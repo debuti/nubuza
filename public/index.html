@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>nubuza</title>
+  <meta name="description" content="nubuza — a little cloud of tiny, cute projects.">
+  <meta name="theme-color" content="#dcecff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1d1838" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="nubuza">
+  <meta property="og:description" content="A little cloud of tiny, cute projects.">
+  <meta property="og:url" content="https://nubuza.com/">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://nubuza.com/">
+  <link rel="icon" href="/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="sky" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <header class="hero">
+    <img class="mascot" src="/logo.svg" alt="" width="200" height="220">
+    <h1>nubuza</h1>
+    <p class="tagline">a little cloud of tiny, cute projects</p>
+  </header>
+
+  <main>
+    <!--
+      To add a project: copy one <li class="photo"> block, point href at the project,
+      and drop a cover image (4:3 works best) in /projects/.
+    -->
+    <ul class="gallery">
+      <li class="photo">
+        <a href="https://bizarre.lovepolygon.com/">
+          <img src="/projects/bizarre-love-polygon.svg" alt="A pink map with heart pins joined into a polygon around a smiling polygon mascot" width="400" height="300" loading="lazy">
+          <span class="caption">
+            <strong>Bizarre Love Polygon</strong>
+            <span>Pin where and when you fell for someone and watch your love polygon grow on a cute pink map.</span>
+            <small>bizarre.lovepolygon.com ↗</small>
+          </span>
+        </a>
+      </li>
+
+      <li class="photo soon" aria-label="More projects coming soon">
+        <div class="placeholder">
+          <span class="drift">☁︎</span>
+          <span class="caption">
+            <strong>more floating in soon…</strong>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>© <span id="y">2026</span> nubuza</p>
+  </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+</body>
+</html>

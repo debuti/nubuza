@@ -1,0 +1,14 @@
+// Static-assets-only Worker: no `main` script, so every request is served
+// straight from Cloudflare's edge cache and never invokes a Worker.
+{
+  "name": "nubuza",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    { "pattern": "nubuza.com", "custom_domain": true },
+    { "pattern": "www.nubuza.com", "custom_domain": true }
+  ]
+}
