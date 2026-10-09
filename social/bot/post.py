@@ -72,6 +72,8 @@ def main() -> int:
     history = load_history()
     project, media = pick(rng, args)
     post = write(project, media, history, rng, not args.no_claude)
+    if args.media and post["media"] != args.media and args.media != "illustration":  # bank posts carry their own
+        post["media"] = args.media
     print(f"project={project['id']} media={post['media']} source={post['source']}\n"
           f"headline: {post['headline']}\nbody: {post['body']}")
 
