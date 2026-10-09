@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=block" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; }
+  body {
+    font-family: "Fredoka", sans-serif;
+    color: #4a3a6b;
+    background: linear-gradient(180deg, #cfe6ff, #fff0f7);
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+    padding: 70px 60px 50px;
+    position: relative;
+  }
+  .puff { position: absolute; background: rgba(255,255,255,.8); border-radius: 999px; }
+  .puff::before, .puff::after { content: ""; position: absolute; background: inherit; border-radius: 50%; }
+  .puff::before { width: 45%; height: 140%; left: 14%; top: -65%; }
+  .puff::after { width: 34%; height: 105%; left: 50%; top: -45%; }
+  h1 { font-size: 72px; font-weight: 600; text-align: center; line-height: 1.1; max-width: 960px; z-index: 1; }
+  .photo {
+    background: #fff; padding: 24px 24px 30px; border-radius: 10px;
+    box-shadow: 0 20px 50px rgba(74,58,107,.22);
+    transform: rotate(-2deg); position: relative; z-index: 1;
+  }
+  .photo::before {
+    content: ""; position: absolute; top: -20px; left: 50%; width: 170px; height: 42px;
+    transform: translateX(-50%) rotate(-3deg); background: rgba(255,179,209,.8); border-radius: 3px;
+  }
+  .photo img { display: block; max-width: 840px; max-height: 860px; border-radius: 4px; }
+  footer { display: flex; align-items: center; gap: 18px; font-size: 40px; font-weight: 600; z-index: 1; }
+  footer img { width: 76px; }
+</style>
+</head>
+<body>
+  <div class="puff" style="width:260px;height:80px;left:-40px;top:300px"></div>
+  <div class="puff" style="width:220px;height:70px;right:-30px;top:120px"></div>
+  <div class="puff" style="width:300px;height:90px;right:-60px;bottom:220px"></div>
+  <h1>{{headline}}</h1>
+  <div class="photo"><img src="{{image}}" alt=""></div>
+  <footer><img src="{{logo}}" alt="">nubuza.com</footer>
+</body>
+</html>

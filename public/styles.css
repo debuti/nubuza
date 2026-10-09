@@ -88,6 +88,35 @@ h1 {
   font-size: clamp(1rem, 3.5vw, 1.2rem);
 }
 
+.socials {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: transform .2s cubic-bezier(.3, 1.6, .5, 1);
+}
+.socials a:hover, .socials a:focus-visible { transform: translateY(-3px) rotate(-2deg); }
+.socials a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.socials svg {
+  width: 20px; height: 20px;
+  fill: none; stroke: var(--accent); stroke-width: 2.2; stroke-linecap: round;
+}
+.socials svg .dot, .socials svg .fill { fill: var(--accent); stroke: none; }
+footer a { color: inherit; }
+
 main {
   flex: 1;
   width: 100%;

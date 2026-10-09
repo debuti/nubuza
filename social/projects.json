@@ -1,0 +1,22 @@
+[
+  {
+    "id": "bizarre-love-polygon",
+    "name": "Bizarre Love Polygon",
+    "url": "https://bizarre.lovepolygon.com/",
+    "pitch": "Pin where and when you fell for someone and watch your love polygon grow on a cute pink map.",
+    "facts": [
+      "Each person you fell for becomes a heart pin on a pink map; the pins form your love polygon.",
+      "You can add moments with dates, a place, an emoji and a colour for each person.",
+      "Private by design: everything is encrypted on your device, no account, no tracking.",
+      "Shows stats such as how many people, countries and how big your polygon is.",
+      "Makes Instagram story and post cards of your polygon, with blurred locations and the Polly mascot or your own photo.",
+      "Encrypted backup files you can restore on another device.",
+      "Works offline and installs as an app on your phone.",
+      "The mascot is Polly, a smiling pink polygon."
+    ],
+    "hashtags": ["bizarrelovepolygon", "lovepolygon", "lovemap", "datinglife", "situationship", "crush", "kawaii", "cuteapp", "webapp", "privacyfirst", "travelandlove", "loveacrosstheworld", "pinkaesthetic", "datingstories"],
+    "media": { "card": 4, "screenshot": 2, "illustration": 2, "cover": 1 },
+    "cover": "public/projects/bizarre-love-polygon.svg",
+    "exporter": "bizarre-love-polygon"
+  }
+]

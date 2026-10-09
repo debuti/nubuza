@@ -1,0 +1,107 @@
+name: Social posts
+
+# Runs hourly through the posting window; social/bot/schedule.py decides whether this
+# run posts (two random slots a week, 9:00-17:00 Europe/Madrid) and when.
+on:
+  schedule:
+    - cron: "23 6-15 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Make the post and attach the image, but don't publish
+        type: boolean
+        default: true
+      project:
+        description: Project id (empty = random)
+        type: string
+        default: ""
+      media:
+        description: Image type (empty = random)
+        type: choice
+        options: ["", card, screenshot, illustration, cover]
+        default: ""
+      no_claude:
+        description: Use the fallback bank instead of Claude
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: social
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: social/requirements.txt
+
+      - name: Is a post due?
+        id: when
+        if: github.event_name == 'schedule'
+        run: python -m social.bot.schedule
+
+      - name: Decide
+        id: go
+        run: echo "run=${{ github.event_name == 'workflow_dispatch' || steps.when.outputs.due == 'true' }}" >> "$GITHUB_OUTPUT"
+
+      - name: Install
+        if: steps.go.outputs.run == 'true'
+        run: |
+          pip install -r social/requirements.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Wait for the slot's minute
+        if: steps.go.outputs.run == 'true' && steps.when.outputs.at
+        run: |
+          left=$(( ${{ steps.when.outputs.at }} - $(date +%s) ))
+          if [ "$left" -gt 0 ]; then echo "sleeping ${left}s"; sleep "$left"; fi
+
+      - name: Post
+        if: steps.go.outputs.run == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_GRAPH_HOST: ${{ vars.IG_GRAPH_HOST }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: >
+          python -m social.bot.post
+          --slot "${{ steps.when.outputs.slot }}"
+          ${{ inputs.project && format('--project {0}', inputs.project) || '' }}
+          ${{ inputs.media && format('--media {0}', inputs.media) || '' }}
+          ${{ inputs.no_claude && '--no-claude' || '' }}
+          ${{ inputs.dry_run && '--dry-run' || '' }}
+
+      - name: Keep the dry-run image
+        if: always() && inputs.dry_run
+        uses: actions/upload-artifact@v4
+        with:
+          name: post-preview
+          path: public/social/*.jpg
+          if-no-files-found: ignore
+
+      - name: Commit the image and history
+        if: always() && steps.go.outputs.run == 'true' && !inputs.dry_run
+        run: |
+          git config user.name "nubuza bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A public/social social
+          git diff --cached --quiet && exit 0
+          git commit -m "social: post ${{ steps.when.outputs.slot || 'manual' }}"
+          git pull --rebase
+          git push
