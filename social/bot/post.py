@@ -22,7 +22,7 @@ from pathlib import Path
 import requests
 from playwright.sync_api import sync_playwright
 
-from . import ROOT, append_history, content, images, load_history, load_projects, publish
+from . import ROOT, append_history, redact, content, images, load_history, load_projects, publish
 
 SITE = os.environ.get("SITE_URL", "https://nubuza.com")
 WRANGLER = "wrangler@4.149.0"
@@ -44,7 +44,7 @@ def write(project: dict, media: str, history: list[dict], rng: random.Random, us
         try:
             return content.from_claude(project, media, recent, how)
         except Exception as e:  # any Claude problem: the bank keeps the schedule going
-            print(f"Claude unavailable, using the fallback bank: {e!r}")
+            print(f"Claude unavailable, using the fallback bank: {redact(repr(e))}")
     used = {h["bank_id"] for h in history if h.get("bank_id")}
     return content.from_bank(project, used, rng)
 
@@ -109,7 +109,7 @@ def main() -> int:
                 raw = images.make(browser, project, post, Path(tmp), rng)
                 break
             except Exception as e:
-                print(f"{media} image failed: {e!r}")
+                print(f"{media} image failed: {redact(repr(e))}")
         else:
             raise RuntimeError("no image could be made")
         images.to_jpeg(raw, jpeg)
@@ -134,8 +134,8 @@ def main() -> int:
             results[name] = send()
             print(f"{name}: {results[name]}")
         except Exception as e:
-            errors[name] = repr(e)
-            print(f"{name} failed: {e!r}", file=sys.stderr)
+            errors[name] = redact(repr(e))
+            print(f"{name} failed: {errors[name]}", file=sys.stderr)
 
     if results:  # anything published: the slot is done (no double posts on retry)
         append_history({"slot": args.slot or f"manual-{stamp}", "at": datetime.now(timezone.utc).isoformat(),

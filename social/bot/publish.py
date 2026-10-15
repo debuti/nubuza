@@ -8,6 +8,8 @@ from pathlib import Path
 import requests
 from requests_oauthlib import OAuth1Session
 
+from . import redact
+
 X_KEYS = ("X_API_KEY", "X_API_SECRET", "X_ACCESS_TOKEN", "X_ACCESS_TOKEN_SECRET")
 IG_KEYS = ("IG_USER_ID", "IG_ACCESS_TOKEN")
 # graph.instagram.com for "Instagram API with Instagram Login" tokens,
@@ -22,7 +24,7 @@ def configured(keys: tuple[str, ...]) -> bool:
 
 def _check(r: requests.Response) -> dict:
     if not r.ok:
-        raise RuntimeError(f"{r.request.method} {r.url.split('?')[0]} → {r.status_code}: {r.text[:500]}")
+        raise RuntimeError(redact(f"{r.request.method} {r.url.split('?')[0]} → {r.status_code}: {r.text[:500]}"))
     return r.json()
 
 

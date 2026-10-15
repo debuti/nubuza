@@ -1,0 +1,43 @@
+name: Refresh Instagram token
+
+# Instagram Login tokens expire after 60 days; refreshing on the 1st of each month keeps
+# IG_ACCESS_TOKEN alive. Writing a secret needs SECRETS_PAT: a fine-grained token for this
+# repository only, with "Secrets: Read and write" and nothing else.
+#
+# The repo is public, so this workflow never prints a token: it masks the new one before
+# anything else, keeps tokens out of command lines and URLs in logs, and only runs on a
+# schedule or by hand (never on pull requests, so forks can't trigger it).
+on:
+  schedule:
+    - cron: "0 5 1 * *"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  refresh:
+    # Facebook Login Page tokens don't expire: nothing to do.
+    if: vars.IG_GRAPH_HOST != 'graph.facebook.com'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Refresh and store the token
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.SECRETS_PAT }}
+        run: |
+          set -euo pipefail
+          if [ -z "$IG_ACCESS_TOKEN" ] || [ -z "$GH_TOKEN" ]; then
+            echo "::warning::IG_ACCESS_TOKEN or SECRETS_PAT is not set; nothing refreshed."
+            exit 0
+          fi
+          response=$(curl -sS -G "https://graph.instagram.com/refresh_access_token" \
+            --data-urlencode "grant_type=ig_refresh_token" \
+            --data-urlencode "access_token@-" < <(printf '%s' "$IG_ACCESS_TOKEN")) || { echo "::error::request failed"; exit 1; }
+          token=$(jq -r '.access_token // empty' <<< "$response")
+          if [ -z "$token" ]; then
+            echo "::error::Instagram refused: $(jq -r '.error.message // "unknown error"' <<< "$response")"
+            exit 1
+          fi
+          echo "::add-mask::$token"
+          printf '%s' "$token" | gh secret set IG_ACCESS_TOKEN --repo "$GITHUB_REPOSITORY"
+          echo "Token refreshed; valid for $(( $(jq -r '.expires_in' <<< "$response") / 86400 )) more days."

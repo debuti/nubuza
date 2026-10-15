@@ -75,5 +75,9 @@ Claude uses your Claude Code login unless `social/.env` sets a key or token. If 
 | `X_ACCESS_TOKEN`, `X_ACCESS_TOKEN_SECRET` | Same page → Access Token and Secret, generated while logged in as @nubuzacom after enabling write permissions |
 | `IG_USER_ID`, `IG_ACCESS_TOKEN` | A Meta app with the Instagram API, @nubuza as a professional (Business or Creator) account, permissions `instagram_business_basic` + `instagram_business_content_publish` |
 
-Instagram Login tokens (`graph.instagram.com`, the default) expire after 60 days. Refresh yours before then with `curl "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=TOKEN"` and save the new token in the secret.
+| `SECRETS_PAT` | github.com → Settings → Developer settings → Fine-grained tokens. Limit it to **only** `debuti/nubuza`, with Repository permissions → **Secrets: Read and write** and nothing else. |
+
+Instagram Login tokens (`graph.instagram.com`, the default) expire after 60 days. `.github/workflows/instagram-token.yml` refreshes `IG_ACCESS_TOKEN` on the 1st of every month, using `SECRETS_PAT` to save it.
+
+This repository is public, so nothing may leak a secret. The workflows only run on a schedule or by hand, never for pull requests from forks. The refresh never prints tokens. The bot redacts tokens from its error messages and from `social/history.jsonl`.
 To use a Facebook Login Page token instead, which doesn't expire, set the repository variable `IG_GRAPH_HOST=graph.facebook.com`.
