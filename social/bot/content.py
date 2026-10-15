@@ -15,7 +15,8 @@ MEDIA_BRIEF = {
             "names) they fell for, each in a real city with its coordinates and dates.",
     "screenshot": "The image is a phone screenshot of the app showing a pink map with heart pins.",
     "cover": "The image is the project's cover art, framed as a polaroid.",
-    "illustration": "You also draw the image: a kawaii SVG illustration about the post's idea, in the "
+    "illustration": "You also draw the image: a square kawaii SVG illustration (no text: the headline is "
+                    "added around it) about the post's idea, in the "
                     "nubuza style (pastel pinks, lavender, mint, sky blue; chunky rounded shapes with "
                     "dark plum #4a3a6b outlines; blush cheeks and tiny smiles on characters).",
 }
@@ -53,8 +54,8 @@ SCHEMA = {
                      "description": "6-10 relevant hashtags without the # sign, lowercase, no spaces."},
         "alt_text": {"type": "string", "description": "Image description for screen readers, under 200 characters."},
         "svg": {"type": "string", "description": "Only for illustration posts: a complete standalone <svg> "
-                                                 "with viewBox=\"0 0 1080 1350\", no scripts, no external "
-                                                 "references, no text other than the headline. Empty otherwise."},
+                                                 "with viewBox=\"0 0 1000 1000\", a filled background, no text, "
+                                                 "no scripts, no external references. Empty otherwise."},
         "lovers": {"type": "array", "items": LOVER, "description": "Only for card and screenshot posts of "
                                                                    "Bizarre Love Polygon. Empty otherwise."},
     },
@@ -63,20 +64,21 @@ SCHEMA = {
 }
 
 
-def from_claude(project: dict, media: str, recent: list[str]) -> dict:
+def backend() -> str | None:
+    """Which way to reach Claude: "api" (API key), "agent-sdk" (Claude Code login or OAuth token), or None."""
+    choice = os.environ.get("CLAUDE_BACKEND", "auto")
+    if choice != "auto":
+        return choice
+    if os.environ.get("ANTHROPIC_API_KEY"):
+        return "api"
+    if os.environ.get("CLAUDE_CODE_OAUTH_TOKEN") or not os.environ.get("GITHUB_ACTIONS"):
+        return "agent-sdk"  # locally, the Agent SDK uses your Claude Code login
+    return None
+
+
+def _ask_api(prompt: str) -> dict:
     import anthropic
 
-    wants_lovers = project.get("exporter") == "bizarre-love-polygon" and media in ("card", "screenshot")
-    brief = MEDIA_BRIEF[media]
-    if wants_lovers and media == "screenshot":
-        brief += " Also invent the demo user's scenario shown on the map (fill `lovers`)."
-    prompt = (
-        f"Project: {project['name']} ({project['url']})\n"
-        f"Pitch: {project['pitch']}\n"
-        "Facts:\n" + "\n".join(f"- {f}" for f in project["facts"]) + "\n\n"
-        f"Post type: {media}. {brief}\n\n"
-        "Recent posts (don't repeat them):\n" + ("\n".join(f"- {r}" for r in recent) or "- none yet")
-    )
     client = anthropic.Anthropic()
     with client.beta.messages.stream(
         model=MODEL,
@@ -91,10 +93,52 @@ def from_claude(project: dict, media: str, recent: list[str]) -> dict:
         response = stream.get_final_message()
     if response.stop_reason != "end_turn":
         raise RuntimeError(f"Claude stopped with {response.stop_reason} (request {response._request_id})")
-    data = json.loads(next(b.text for b in response.content if b.type == "text"))
+    return json.loads(next(b.text for b in response.content if b.type == "text"))
+
+
+def _ask_agent_sdk(prompt: str) -> dict:
+    import anyio
+    from claude_agent_sdk import ClaudeAgentOptions, ResultMessage, query
+
+    options = ClaudeAgentOptions(
+        system_prompt=SYSTEM,
+        model=MODEL,
+        tools=[],  # just writing: no file, shell or web tools
+        setting_sources=[],  # ignore local Claude Code settings, hooks and CLAUDE.md
+        max_turns=3,
+        effort="medium",
+        output_format={"type": "json_schema", "schema": SCHEMA},
+    )
+
+    async def run() -> ResultMessage | None:
+        result = None
+        async for message in query(prompt=prompt, options=options):
+            if isinstance(message, ResultMessage):
+                result = message
+        return result
+
+    result = anyio.run(run)
+    if result is None or result.is_error or not isinstance(result.structured_output, dict):
+        raise RuntimeError(f"Agent SDK returned no post: {result and (result.errors or result.subtype)}")
+    return result.structured_output
+
+
+def from_claude(project: dict, media: str, recent: list[str], how: str) -> dict:
+    wants_lovers = project.get("exporter") == "bizarre-love-polygon" and media in ("card", "screenshot")
+    brief = MEDIA_BRIEF[media]
+    if wants_lovers and media == "screenshot":
+        brief += " Also invent the demo user's scenario shown on the map (fill `lovers`)."
+    prompt = (
+        f"Project: {project['name']} ({project['url']})\n"
+        f"Pitch: {project['pitch']}\n"
+        "Facts:\n" + "\n".join(f"- {f}" for f in project["facts"]) + "\n\n"
+        f"Post type: {media}. {brief}\n\n"
+        "Recent posts (don't repeat them):\n" + ("\n".join(f"- {r}" for r in recent) or "- none yet")
+    )
+    data = _ask_api(prompt) if how == "api" else _ask_agent_sdk(prompt)
     if media == "illustration" and not data["svg"].lstrip().startswith("<svg"):
         raise RuntimeError("Claude returned no SVG for an illustration post")
-    data.update(source="claude", media=media, id=None)
+    data.update(source=f"claude-{how}", media=media, id=None)
     return data
 
 

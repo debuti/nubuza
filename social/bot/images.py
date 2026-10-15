@@ -19,8 +19,8 @@ def _data_uri(path: Path) -> str:
     return f"data:{mime};base64,{base64.b64encode(path.read_bytes()).decode()}"
 
 
-def _render(browser, page_html: str, out: Path, offline: bool = False) -> Path:
-    context = browser.new_context(viewport=SIZE)
+def _render(browser, page_html: str, out: Path, offline: bool = False, size: dict = SIZE) -> Path:
+    context = browser.new_context(viewport=size)
     if offline:  # model-written SVG: nothing may load from the network
         context.route(re.compile(r"^(?!data:).*"), lambda route: route.abort())
     page = context.new_page()
@@ -46,9 +46,9 @@ def _safe_svg(svg: str) -> str:
 
 
 def illustration(browser, svg: str, out: Path) -> Path:
-    page_html = ("<!doctype html><style>html,body{margin:0;width:1080px;height:1350px;overflow:hidden;"
-                 "background:#fff0f7}svg{display:block;width:1080px;height:1350px}</style>" + _safe_svg(svg))
-    return _render(browser, page_html, out, offline=True)
+    page_html = ("<!doctype html><style>html,body{margin:0;width:1000px;height:1000px;overflow:hidden;"
+                 "background:#fff0f7}svg{display:block;width:1000px;height:1000px}</style>" + _safe_svg(svg))
+    return _render(browser, page_html, out, offline=True, size={"width": 1000, "height": 1000})
 
 
 def make(browser, project: dict, post: dict, workdir: Path, rng: random.Random) -> Path:
@@ -56,7 +56,8 @@ def make(browser, project: dict, post: dict, workdir: Path, rng: random.Random) 
     media = post["media"]
     raw = workdir / f"{media}.png"
     if media == "illustration":
-        return illustration(browser, post["svg"], raw)
+        art = illustration(browser, post["svg"], workdir / "art.png")
+        return frame(browser, art, post["headline"], raw)
     if media == "cover":
         return frame(browser, ROOT / project["cover"], post["headline"], raw)
     if project.get("exporter") == "bizarre-love-polygon":

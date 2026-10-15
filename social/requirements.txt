@@ -1,4 +1,5 @@
 anthropic==1.12.1
+claude-agent-sdk==0.2.167
 cryptography==50.0.2
 pillow==12.3.0
 playwright==1.63.0

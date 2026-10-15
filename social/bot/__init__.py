@@ -1,11 +1,19 @@
 """nubuza social bot: posts about nubuza projects to Instagram and X."""
 
 import json
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 SOCIAL = ROOT / "social"
 HISTORY = SOCIAL / "history.jsonl"
+
+# Local runs read secrets from social/.env (KEY=value lines, git-ignored); real env vars win.
+if (env := SOCIAL / ".env").exists():
+    for line in env.read_text().splitlines():
+        key, sep, value = line.strip().partition("=")
+        if sep and not key.startswith("#") and value.strip():
+            os.environ.setdefault(key.strip(), value.strip().strip("\"'"))
 
 
 def load_projects() -> list[dict]:

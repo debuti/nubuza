@@ -1,15 +1,17 @@
 """Makes and publishes one post about a random nubuza project.
 
-    python -m social.bot.post [--slot ID] [--project ID] [--media KIND] [--no-claude] [--dry-run]
+    python -m social.bot.post [--slot ID] [--project ID] [--media KIND] [--no-claude] [--dry-run] [--commit]
 
 The image is saved under public/social/ and deployed with the site before posting,
-because Instagram fetches images from a public URL. --dry-run stops before deploying.
+because Instagram fetches images from a public URL. --dry-run stops before deploying;
+--commit commits and pushes the image and social/history.jsonl after posting.
 """
 
 import argparse
 import json
 import os
 import random
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -36,23 +38,41 @@ def pick(rng: random.Random, args) -> tuple[dict, str]:
 
 
 def write(project: dict, media: str, history: list[dict], rng: random.Random, use_claude: bool) -> dict:
-    if use_claude and os.environ.get("ANTHROPIC_API_KEY"):
+    how = content.backend() if use_claude else None
+    if how:
         recent = [h["text"] for h in history[-12:] if h.get("project") == project["id"]]
         try:
-            return content.from_claude(project, media, recent)
+            return content.from_claude(project, media, recent, how)
         except Exception as e:  # any Claude problem: the bank keeps the schedule going
             print(f"Claude unavailable, using the fallback bank: {e!r}")
     used = {h["bank_id"] for h in history if h.get("bank_id")}
     return content.from_bank(project, used, rng)
 
 
-def deploy_and_wait(url: str) -> None:
-    subprocess.run(["npx", "--yes", WRANGLER, "deploy"], cwd=ROOT, check=True)
-    for _ in range(40):
+def deploy_and_wait(url: str, jpeg: Path) -> None:
+    if shutil.which("npx"):
+        subprocess.run(["npx", "--yes", WRANGLER, "deploy"], cwd=ROOT, check=True)
+    else:  # no Node here (e.g. a local run): pushing the image makes the Deploy workflow publish it
+        git("add", str(jpeg))
+        git("commit", "-m", f"social: image {jpeg.name}")
+        git("pull", "--rebase")
+        git("push")
+    for _ in range(100):
         if requests.head(url, timeout=15).status_code == 200:
             return
         time.sleep(3)
     raise RuntimeError(f"{url} never became reachable")
+
+
+def git(*args: str) -> None:
+    subprocess.run(["git", *args], cwd=ROOT, check=True)
+
+
+def commit(message: str, jpeg: Path) -> None:
+    git("add", str(jpeg), "social/history.jsonl")
+    git("commit", "-m", message)
+    git("pull", "--rebase")
+    git("push")
 
 
 def main() -> int:
@@ -62,6 +82,7 @@ def main() -> int:
     ap.add_argument("--media", choices=["card", "screenshot", "illustration", "cover"])
     ap.add_argument("--no-claude", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--commit", action="store_true")
     args = ap.parse_args()
 
     if not args.dry_run and not (publish.configured(publish.X_KEYS) or publish.configured(publish.IG_KEYS)):
@@ -100,7 +121,7 @@ def main() -> int:
         return 0
 
     image_url = f"{SITE}/social/{jpeg.name}"
-    deploy_and_wait(image_url)
+    deploy_and_wait(image_url, jpeg)
     results, errors = {}, {}
     targets = [("x", publish.X_KEYS, lambda: publish.post_x(texts["x"], jpeg, post["alt_text"])),
                ("instagram", publish.IG_KEYS,
@@ -121,6 +142,8 @@ def main() -> int:
                         "project": project["id"], "media": post["media"], "source": post["source"],
                         "bank_id": post["id"] if post["source"] == "bank" else None,
                         "text": post["body"], "image": f"/social/{jpeg.name}", "posts": results, "errors": errors})
+        if args.commit:
+            commit(f"social: post {args.slot or 'manual'}", jpeg)
     else:
         jpeg.unlink()
     return 1 if errors or not results else 0
