@@ -18,8 +18,16 @@ IG_HOST = os.environ.get("IG_GRAPH_HOST") or "graph.instagram.com"
 IG_VERSION = os.environ.get("IG_GRAPH_VERSION") or "v23.0"
 
 
+def paused(name: str) -> bool:
+    """SOCIAL_PAUSE (repo variable) lists platforms not to post to, e.g. "instagram", or "all"."""
+    pause = {p.strip().lower() for p in os.environ.get("SOCIAL_PAUSE", "").split(",")}
+    return "all" in pause or name in pause
+
+
 def configured(keys: tuple[str, ...]) -> bool:
-    return all(os.environ.get(k) for k in keys)
+    """Has secrets and isn't paused. Keys tuples are named after their platform below."""
+    name = "x" if keys is X_KEYS else "instagram"
+    return all(os.environ.get(k) for k in keys) and not paused(name)
 
 
 def _check(r: requests.Response) -> dict:

@@ -86,7 +86,7 @@ def main() -> int:
     args = ap.parse_args()
 
     if not args.dry_run and not (publish.configured(publish.X_KEYS) or publish.configured(publish.IG_KEYS)):
-        print("No X or Instagram secrets configured yet: nothing to post to.")
+        print("No platform to post to (secrets missing or SOCIAL_PAUSE set): nothing to do.")
         return 0
 
     rng = random.Random()
@@ -128,7 +128,7 @@ def main() -> int:
                 lambda: publish.post_instagram(texts["instagram"], image_url, post["alt_text"]))]
     for name, keys, send in targets:
         if not publish.configured(keys):
-            print(f"{name}: not configured, skipped")
+            print(f"{name}: not configured or paused, skipped")
             continue
         try:
             results[name] = send()
