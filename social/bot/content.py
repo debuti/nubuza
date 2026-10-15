@@ -16,9 +16,12 @@ MEDIA_BRIEF = {
     "screenshot": "The image is a phone screenshot of the app showing a pink map with heart pins.",
     "cover": "The image is the project's cover art, framed as a polaroid.",
     "illustration": "You also draw the image: a square kawaii SVG illustration (no text: the headline is "
-                    "added around it) about the post's idea, in the "
-                    "nubuza style (pastel pinks, lavender, mint, sky blue; chunky rounded shapes with "
-                    "dark plum #4a3a6b outlines; blush cheeks and tiny smiles on characters).",
+                    "added around it) that shows the post's idea clearly, as a scene, not a logo. Make it rich "
+                    "and full, with no empty areas: a background, a main subject and small details (sparkles, "
+                    "clouds, little hearts, map bits). Nubuza style: pastel pinks, lavender, mint, sky blue; "
+                    "chunky rounded shapes with dark plum #4a3a6b outlines; blush cheeks and tiny smiles on "
+                    "characters. For Bizarre Love Polygon, Polly (a smiling pink heart-shaped polygon), heart "
+                    "map pins and pink maps fit well.",
 }
 
 SYSTEM = """You write social media posts for nubuza, a tiny studio of cute web projects (nubuza.com).
