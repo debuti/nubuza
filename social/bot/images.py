@@ -19,13 +19,19 @@ def _data_uri(path: Path) -> str:
     return f"data:{mime};base64,{base64.b64encode(path.read_bytes()).decode()}"
 
 
-def _render(browser, page_html: str, out: Path, offline: bool = False, size: dict = SIZE) -> Path:
+def _render(browser, page_html: str, out: Path, offline: bool = False, size: dict = SIZE,
+            check: str | None = None) -> Path:
     context = browser.new_context(viewport=size)
     if offline:  # model-written SVG: nothing may load from the network
         context.route(re.compile(r"^(?!data:).*"), lambda route: route.abort())
     page = context.new_page()
     page.set_content(page_html, wait_until="networkidle")
     page.evaluate("document.fonts.ready")
+    if check:  # e.g. an SVG without a size draws as an empty box: never post that
+        box = page.locator(check).bounding_box()
+        if not box or box["width"] < 300 or box["height"] < 200:
+            context.close()
+            raise RuntimeError(f"{check} rendered too small: {box}")
     page.screenshot(path=out)
     context.close()
     return out
@@ -36,7 +42,7 @@ def frame(browser, image: Path, headline: str, out: Path) -> Path:
     page_html = (template.replace("{{headline}}", html.escape(headline))
                  .replace("{{image}}", _data_uri(image))
                  .replace("{{logo}}", _data_uri(ROOT / "public" / "logo.svg")))
-    return _render(browser, page_html, out)
+    return _render(browser, page_html, out, check=".photo img")
 
 
 def _safe_svg(svg: str) -> str:
