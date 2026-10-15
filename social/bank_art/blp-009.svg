@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000">
+<defs>
+<g id="pin">
+<ellipse cx="0" cy="34" rx="22" ry="7" fill="#4a3a6b" opacity="0.25"/>
+<path d="M0,30 C-40,0 -46,-36 -22,-46 C-10,-51 0,-43 0,-33 C0,-43 10,-51 22,-46 C46,-36 40,0 0,30 Z" stroke="#4a3a6b" stroke-width="7" stroke-linejoin="round"/>
+<circle cx="-9" cy="-20" r="4" fill="#4a3a6b"/>
+<circle cx="9" cy="-20" r="4" fill="#4a3a6b"/>
+<path d="M-6,-10 Q0,-4 6,-10" fill="none" stroke="#4a3a6b" stroke-width="3.5" stroke-linecap="round"/>
+<ellipse cx="-18" cy="-11" rx="5" ry="3" fill="#ff4f8a" opacity="0.5"/>
+<ellipse cx="18" cy="-11" rx="5" ry="3" fill="#ff4f8a" opacity="0.5"/>
+<ellipse cx="-20" cy="-34" rx="6" ry="4" fill="#fff" opacity="0.7"/>
+</g>
+<g id="clock">
+<circle r="30" fill="#e3d6ff" stroke="#4a3a6b" stroke-width="6"/>
+<path d="M0,-17 L0,0 L12,8" fill="none" stroke="#4a3a6b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle r="3.5" fill="#4a3a6b"/>
+</g>
+<g id="cal">
+<rect x="-30" y="-26" width="60" height="54" rx="10" fill="#fff" stroke="#4a3a6b" stroke-width="6"/>
+<path d="M-27,-24 H27 V-6 H-27 Z" fill="#ff8fb8"/>
+<rect x="-30" y="-26" width="60" height="54" rx="10" fill="none" stroke="#4a3a6b" stroke-width="6"/>
+<line x1="-14" y1="-34" x2="-14" y2="-18" stroke="#4a3a6b" stroke-width="6" stroke-linecap="round"/>
+<line x1="14" y1="-34" x2="14" y2="-18" stroke="#4a3a6b" stroke-width="6" stroke-linecap="round"/>
+<path d="M0,20 C-14,10 -14,0 -6,0 C-3,0 0,3 0,5 C0,3 3,0 6,0 C14,0 14,10 0,20Z" fill="#ff6f9f"/>
+</g>
+<g id="sp"><path d="M0,-16 Q3,-3 16,0 Q3,3 0,16 Q-3,3 -16,0 Q-3,-3 0,-16Z" fill="#fff" stroke="#4a3a6b" stroke-width="4" stroke-linejoin="round"/></g>
+<g id="hrt"><path d="M0,14 C-20,0 -20,-14 -9,-14 C-4,-14 0,-10 0,-7 C0,-10 4,-14 9,-14 C20,-14 20,0 0,14Z" stroke="#4a3a6b" stroke-width="4" stroke-linejoin="round"/></g>
+<g id="tree"><circle r="26" fill="#9fe6c8" stroke="#4a3a6b" stroke-width="5"/><circle cx="-8" cy="-8" r="7" fill="#c9f5e2"/></g>
+</defs>
+<rect width="1000" height="1000" fill="#fff1f6"/>
+<g fill="#ffd3e3" stroke="#f4a7c5" stroke-width="5">
+<rect x="-20" y="-20" width="180" height="180" rx="26"/><rect x="190" y="-20" width="180" height="180" rx="26"/><rect x="400" y="-20" width="180" height="180" rx="26"/><rect x="610" y="-20" width="180" height="180" rx="26"/><rect x="820" y="-20" width="200" height="180" rx="26"/>
+<rect x="-20" y="190" width="180" height="180" rx="26"/><rect x="190" y="190" width="180" height="180" rx="26"/><rect x="400" y="190" width="180" height="180" rx="26"/><rect x="610" y="190" width="180" height="180" rx="26"/><rect x="820" y="190" width="200" height="180" rx="26"/>
+<rect x="-20" y="400" width="180" height="180" rx="26"/><rect x="190" y="400" width="180" height="180" rx="26"/><rect x="400" y="400" width="180" height="180" rx="26"/><rect x="610" y="400" width="180" height="180" rx="26"/><rect x="820" y="400" width="200" height="180" rx="26"/>
+<rect x="-20" y="610" width="180" height="180" rx="26"/><rect x="190" y="610" width="180" height="180" rx="26"/><rect x="400" y="610" width="180" height="180" rx="26"/><rect x="610" y="610" width="180" height="180" rx="26"/><rect x="820" y="610" width="200" height="180" rx="26"/>
+<rect x="-20" y="820" width="180" height="200" rx="26"/><rect x="190" y="820" width="180" height="200" rx="26"/><rect x="400" y="820" width="180" height="200" rx="26"/><rect x="610" y="820" width="180" height="200" rx="26"/><rect x="820" y="820" width="200" height="200" rx="26"/>
+</g>
+<rect x="-20" y="400" width="180" height="180" rx="26" fill="#c9f5e2" stroke="#4a3a6b" stroke-width="5"/>
+<rect x="610" y="-20" width="180" height="180" rx="26" fill="#c9f5e2" stroke="#4a3a6b" stroke-width="5"/>
+<use xlink:href="#tree" x="45" y="455"/><use xlink:href="#tree" x="100" y="520"/><use xlink:href="#tree" x="40" y="535"/>
+<use xlink:href="#tree" x="660" y="40"/><use xlink:href="#tree" x="740" y="100"/><use xlink:href="#tree" x="670" y="115"/>
+<path d="M-20,830 C250,700 450,900 700,760 S950,640 1020,600" fill="none" stroke="#4a3a6b" stroke-width="86" stroke-linecap="round"/>
+<path d="M-20,830 C250,700 450,900 700,760 S950,640 1020,600" fill="none" stroke="#bfe6ff" stroke-width="72" stroke-linecap="round"/>
+<path d="M120,790 q20,-10 40,0 M420,815 q20,-10 40,0 M760,720 q20,-10 40,0" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+<polygon points="200,280 520,175 820,320 770,660 270,640" fill="#ff8fb8" fill-opacity="0.38" stroke="none"/>
+<polygon points="200,280 520,175 820,320 770,660 270,640" fill="none" stroke="#4a3a6b" stroke-width="9" stroke-dasharray="26 18" stroke-linejoin="round" stroke-linecap="round"/>
+<use xlink:href="#clock" x="120" y="205"/>
+<use xlink:href="#cal" x="625" y="105"/>
+<use xlink:href="#clock" x="905" y="250"/>
+<use xlink:href="#cal" x="880" y="560"/>
+<use xlink:href="#clock" x="170" y="560"/>
+<use xlink:href="#pin" x="200" y="250" fill="#ff6f9f"/>
+<use xlink:href="#pin" x="520" y="145" fill="#ff9ec4"/>
+<use xlink:href="#pin" x="820" y="290" fill="#c9a7ff"/>
+<use xlink:href="#pin" x="770" y="630" fill="#7fdcc0"/>
+<use xlink:href="#pin" x="270" y="610" fill="#8fd0ff"/>
+<ellipse cx="500" cy="590" rx="110" ry="16" fill="#4a3a6b" opacity="0.2"/>
+<path d="M392,450 L340,420" stroke="#4a3a6b" stroke-width="22" stroke-linecap="round"/>
+<path d="M392,450 L340,420" stroke="#ff7aa8" stroke-width="10" stroke-linecap="round"/>
+<path d="M608,450 L655,405" stroke="#4a3a6b" stroke-width="22" stroke-linecap="round"/>
+<path d="M608,450 L655,405" stroke="#ff7aa8" stroke-width="10" stroke-linecap="round"/>
+<ellipse cx="470" cy="578" rx="24" ry="13" fill="#ff7aa8" stroke="#4a3a6b" stroke-width="6"/>
+<ellipse cx="530" cy="578" rx="24" ry="13" fill="#ff7aa8" stroke="#4a3a6b" stroke-width="6"/>
+<polygon points="500,570 385,455 372,385 405,332 460,325 500,368 540,325 595,332 628,385 615,455" fill="#ff7aa8" stroke="#4a3a6b" stroke-width="9" stroke-linejoin="round"/>
+<polygon points="410,350 455,343 440,380 405,390" fill="#ffb3cf"/>
+<ellipse cx="458" cy="425" rx="13" ry="17" fill="#4a3a6b"/><circle cx="462" cy="418" r="5" fill="#fff"/>
+<ellipse cx="542" cy="425" rx="13" ry="17" fill="#4a3a6b"/><circle cx="546" cy="418" r="5" fill="#fff"/>
+<path d="M478,458 Q500,480 522,458" fill="none" stroke="#4a3a6b" stroke-width="7" stroke-linecap="round"/>
+<ellipse cx="425" cy="462" rx="18" ry="10" fill="#ff4f8a" opacity="0.5"/>
+<ellipse cx="575" cy="462" rx="18" ry="10" fill="#ff4f8a" opacity="0.5"/>
+<use xlink:href="#hrt" x="335" y="395" fill="#ff6f9f"/>
+<use xlink:href="#sp" x="672" y="380"/>
+<g transform="translate(905,95)">
+<circle r="62" fill="#e3d6ff" stroke="#4a3a6b" stroke-width="7"/>
+<path d="M0,-46 L13,0 L0,46 L-13,0Z" fill="#fff" stroke="#4a3a6b" stroke-width="5" stroke-linejoin="round"/>
+<path d="M0,-46 L13,0 L-13,0Z" fill="#ff6f9f" stroke="#4a3a6b" stroke-width="5" stroke-linejoin="round"/>
+<circle r="6" fill="#4a3a6b"/>
+</g>
+<g transform="translate(95,905)">
+<path d="M-10,40 Q-40,10 -55,25 Q-35,45 -10,40Z" fill="#9fe6c8" stroke="#4a3a6b" stroke-width="5"/>
+<path d="M10,40 Q40,10 55,25 Q35,45 10,40Z" fill="#9fe6c8" stroke="#4a3a6b" stroke-width="5"/>
+<path d="M0,80 L0,20" stroke="#4a3a6b" stroke-width="8" stroke-linecap="round"/>
+<circle cy="-10" r="48" fill="#ff5f8f" stroke="#4a3a6b" stroke-width="7"/>
+<path d="M-6,-12 a10,10 0 1,1 14,6 a20,20 0 1,1 -30,-14 a30,30 0 1,1 48,4" fill="none" stroke="#4a3a6b" stroke-width="5" stroke-linecap="round"/>
+<ellipse cx="-24" cy="10" rx="8" ry="5" fill="#ffd3e3" opacity="0.8"/>
+</g>
+<g transform="translate(880,880)">
+<path d="M-75,60 L65,60 L65,-80 Z" fill="#cbe9ff" stroke="#4a3a6b" stroke-width="7" stroke-linejoin="round"/>
+<path d="M-15,40 L45,40 L45,-20 Z" fill="#fff1f6" stroke="#4a3a6b" stroke-width="5" stroke-linejoin="round"/>
+<path d="M-40,60 v-12 M-15,60 v-16 M10,60 v-12 M35,60 v-16" stroke="#4a3a6b" stroke-width="4" stroke-linecap="round"/>
+<circle cx="-45" cy="35" r="4" fill="#4a3a6b"/>
+</g>
+<use xlink:href="#hrt" x="360" y="240" fill="#c9a7ff"/>
+<use xlink:href="#hrt" x="680" y="230" fill="#ff9ec4"/>
+<use xlink:href="#hrt" x="640" y="560" fill="#7fdcc0"/>
+<use xlink:href="#hrt" x="330" y="520" fill="#ff9ec4"/>
+<use xlink:href="#hrt" x="560" y="940" fill="#ff6f9f"/>
+<use xlink:href="#hrt" x="300" y="80" fill="#8fd0ff"/>
+<use xlink:href="#sp" x="420" y="90"/>
+<use xlink:href="#sp" x="60" y="330"/>
+<use xlink:href="#sp" x="950" y="440"/>
+<use xlink:href="#sp" x="330" y="930"/>
+<use xlink:href="#sp" x="720" y="900"/>
+<use xlink:href="#sp" x="590" y="270"/>
+</svg>

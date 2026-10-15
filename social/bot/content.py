@@ -96,7 +96,7 @@ def _ask_api(prompt: str) -> dict:
     return json.loads(next(b.text for b in response.content if b.type == "text"))
 
 
-def _ask_agent_sdk(prompt: str) -> dict:
+def _ask_agent_sdk(prompt: str, schema: dict = SCHEMA) -> dict:
     import anyio
     from claude_agent_sdk import ClaudeAgentOptions, ResultMessage, query
 
@@ -107,7 +107,7 @@ def _ask_agent_sdk(prompt: str) -> dict:
         setting_sources=[],  # ignore local Claude Code settings, hooks and CLAUDE.md
         max_turns=3,
         effort="medium",
-        output_format={"type": "json_schema", "schema": SCHEMA},
+        output_format={"type": "json_schema", "schema": schema},
     )
 
     async def run() -> ResultMessage | None:
@@ -150,8 +150,9 @@ def from_bank(project: dict, used: set[str], rng: random.Random) -> dict:
                  "body": f"✨ {project['pitch']} Come say hi! 🥰"}]
     fresh = [p for p in mine if p["id"] not in used] or mine  # start over once all were used
     post = dict(rng.choice(fresh))
-    post.update(source="bank", hashtags=[], alt_text=f"{post['headline']}: an image about {project['name']}",
-                svg="", lovers=[])
+    art = SOCIAL / "bank_art" / f"{post['id']}.svg"  # pre-drawn illustration for this exact post
+    post.update(source="bank", hashtags=[], alt_text=post.get("alt") or f"{post['headline']}: an image about "
+                f"{project['name']}", svg=art.read_text() if art.exists() else "", lovers=[])
     return post
 
 

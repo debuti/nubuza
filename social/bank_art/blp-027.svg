@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe8fb"/><stop offset="0.6" stop-color="#e6dcfa"/><stop offset="1" stop-color="#fbe0ee"/></linearGradient>
+<linearGradient id="map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd3e6"/><stop offset="1" stop-color="#ffbcd9"/></linearGradient>
+</defs>
+<rect width="1000" height="1000" fill="url(#sky)"/>
+<g stroke="#4a3a6b" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+<!-- clouds -->
+<path d="M60 170 q0-45 45-45 q15-35 60-30 q40-10 55 30 q40 0 40 45 z" fill="#fff"/>
+<path d="M730 130 q0-40 40-40 q15-35 58-28 q38-8 52 28 q40 2 40 40 z" fill="#fff"/>
+<!-- stars and hearts -->
+<path d="M330 90 l12 26 28 4 -20 19 5 28 -25-14 -25 14 5-28 -20-19 28-4z" fill="#fff3a8"/>
+<path d="M900 300 l9 20 22 3 -16 15 4 22 -19-11 -19 11 4-22 -16-15 22-3z" fill="#fff3a8"/>
+<path d="M90 330 l9 20 22 3 -16 15 4 22 -19-11 -19 11 4-22 -16-15 22-3z" fill="#bff0dc"/>
+<path d="M620 80 c-15-22 -45-5 -30 18 l30 28 30-28 c15-23 -15-40 -30-18z" fill="#ff9fc6"/>
+<path d="M850 470 c-12-18 -36-4 -24 14 l24 22 24-22 c12-18 -12-32 -24-14z" fill="#c9b6f2"/>
+<path d="M480 230 c-10-15 -30-3 -20 12 l20 18 20-18 c10-15 -10-27 -20-12z" fill="#ff9fc6"/>
+<!-- map -->
+<path d="M40 700 L300 650 L520 700 L760 640 L960 690 L960 970 L760 930 L520 980 L300 930 L40 970 Z" fill="url(#map)"/>
+<path d="M300 650 L300 930 M520 700 L520 980 M760 640 L760 930" fill="none" stroke-opacity="0.35"/>
+<path d="M60 820 C200 780 300 880 450 830 S700 760 940 820" fill="none" stroke="#fff" stroke-width="16"/>
+<path d="M60 820 C200 780 300 880 450 830 S700 760 940 820" fill="none" stroke-width="4" stroke-dasharray="2 18" stroke-opacity="0.4"/>
+<path d="M620 690 C600 790 660 860 640 960" fill="none" stroke="#fff" stroke-width="14"/>
+<ellipse cx="180" cy="900" rx="70" ry="30" fill="#bff0dc"/>
+<ellipse cx="850" cy="890" rx="60" ry="26" fill="#bfe3fb"/>
+<!-- love polygon -->
+<path d="M150 760 L360 720 L600 770 L820 740 L700 880 L400 900 Z" fill="#ff8fbf" fill-opacity="0.35" stroke="#e0508f" stroke-width="6" stroke-dasharray="14 10"/>
+<!-- pins -->
+<g fill="#ff6fa8">
+<path d="M150 760 c-22-38 -62-10 -40 22 l40 38 40-38 c22-32 -18-60 -40-22z" transform="translate(0,-60)"/>
+<path d="M360 720 c-22-38 -62-10 -40 22 l40 38 40-38 c22-32 -18-60 -40-22z" transform="translate(0,-60)"/>
+<path d="M600 770 c-22-38 -62-10 -40 22 l40 38 40-38 c22-32 -18-60 -40-22z" transform="translate(0,-60)" fill="#c9a6f5"/>
+<path d="M820 740 c-22-38 -62-10 -40 22 l40 38 40-38 c22-32 -18-60 -40-22z" transform="translate(0,-60)"/>
+<path d="M700 880 c-22-38 -62-10 -40 22 l40 38 40-38 c22-32 -18-60 -40-22z" transform="translate(0,-60)" fill="#8fdcc0"/>
+<path d="M400 900 c-22-38 -62-10 -40 22 l40 38 40-38 c22-32 -18-60 -40-22z" transform="translate(0,-60)" fill="#9fd2f7"/>
+</g>
+<!-- dotted arrow from map to file -->
+<path d="M360 650 C330 620 320 610 320 600" fill="none" stroke-dasharray="4 16" stroke-width="8"/>
+<!-- encrypted file -->
+<g transform="rotate(-6 300 450)">
+<path d="M170 270 L370 270 L440 340 L440 620 Q440 640 420 640 L190 640 Q170 640 170 620 Z" fill="#fff"/>
+<path d="M370 270 L370 340 L440 340" fill="#e6dcfa"/>
+<rect x="200" y="310" width="140" height="90" rx="14" fill="#ffd3e6"/>
+<path d="M210 370 L250 335 L290 360 L330 330" fill="none" stroke="#e0508f" stroke-width="5"/>
+<path d="M250 335 c-6-10 -18-3 -11 6 l11 10 11-10 c7-9 -5-16 -11-6z" fill="#ff6fa8" stroke-width="4"/>
+<rect x="200" y="420" width="210" height="14" rx="7" fill="#c9b6f2" stroke="none"/>
+<rect x="200" y="446" width="150" height="14" rx="7" fill="#bff0dc" stroke="none"/>
+<!-- padlock -->
+<path d="M265 520 v-30 a40 40 0 0 1 80 0 v30" fill="none" stroke-width="14"/>
+<path d="M265 520 v-30 a40 40 0 0 1 80 0 v30" fill="none" stroke="#ffd36b" stroke-width="5"/>
+<rect x="240" y="515" width="130" height="100" rx="22" fill="#ffd36b"/>
+<path d="M305 548 c-9-15 -30-4 -20 11 l20 18 20-18 c10-15 -11-26 -20-11z" fill="#ff6fa8" stroke-width="5"/>
+<circle cx="275" cy="580" r="5" fill="#4a3a6b" stroke="none"/>
+<circle cx="335" cy="580" r="5" fill="#4a3a6b" stroke="none"/>
+<path d="M295 592 q10 8 20 0" fill="none" stroke-width="4"/>
+</g>
+<!-- shield sparkle -->
+<path d="M110 470 l40-15 40 15 v35 c0 30 -20 45 -40 55 c-20-10 -40-25 -40-55z" fill="#bff0dc"/>
+<path d="M132 500 l14 14 24-26" fill="none" stroke-width="6"/>
+<!-- Polly -->
+<path d="M650 655 L470 470 L490 390 L560 345 L640 380 L720 345 L790 390 L810 470 Z" fill="#ff9fc6" stroke-width="9"/>
+<path d="M560 345 L590 470 L650 655 M720 345 L700 470 L650 655 M470 470 L590 470 L700 470 L810 470 M640 380 L590 470 M640 380 L700 470" fill="none" stroke="#fff" stroke-width="4" stroke-opacity="0.6"/>
+<path d="M650 655 L470 470 L490 390 L560 345 L640 380 L720 345 L790 390 L810 470 Z" fill="none" stroke-width="9"/>
+<!-- arm hugging file -->
+<path d="M485 495 Q430 500 420 470" fill="none" stroke-width="14"/>
+<path d="M485 495 Q430 500 420 470" fill="none" stroke="#ff9fc6" stroke-width="5"/>
+<circle cx="418" cy="466" r="16" fill="#ff9fc6"/>
+<!-- waving arm -->
+<path d="M800 440 Q860 420 870 370" fill="none" stroke-width="14"/>
+<path d="M800 440 Q860 420 870 370" fill="none" stroke="#ff9fc6" stroke-width="5"/>
+<circle cx="872" cy="362" r="16" fill="#ff9fc6"/>
+<!-- face -->
+<ellipse cx="595" cy="455" rx="12" ry="16" fill="#4a3a6b" stroke="none"/>
+<ellipse cx="695" cy="455" rx="12" ry="16" fill="#4a3a6b" stroke="none"/>
+<circle cx="599" cy="449" r="4" fill="#fff" stroke="none"/>
+<circle cx="699" cy="449" r="4" fill="#fff" stroke="none"/>
+<ellipse cx="568" cy="495" rx="20" ry="11" fill="#ff6fa8" stroke="none" opacity="0.7"/>
+<ellipse cx="722" cy="495" rx="20" ry="11" fill="#ff6fa8" stroke="none" opacity="0.7"/>
+<path d="M625 495 q20 22 40 0" fill="#ff6f8f" stroke-width="6"/>
+<!-- floating key -->
+<g transform="rotate(30 880 560)">
+<circle cx="880" cy="540" r="26" fill="#ffd36b"/>
+<circle cx="880" cy="540" r="9" fill="#e6dcfa"/>
+<path d="M880 566 v70 M880 610 h16 M880 630 h12" fill="none" stroke-width="9"/>
+</g>
+</g>
+<!-- sparkles -->
+<g fill="#fff">
+<path d="M470 600 l6 14 14 6 -14 6 -6 14 -6-14 -14-6 14-6z"/>
+<path d="M200 230 l5 12 12 5 -12 5 -5 12 -5-12 -12-5 12-5z"/>
+<path d="M940 560 l5 12 12 5 -12 5 -5 12 -5-12 -12-5 12-5z"/>
+<path d="M760 250 l6 14 14 6 -14 6 -6 14 -6-14 -14-6 14-6z"/>
+</g>
+</svg>
