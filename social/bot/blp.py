@@ -24,6 +24,7 @@ ITERATIONS = 100_000  # the app's minimum: quick to restore in CI
 AAD = b"bizarre-love-polygon/backup/v1"
 PALETTE = ["#ff8fb8", "#ff5fa2", "#ffb38a", "#ffd966", "#7fd8be", "#7ec8ff", "#b79cff", "#e39bff",
            "#ff7f7f", "#e8a0a0"]
+THEMES = ["pink", "lilac", "mint", "peach", "sky", "night"]  # share card colours
 TYPES = ["crush", "first_date", "kiss", "fling", "situationship", "relationship", "complicated", "other"]
 
 # Used when Claude didn't supply a scenario.
@@ -72,7 +73,8 @@ def backup(lovers: list[dict], rng: random.Random) -> str:
     now = int(time.time() * 1000)
     data = {
         "version": 1,
-        "settings": {"locale": "en", "loverWord": "lovers", "ageConfirmed": True},
+        "settings": {"locale": "en", "loverWord": "lovers", "ageConfirmed": True, "tourSeen": True,
+                     "theme": rng.choice(THEMES)},
         "lovers": [{
             "id": uuid.uuid4().hex, "nickname": lv["nickname"].strip(), "emoji": lv["emoji"],
             "color": PALETTE[i % len(PALETTE)], "type": lv["type"], "gender": "unspecified",
@@ -91,6 +93,19 @@ def backup(lovers: list[dict], rng: random.Random) -> str:
                        "cipher": {"name": "AES-256-GCM", "iv": b64(iv)}, "data": b64(ct)})
 
 
+def _dismiss(page) -> None:
+    """Closes whatever the app pops up on its own: the welcome tour, achievement celebrations…"""
+    page.wait_for_timeout(1500)
+    for _ in range(6):
+        if page.get_by_test_id("tour-skip").is_visible():
+            page.get_by_test_id("tour-skip").click()
+        elif page.locator("dialog[open]").count():
+            page.keyboard.press("Escape")
+        else:
+            return
+        page.wait_for_timeout(500)
+
+
 def _open_with_demo(browser, url: str, lovers: list[dict], rng: random.Random, viewport: dict):
     context = browser.new_context(viewport=viewport, device_scale_factor=2, locale="en-US",
                                   accept_downloads=True, is_mobile=viewport["width"] < 600, has_touch=True)
@@ -98,6 +113,7 @@ def _open_with_demo(browser, url: str, lovers: list[dict], rng: random.Random, v
     page.set_default_timeout(60_000)
     page.goto(url)
     page.get_by_test_id("age-yes").click()
+    _dismiss(page)
     page.get_by_test_id("open-settings").click()
     settings = page.get_by_test_id("settings")
     with tempfile.TemporaryDirectory() as tmp:
@@ -110,6 +126,7 @@ def _open_with_demo(browser, url: str, lovers: list[dict], rng: random.Random, v
     settings.get_by_role("status").wait_for()
     page.keyboard.press("Escape")
     settings.wait_for(state="hidden")
+    _dismiss(page)
     return context, page
 
 
@@ -119,7 +136,8 @@ def card(browser, url: str, lovers: list[dict], rng: random.Random, out: Path) -
     try:
         page.get_by_test_id("open-share").click()
         share = page.get_by_test_id("share")
-        share.get_by_role("button", name="Post").click()
+        post = share.get_by_test_id("format-post")
+        (post if post.count() else share.get_by_role("button", name="Post")).click()
         share.locator(".preview[aria-busy=false]").wait_for(timeout=90_000)
         page.wait_for_function("() => !document.querySelector('[data-testid=card-preview].dim')")
         with page.expect_download() as dl:
