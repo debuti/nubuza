@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="1200" height="900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f2fbf6"/>
+      <stop offset="1" stop-color="#cdeedd"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe08a"/>
+      <stop offset="1" stop-color="#f0b429"/>
+    </linearGradient>
+    <linearGradient id="note" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3fae7d"/>
+      <stop offset="1" stop-color="#1f7a52"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#bg)"/>
+
+  <!-- savings chart: bars going up -->
+  <g stroke="#4a3a6b" stroke-width="3">
+    <rect x="232" y="196" width="26" height="64" rx="8" fill="#a8e6d9"/>
+    <rect x="268" y="172" width="26" height="88" rx="8" fill="#7fd8be"/>
+    <rect x="304" y="140" width="26" height="120" rx="8" fill="#5cc4a0"/>
+    <rect x="340" y="104" width="26" height="156" rx="8" fill="#3fae7d"/>
+  </g>
+  <path d="M238 182 L281 156 L317 124 L353 88" fill="none" stroke="#ff8fbd" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 9"/>
+  <path d="M345 82 L357 86 L353 98" fill="none" stroke="#ff8fbd" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="220" y1="262" x2="380" y2="262" stroke="#4a3a6b" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- the $5 note -->
+  <g transform="rotate(-12 120 120)">
+    <rect x="40" y="70" width="170" height="92" rx="12" fill="url(#note)" stroke="#4a3a6b" stroke-width="3"/>
+    <rect x="50" y="80" width="150" height="72" rx="8" fill="none" stroke="#ffd966" stroke-width="2.5"/>
+    <text x="125" y="132" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="46" fill="#ffd966" stroke="#8a5a00" stroke-width="1">$5</text>
+  </g>
+
+  <!-- happy coin -->
+  <g transform="translate(140 196)">
+    <circle r="62" fill="url(#gold)" stroke="#4a3a6b" stroke-width="4"/>
+    <circle r="48" fill="none" stroke="#c98a00" stroke-width="3" stroke-dasharray="5 6"/>
+    <ellipse cx="-24" cy="-30" rx="14" ry="7" fill="#fff" opacity=".7" transform="rotate(-25 -24 -30)"/>
+    <ellipse cx="-30" cy="14" rx="10" ry="6" fill="#ff8fbd" opacity=".55"/>
+    <ellipse cx="30" cy="14" rx="10" ry="6" fill="#ff8fbd" opacity=".55"/>
+    <ellipse cx="-18" cy="-2" rx="7" ry="9" fill="#4a3a6b"/>
+    <ellipse cx="18" cy="-2" rx="7" ry="9" fill="#4a3a6b"/>
+    <circle cx="-15.5" cy="-6" r="2.8" fill="#fff"/>
+    <circle cx="20.5" cy="-6" r="2.8" fill="#fff"/>
+    <path d="M-9 16 Q0 25 9 16" fill="none" stroke="#4a3a6b" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- sparkles -->
+  <g fill="#ffd966" stroke="#4a3a6b" stroke-width="2" stroke-linejoin="round">
+    <path d="M238 40 C240 52 244 56 256 58 C244 60 240 64 238 76 C236 64 232 60 220 58 C232 56 236 52 238 40Z"/>
+    <path d="M40 220 C41 227 43 229 50 230 C43 231 41 233 40 240 C39 233 37 231 30 230 C37 229 39 227 40 220Z"/>
+  </g>
+  <circle cx="300" cy="50" r="6" fill="#ff8fbd"/>
+  <circle cx="215" cy="230" r="4" fill="#b79cff"/>
+</svg>

@@ -33,8 +33,8 @@ def draw(post: dict, project: dict) -> tuple[str, dict]:
         f"Post text: {post['body']}\n\n"
         "The image must show the post's idea clearly, as a scene, not a logo. Square kawaii SVG illustration in "
         "the nubuza style: pastel pinks, lavender, mint, sky blue; chunky rounded shapes with dark plum #4a3a6b "
-        "outlines; blush cheeks and tiny smiles on characters. The app's mascot is Polly, a smiling pink "
-        "polygon-heart; heart-shaped map pins and pink maps fit the app. Rich and full, no empty areas."
+        "outlines; blush cheeks and tiny smiles on characters. Rich and full, no empty areas. "
+        + project.get("art_hint", "")
     )
     data = content._ask_agent_sdk(prompt, SCHEMA) if content.backend() == "agent-sdk" else None
     if data is None:
@@ -51,7 +51,8 @@ def main() -> None:
     projects = {p["id"]: p for p in load_projects()}
     bank_file = SOCIAL / "fallback_posts.json"
     bank = json.loads(bank_file.read_text())
-    todo = [p for p in bank if (p["media"] == "cover" and not (ART / f"{p['id']}.svg").exists()) or p["id"] in args.redo]
+    todo = [p for p in bank if (p["media"] in ("cover", "illustration") and not (ART / f"{p['id']}.svg").exists())
+            or p["id"] in args.redo]
     print(f"drawing {len(todo)} illustrations")
     ART.mkdir(exist_ok=True)
     with ThreadPoolExecutor(4) as pool:

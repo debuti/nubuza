@@ -13,15 +13,14 @@ MEDIA_BRIEF = {
     "card": "The image is the app's own share card of a fictional demo user's love polygon. "
             "Also invent that demo user's scenario: 3 to 7 fictional people (cute nicknames, never real "
             "names) they fell for, each in a real city with its coordinates and dates.",
-    "screenshot": "The image is a phone screenshot of the app showing a pink map with heart pins.",
+    "screenshot": "",  # each project describes its own screenshots (screenshot_brief)
     "cover": "The image is the project's cover art, framed as a polaroid.",
     "illustration": "You also draw the image: a square kawaii SVG illustration (no text: the headline is "
                     "added around it) that shows the post's idea clearly, as a scene, not a logo. Make it rich "
                     "and full, with no empty areas: a background, a main subject and small details (sparkles, "
                     "clouds, little hearts, map bits). Nubuza style: pastel pinks, lavender, mint, sky blue; "
                     "chunky rounded shapes with dark plum #4a3a6b outlines; blush cheeks and tiny smiles on "
-                    "characters. For Bizarre Love Polygon, Polly (a smiling pink heart-shaped polygon), heart "
-                    "map pins and pink maps fit well.",
+                    "characters.",
 }
 
 SYSTEM = """You write social media posts for nubuza, a tiny studio of cute web projects (nubuza.com).
@@ -59,10 +58,14 @@ SCHEMA = {
         "svg": {"type": "string", "description": "Only for illustration posts: a complete standalone <svg> "
                                                  "with viewBox=\"0 0 1000 1000\", a filled background, no text, "
                                                  "no scripts, no external references. Empty otherwise."},
+        "screen": {"type": "string", "enum": ["report", "alerts", "epic", ""],
+                   "description": "Only for 5dollars screenshot posts: the screen that fits the text (report = "
+                                  "monthly savings chart, alerts = why a month went off, epic = a trip's "
+                                  "expenses). Empty otherwise."},
         "lovers": {"type": "array", "items": LOVER, "description": "Only for card and screenshot posts of "
                                                                    "Bizarre Love Polygon. Empty otherwise."},
     },
-    "required": ["headline", "body", "hashtags", "alt_text", "svg", "lovers"],
+    "required": ["headline", "body", "hashtags", "alt_text", "svg", "screen", "lovers"],
     "additionalProperties": False,
 }
 
@@ -128,7 +131,9 @@ def _ask_agent_sdk(prompt: str, schema: dict = SCHEMA) -> dict:
 
 def from_claude(project: dict, media: str, recent: list[str], how: str) -> dict:
     wants_lovers = project.get("exporter") == "bizarre-love-polygon" and media in ("card", "screenshot")
-    brief = MEDIA_BRIEF[media]
+    brief = MEDIA_BRIEF[media] or project.get("screenshot_brief", "The image is a screenshot of the app.")
+    if media == "illustration" and project.get("art_hint"):
+        brief += " " + project["art_hint"]
     if wants_lovers and media == "screenshot":
         brief += " Also invent the demo user's scenario shown on the map (fill `lovers`)."
     prompt = (

@@ -978,5 +978,405 @@
   "media": "card",
   "headline": "Love polygon check-in ✅",
   "body": "Has your shape changed this month? 👀💗"
+ },
+ {
+  "id": "fd-001",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Did we save this month? 💸",
+  "body": "One chart, every month: green when you saved, red when you spent more than you earned 📊✨",
+  "screen": "report"
+ },
+ {
+  "id": "fd-002",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Your money, your file 🔒",
+  "body": "5dollars has no server and never sees your data. Your ledger lives in your Drive, your folder or your browser 💚",
+  "screen": "report"
+ },
+ {
+  "id": "fd-003",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "Meet 5dollars 💚",
+  "body": "A tiny, private ledger for your household. Import your bank statements and see if you saved this month 🪙✨",
+  "alt": "Kawaii scene: a smiling pink piggy bank catches a gold coin, beside a happy green wallet with statements, a cozy house, a rising green bar chart and coins."
+ },
+ {
+  "id": "fd-004",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Why was July so expensive? 🤔",
+  "body": "Alerts explain the months you saved less: categories running hot and big one-off buys, all in one place 🔔",
+  "screen": "alerts"
+ },
+ {
+  "id": "fd-005",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "Budgeting, but cozy ☕",
+  "body": "No spreadsheets with 40 tabs. Just your moves, your categories and one honest chart 💚",
+  "alt": "Cozy kawaii room: a smiling piggy bank on a table catches a happy gold coin, beside a coffee mug, a cheerful green wallet, and a framed bar chart rising."
+ },
+ {
+  "id": "fd-006",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Trips get their own budget ✈️",
+  "body": "Group a trip's moves into an epic and see what it really cost, by category and by account 🧳",
+  "screen": "epic"
+ },
+ {
+  "id": "fd-007",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "Family finances, together 👨‍👩‍👧",
+  "body": "Share your scenario through Google Drive: Editor can write, Viewer can only peek 👀💚",
+  "alt": "Kawaii scene: a smiling cloud shares a ledger with a mint parent writing with a pencil and a lavender kid peeking at an eye tablet, plus a piggy bank, house and rising chart."
+ },
+ {
+  "id": "fd-008",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Every cent where it belongs 🪙",
+  "body": "Categorise moves in seconds and watch your month make sense ✨",
+  "screen": "report"
+ },
+ {
+  "id": "fd-009",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "No account needed 🙅",
+  "body": "No sign up, no server, no tracking. Just you and your numbers 🔒💚",
+  "alt": "Kawaii room: a smiling piggy bank holds a gold coin beside a ledger with a green chart going up, a happy wallet and coins, and a padlocked window keeping a sleepy cloud outside."
+ },
+ {
+  "id": "fd-010",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Paste from Excel? Sure 📋",
+  "body": "Copy your bank statement lines from a spreadsheet, paste, done. 5dollars sorts the rest ✨",
+  "screen": "report"
+ },
+ {
+  "id": "fd-011",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "Your savings, growing 🌱",
+  "body": "Small months add up. Watch your total balance climb, one green bar at a time 📈💚",
+  "alt": "Kawaii scene: a smiling pink piggy bank gets a gold coin beside five happy green bars climbing to a sprout, with a cheerful wallet, coin stacks, a cozy house and a smiling sun."
+ },
+ {
+  "id": "fd-012",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Spot the sneaky expenses 🕵️",
+  "body": "Big one-offs and hot categories get flagged, so nothing surprises you twice 🔔",
+  "screen": "alerts"
+ },
+ {
+  "id": "fd-013",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "Money, but make it kawaii 🪙",
+  "body": "Who said budgeting had to be boring? Our coin is smiling, and soon you will be too 😊",
+  "alt": "Kawaii cozy room: a big smiling gold coin waves between a pink piggy bank and a happy green wallet, with a rising bar chart and a little house in the window."
+ },
+ {
+  "id": "fd-014",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Transfers aren't spending 🔁",
+  "body": "Link the moves between your own accounts so moving money around never looks like spending 💚",
+  "screen": "report"
+ },
+ {
+  "id": "fd-015",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "A ledger for the whole home 🏡",
+  "body": "Personal, Family, the shared flat… each scenario is its own little file 📁✨",
+  "alt": "Kawaii house with a smiling roof and a rising bar chart in the window. Three smiling folders sit in front: pink for one person, mint for a family, blue for a shared flat. Piggy bank, wallet and coins nearby."
+ },
+ {
+  "id": "fd-016",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Wedding, renovation, road trip 🎉",
+  "body": "Epics group the moves of big life projects so you know what each one really cost 💍🔨🚗",
+  "screen": "epic"
+ },
+ {
+  "id": "fd-017",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "Safe and snug 🛟",
+  "body": "Daily and monthly snapshots, and a backup before every delete. Your data is tucked in 💚",
+  "alt": "Kawaii bedroom: a piggy bank in a nightcap asleep under a coin-print green blanket, a lifebuoy, snapshot photos, a checked calendar, a smiling safe and a wallet."
+ },
+ {
+  "id": "fd-018",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Monthly check-in ✅",
+  "body": "How did this month go? Income, expenses and savings at a glance 📊",
+  "screen": "report"
+ },
+ {
+  "id": "fd-019",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "Exact to the cent 🎯",
+  "body": "Money is counted in cents, never rounded away. Every euro accounted for 💚",
+  "alt": "Kawaii scene: smiling pink piggy bank catches a gold coin, a coin is studied under a magnifying glass, a bullseye target, a rising chart, a checked ledger, coins and a wallet."
+ },
+ {
+  "id": "fd-020",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Saved 25% of your income? 🥳",
+  "body": "The report shows how much you saved and how that compares with your average month ✨",
+  "screen": "report"
+ },
+ {
+  "id": "fd-021",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "Off the cloud, on your terms ☁️",
+  "body": "Keep your ledger in Google Drive, a synced folder or right in your browser. You choose 💚",
+  "alt": "Kawaii green ledger book waving between three paths: a smiling cloud, a browser window with rising bars and a synced folder. A piggy bank, coins and hearts surround it."
+ },
+ {
+  "id": "fd-022",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Know your usual 📏",
+  "body": "Alerts compare each month with your usual, so you know when something is really off 🔔",
+  "screen": "alerts"
+ },
+ {
+  "id": "fd-023",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "Little wins count 🏆",
+  "body": "Saved five dollars more than last month? That's a win. Celebrate it 🎉💚",
+  "alt": "Kawaii pink piggy bank in a party hat catches a smiling gold coin as a green wallet cheers, beside a rising bar chart topped with a trophy and confetti."
+ },
+ {
+  "id": "fd-024",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Where did it all go? 🧾",
+  "body": "Search, filter and categorise every move until the answer is obvious ✨",
+  "screen": "report"
+ },
+ {
+  "id": "fd-025",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "For couples and housemates 💞",
+  "body": "One shared scenario, everyone on the same page. Share it from Drive in two taps 💚",
+  "alt": "Kawaii pink bear and lavender bunny on a sofa share the same up-trending chart on their phones, synced to a smiling cloud, with a piggy bank, coins and a green wallet."
+ },
+ {
+  "id": "fd-026",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Your year in green and red 🟩🟥",
+  "body": "Scroll back through the months and see your saving streaks 📊",
+  "screen": "report"
+ },
+ {
+  "id": "fd-027",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "Money talk, without the stress 🧘",
+  "body": "Calm charts, kind alerts and no judgement. Just clarity 💚",
+  "alt": "Kawaii piggy bank meditating on a cushion with eyes closed, next to a happy green wallet, smiling gold coins, a rising bar chart and a heart-and-check alert bubble."
+ },
+ {
+  "id": "fd-028",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Lisbon trip: €603.50 🇵🇹",
+  "body": "That's what our demo trip cost, split by category. What did your last holiday really cost? ✈️",
+  "screen": "epic"
+ },
+ {
+  "id": "fd-029",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "Your financial diary 📔",
+  "body": "Add a note to any month to remember why it was special (or expensive) ✍️💚",
+  "alt": "Kawaii open green-and-gold diary with a month calendar, a heart sticky note and a rising bar chart, a smiling pencil writing, plus a piggy bank, a cozy house and a wallet."
+ },
+ {
+  "id": "fd-030",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Hot categories 🔥",
+  "body": "Eating out a bit too much this month? 5dollars notices before your wallet does 🍜",
+  "screen": "alerts"
+ },
+ {
+  "id": "fd-031",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "Built for privacy 🔐",
+  "body": "Your bank moves are nobody else's business. That's why 5dollars never sees them 💚",
+  "alt": "Kawaii house with a gold padlock on its door, a smiling piggy bank and green wallet beside it, all safe under a mint protective dome, with clouds, sun and coins around."
+ },
+ {
+  "id": "fd-032",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "All accounts, one view 🗂️",
+  "body": "Bank account, savings, the joint one: see them all and the scenario's total balance 💚",
+  "screen": "report"
+ },
+ {
+  "id": "fd-033",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "Start tiny 🐣",
+  "body": "Try 5dollars right in your browser, no setup at all. Download a backup when you like it 💚",
+  "alt": "Kawaii scene: a browser window with a smiling green and gold bar chart rising, a download arrow into a happy wallet, a piggy bank, a hatching chick and a cozy house."
+ },
+ {
+  "id": "fd-034",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Spot the one-offs 💥",
+  "body": "A new laptop, a flight, a big repair: one-offs get flagged so your usual months stay clear 🔔",
+  "screen": "alerts"
+ },
+ {
+  "id": "fd-035",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "A wall for your savings 🖼️",
+  "body": "Put your monthly savings on a tablet at home with the optional wall page. Only monthly totals are shown 💚",
+  "alt": "Kawaii living room: a smiling tablet on the wall shows green monthly bars rising to a gold coin, above a sideboard with a happy piggy bank, wallet and coin stack."
+ },
+ {
+  "id": "fd-036",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Every move, categorised ✨",
+  "body": "Groceries, rent, fun… a tidy category tree you can shape however you like 🌳",
+  "screen": "report"
+ },
+ {
+  "id": "fd-037",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "Money mood board 💚",
+  "body": "Green months feel good. 5dollars helps you have more of them 🌿",
+  "alt": "Kawaii mood board of twelve smiling month tiles, mostly mint green with sprouts, plus a happy piggy bank catching a gold coin, a smiling plant pot, a wallet and a rising bar chart."
+ },
+ {
+  "id": "fd-038",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Before and after the trip 🧳",
+  "body": "See how a holiday shows up in your month, then plan the next one smarter ✈️",
+  "screen": "epic"
+ },
+ {
+  "id": "fd-039",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "Five dollars at a time 🪙",
+  "body": "Saving starts small. Track it, see it grow, feel proud 💚✨",
+  "alt": "Kawaii scene: a smiling coin drops into a happy pink piggy bank. Around it are a cozy house, a green wallet, coin stacks and a bar chart rising upward."
+ },
+ {
+  "id": "fd-040",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Your balance, every day 📈",
+  "body": "A line that shows your total balance over time. Watch it climb 🌱",
+  "screen": "report"
+ },
+ {
+  "id": "fd-041",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "Undo-friendly 🔙",
+  "body": "Changed your mind? Restore any snapshot. 5dollars backs up before every big change 💚",
+  "alt": "Kawaii scene: a smiling green ledger book under a big green undo arrow pulls back a happy snapshot card from a stack, with a piggy bank, gold coins, a wallet and a cozy house."
+ },
+ {
+  "id": "fd-042",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Explain this month 🔎",
+  "body": "One tap and 5dollars tells you why a month went the way it did 🔔",
+  "screen": "alerts"
+ },
+ {
+  "id": "fd-043",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "Cozy home economics 🏠",
+  "body": "Rent, bills, groceries and the occasional treat, all in their place 🧁💚",
+  "alt": "Kawaii cozy room: a shelf holds a smiling house, bill, grocery basket and cupcake; a happy piggy bank catches a coin beside a wallet, coin stack and rising chart."
+ },
+ {
+  "id": "fd-044",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Saving streak 🔥",
+  "body": "Six green months in a row? Your chart will show it off 💚📊",
+  "screen": "report"
+ },
+ {
+  "id": "fd-045",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "Your data stays home 🏡",
+  "body": "No server and no database to trust. Your ledger is just a file you own 📁💚",
+  "alt": "Kawaii cutaway house with a smiling green folder ledger, piggy bank and wallet inside, a rising bar chart on the wall, gold coins and trees outside."
+ },
+ {
+  "id": "fd-046",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Monthly report, done ✅",
+  "body": "Income, expenses, saved, average per month and balance. Five numbers that tell the story 📊",
+  "screen": "report"
+ },
+ {
+  "id": "fd-047",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "Budget buddies 🤝",
+  "body": "Share a scenario with your partner or family and stay on the same page 💚",
+  "alt": "Kawaii pink piggy bank and green wallet in a cozy room share the same chart on their phones, linked by a heart, with a coin buddy and a rising bar chart."
+ },
+ {
+  "id": "fd-048",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Little alerts, big help 🔔",
+  "body": "Gentle nudges when a month saves less than usual, with the reasons right there ✨",
+  "screen": "alerts"
+ },
+ {
+  "id": "fd-049",
+  "project": "fivedollars",
+  "media": "illustration",
+  "headline": "New month, fresh start 🌅",
+  "body": "Every month is a new chance to save a little more. 5dollars keeps score kindly 💚",
+  "alt": "Kawaii sunrise scene: smiling sun over mint hills, a cozy house, a calendar starting a new month, a happy piggy bank getting a gold coin, a green wallet and a rising bar chart."
+ },
+ {
+  "id": "fd-050",
+  "project": "fivedollars",
+  "media": "screenshot",
+  "headline": "Try it in your browser 💻",
+  "body": "apps.nubuza.com/fivedollars: open it, import a statement and see your first chart 💚",
+  "screen": "report"
  }
 ]

@@ -14,9 +14,74 @@
       "Works offline and installs as an app on your phone.",
       "The mascot is Polly, a smiling pink heart-shaped polygon. Polly is just the mascot: Polly never grows or changes. What grows is the user's love polygon, the shape their heart pins make on the map."
     ],
-    "hashtags": ["bizarrelovepolygon", "lovepolygon", "lovemap", "datinglife", "situationship", "crush", "kawaii", "cuteapp", "webapp", "privacyfirst", "travelandlove", "loveacrosstheworld", "pinkaesthetic", "datingstories"],
-    "media": { "card": 4, "screenshot": 2, "illustration": 2 },
+    "hashtags": [
+      "bizarrelovepolygon",
+      "lovepolygon",
+      "lovemap",
+      "datinglife",
+      "situationship",
+      "crush",
+      "kawaii",
+      "cuteapp",
+      "webapp",
+      "privacyfirst",
+      "travelandlove",
+      "loveacrosstheworld",
+      "pinkaesthetic",
+      "datingstories"
+    ],
+    "media": {
+      "card": 4,
+      "screenshot": 2,
+      "illustration": 2
+    },
     "cover": "public/projects/bizarre-love-polygon.svg",
-    "exporter": "bizarre-love-polygon"
+    "exporter": "bizarre-love-polygon",
+    "screenshot_brief": "The image is a phone screenshot of the app showing a pink map with heart pins.",
+    "art_hint": "For this project, Polly (a smiling pink heart-shaped polygon), heart map pins and pink maps fit well."
+  },
+  {
+    "id": "fivedollars",
+    "name": "5dollars",
+    "url": "https://apps.nubuza.com/fivedollars/",
+    "pitch": "A private ledger for your household's bank accounts: import your statements, categorise them in seconds and see every month whether you saved or spent more than you earned.",
+    "facts": [
+      "No server and no account: 5dollars never sees your data.",
+      "Each scenario (for example Personal or Family) is one file that lives where you choose: your Google Drive, a folder on your computer (it can be a synced folder) or this browser.",
+      "Share a scenario with your family through Google Drive: Editor can write, Viewer can only read.",
+      "Import your bank statements or paste them from Excel or Google Sheets, then categorise moves quickly.",
+      "Link the transfers between your own accounts so they don't count as spending.",
+      "The report shows, month by month, whether you saved or spent more than you earned, plus your total balance.",
+      "Alerts explain months where you saved less than usual, categories running hot and big one-off expenses.",
+      "Epics group the moves of a trip, a wedding or a renovation, with their own totals by category, account and month.",
+      "An optional public wall page shows only each month's savings and the total balance, for example on a tablet at home.",
+      "Data safety: automatic daily and monthly snapshots, and a backup before every delete, restore or merge.",
+      "Money is exact, down to the cent.",
+      "Made by nubuza."
+    ],
+    "hashtags": [
+      "5dollars",
+      "personalfinance",
+      "budgeting",
+      "budgetapp",
+      "savingmoney",
+      "moneytips",
+      "familybudget",
+      "householdbudget",
+      "frugalliving",
+      "privacyfirst",
+      "webapp",
+      "savingsgoals",
+      "financialwellness",
+      "cuteapp"
+    ],
+    "media": {
+      "screenshot": 3,
+      "illustration": 2
+    },
+    "cover": "public/projects/fivedollars.svg",
+    "exporter": "fivedollars",
+    "screenshot_brief": "The image is a screenshot of the app with a fictional household: the monthly report chart (did we save each month?), the alerts that explain an unusual month, or a trip epic with its expenses.",
+    "art_hint": "For this project, think kawaii money: a smiling piggy bank or coin, a happy little wallet, a cheerful bar chart going up, a cozy home; add 5dollars' green and gold to the nubuza pastels."
   }
 ]

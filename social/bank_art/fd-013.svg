@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<defs>
+<linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9dcff"/><stop offset="1" stop-color="#ffd9e8"/></linearGradient>
+<linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bff0dc"/><stop offset="1" stop-color="#9fe3c6"/></linearGradient>
+<radialGradient id="gold" cx="0.4" cy="0.35" r="0.7"><stop offset="0" stop-color="#fff2a8"/><stop offset="0.6" stop-color="#ffd45c"/><stop offset="1" stop-color="#f2b632"/></radialGradient>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe6ff"/><stop offset="1" stop-color="#e3f4ff"/></linearGradient>
+</defs>
+<g stroke="#4a3a6b" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<rect x="-10" y="-10" width="1020" height="1020" fill="url(#wall)" stroke="none"/>
+<!-- wallpaper dots -->
+<g fill="#fff" stroke="none" opacity="0.6">
+<circle cx="60" cy="60" r="8"/><circle cx="180" cy="120" r="6"/><circle cx="420" cy="50" r="7"/><circle cx="560" cy="130" r="6"/><circle cx="940" cy="80" r="8"/><circle cx="880" cy="200" r="6"/><circle cx="40" cy="300" r="7"/><circle cx="960" cy="420" r="7"/><circle cx="500" cy="300" r="5"/>
+</g>
+<!-- window with house -->
+<rect x="70" y="110" width="300" height="270" rx="30" fill="url(#sky)"/>
+<ellipse cx="150" cy="180" rx="45" ry="22" fill="#fff" stroke-width="6"/>
+<ellipse cx="290" cy="160" rx="38" ry="18" fill="#fff" stroke-width="6"/>
+<path d="M78 340 Q220 290 362 340 L362 372 L78 372 Z" fill="#9fe3c6" stroke-width="6"/>
+<path d="M175 300 L220 255 L265 300 L265 345 L175 345 Z" fill="#ffc4dd" stroke-width="6"/>
+<path d="M165 305 L220 248 L275 305" fill="none" stroke="#b07ce8" stroke-width="12"/>
+<rect x="208" y="315" width="24" height="30" rx="6" fill="#4caf7d" stroke-width="5"/>
+<path d="M220 280 m-9 0 a6 6 0 0 1 9 -4 a6 6 0 0 1 9 4 q0 7 -9 13 q-9 -6 -9 -13z" fill="#ff8fb8" stroke-width="3"/>
+<line x1="220" y1="110" x2="220" y2="240" stroke-width="6"/>
+<rect x="70" y="110" width="300" height="270" rx="30" fill="none"/>
+<rect x="55" y="372" width="330" height="26" rx="13" fill="#d9c4ff"/>
+<!-- chart board -->
+<rect x="560" y="90" width="380" height="300" rx="34" fill="#fffaf2"/>
+<line x1="600" y1="340" x2="900" y2="340" stroke-width="6"/>
+<rect x="615" y="265" width="50" height="75" rx="12" fill="#bfe6ff"/>
+<rect x="685" y="225" width="50" height="115" rx="12" fill="#d9c4ff"/>
+<rect x="755" y="180" width="50" height="160" rx="12" fill="#ffc4dd"/>
+<rect x="825" y="130" width="50" height="210" rx="12" fill="#6fd39a"/>
+<path d="M630 240 Q700 215 720 195 Q780 170 800 150 L840 112" fill="none" stroke="#f2b632" stroke-width="10"/>
+<path d="M818 105 L848 102 L846 132" fill="none" stroke="#f2b632" stroke-width="10"/>
+<circle cx="850" cy="170" r="5" fill="#4a3a6b" stroke="none"/><circle cx="868" cy="170" r="5" fill="#4a3a6b" stroke="none"/>
+<path d="M852 184 Q859 191 866 184" fill="none" stroke-width="4"/>
+<!-- floor -->
+<path d="M-10 640 Q500 600 1010 640 L1010 1010 L-10 1010 Z" fill="url(#floor)"/>
+<!-- rug -->
+<ellipse cx="500" cy="860" rx="420" ry="95" fill="#ffd9e8"/>
+<ellipse cx="500" cy="860" rx="350" ry="68" fill="none" stroke="#ff9fc4" stroke-width="7" stroke-dasharray="18 16"/>
+<!-- plant left -->
+<path d="M70 640 Q50 560 100 520 Q110 580 95 640" fill="#6fd39a"/>
+<path d="M110 640 Q140 540 200 530 Q170 600 135 645" fill="#4caf7d"/>
+<path d="M60 630 L150 630 L138 720 L72 720 Z" fill="#b07ce8"/>
+<!-- piggy bank -->
+<ellipse cx="225" cy="790" rx="70" ry="22" fill="#4a3a6b" stroke="none" opacity="0.15"/>
+<rect x="160" y="740" width="34" height="50" rx="14" fill="#ffaecd"/>
+<rect x="260" y="740" width="34" height="50" rx="14" fill="#ffaecd"/>
+<ellipse cx="230" cy="690" rx="125" ry="95" fill="#ffc4dd"/>
+<path d="M175 610 L190 560 L225 600 Z" fill="#ffaecd"/>
+<path d="M115 680 q-30 -10 -25 -35 q20 0 18 20" fill="none" stroke-width="7"/>
+<rect x="200" y="602" width="60" height="12" rx="6" fill="#4a3a6b"/>
+<ellipse cx="335" cy="700" rx="34" ry="28" fill="#ffaecd"/>
+<circle cx="325" cy="700" r="5" fill="#4a3a6b" stroke="none"/><circle cx="345" cy="700" r="5" fill="#4a3a6b" stroke="none"/>
+<circle cx="275" cy="665" r="8" fill="#4a3a6b" stroke="none"/><circle cx="278" cy="662" r="3" fill="#fff" stroke="none"/>
+<ellipse cx="270" cy="700" rx="16" ry="10" fill="#ff8fb8" stroke="none"/>
+<path d="M285 718 Q295 728 306 720" fill="none" stroke-width="5"/>
+<!-- coin dropping into piggy -->
+<circle cx="230" cy="545" r="26" fill="url(#gold)" stroke-width="6"/>
+<path d="M222 545 l6 6 l10 -12" fill="none" stroke="#c98a10" stroke-width="5"/>
+<!-- wallet -->
+<ellipse cx="790" cy="815" rx="110" ry="22" fill="#4a3a6b" stroke="none" opacity="0.15"/>
+<rect x="670" y="620" width="230" height="190" rx="36" fill="#5cc78a"/>
+<rect x="690" y="590" width="80" height="60" rx="10" fill="#bfe6ff" transform="rotate(-12 730 620)"/>
+<rect x="740" y="580" width="80" height="60" rx="10" fill="#fff2a8" transform="rotate(8 780 610)"/>
+<path d="M670 660 L900 660 L900 690 Q785 720 670 690 Z" fill="#4caf7d"/>
+<rect x="830" y="690" width="90" height="60" rx="22" fill="#3d9a6a"/>
+<circle cx="860" cy="720" r="12" fill="#ffd45c" stroke-width="5"/>
+<circle cx="735" cy="735" r="7" fill="#4a3a6b" stroke="none"/><circle cx="790" cy="735" r="7" fill="#4a3a6b" stroke="none"/>
+<circle cx="738" cy="732" r="2.5" fill="#fff" stroke="none"/><circle cx="793" cy="732" r="2.5" fill="#fff" stroke="none"/>
+<ellipse cx="715" cy="760" rx="14" ry="8" fill="#ff9fc4" stroke="none"/><ellipse cx="810" cy="760" rx="14" ry="8" fill="#ff9fc4" stroke="none"/>
+<path d="M752 752 Q762 764 772 752" fill="none" stroke-width="5"/>
+<!-- big coin hero -->
+<ellipse cx="500" cy="880" rx="150" ry="28" fill="#4a3a6b" stroke="none" opacity="0.15"/>
+<path d="M395 790 Q380 860 420 870" fill="none" stroke-width="10"/>
+<path d="M605 790 Q620 860 580 870" fill="none" stroke-width="10"/>
+<ellipse cx="420" cy="872" rx="30" ry="14" fill="#ffc4dd"/>
+<ellipse cx="580" cy="872" rx="30" ry="14" fill="#ffc4dd"/>
+<circle cx="500" cy="660" r="185" fill="#e6a52a"/>
+<circle cx="490" cy="650" r="178" fill="url(#gold)"/>
+<circle cx="490" cy="650" r="140" fill="none" stroke="#e6a52a" stroke-width="8" stroke-dasharray="4 18"/>
+<path d="M330 600 Q300 520 340 470" fill="none" stroke-width="10"/>
+<circle cx="345" cy="462" r="20" fill="#fff2a8"/>
+<path d="M655 600 Q700 540 690 480" fill="none" stroke-width="10"/>
+<circle cx="688" cy="470" r="20" fill="#fff2a8"/>
+<path d="M425 615 Q440 595 455 615" fill="none" stroke-width="9"/>
+<path d="M525 615 Q540 595 555 615" fill="none" stroke-width="9"/>
+<ellipse cx="410" cy="665" rx="26" ry="15" fill="#ff8fb8" stroke="none" opacity="0.85"/>
+<ellipse cx="570" cy="665" rx="26" ry="15" fill="#ff8fb8" stroke="none" opacity="0.85"/>
+<path d="M455 655 Q490 705 525 655 Z" fill="#ff7aa8"/>
+<path d="M490 760 m-22 0 a14 14 0 0 1 22 -10 a14 14 0 0 1 22 10 q0 16 -22 30 q-22 -14 -22 -30z" fill="#ffe680" stroke="#e6a52a" stroke-width="6"/>
+<path d="M395 540 Q430 500 480 495" fill="none" stroke="#fff" stroke-width="12" opacity="0.8"/>
+<!-- floating coins & sparkles -->
+<circle cx="470" cy="150" r="28" fill="url(#gold)" stroke-width="6"/>
+<path d="M460 150 l7 7 l12 -14" fill="none" stroke="#c98a10" stroke-width="5"/>
+<circle cx="440" cy="380" r="20" fill="url(#gold)" stroke-width="6"/>
+<circle cx="960" cy="560" r="22" fill="url(#gold)" stroke-width="6"/>
+<circle cx="40" cy="470" r="20" fill="url(#gold)" stroke-width="6"/>
+<path d="M520 240 l8 -22 l8 22 l22 8 l-22 8 l-8 22 l-8 -22 l-22 -8z" fill="#fff2a8" stroke-width="5"/>
+<path d="M460 450 l5 -14 l5 14 l14 5 l-14 5 l-5 14 l-5 -14 l-14 -5z" fill="#bfe6ff" stroke-width="4"/>
+<path d="M940 470 l6 -16 l6 16 l16 6 l-16 6 l-6 16 l-6 -16 l-16 -6z" fill="#d9c4ff" stroke-width="4"/>
+<path d="M30 580 l5 -14 l5 14 l14 5 l-14 5 l-5 14 l-5 -14 l-14 -5z" fill="#6fd39a" stroke-width="4"/>
+<path d="M620 470 m-14 0 a9 9 0 0 1 14 -6 a9 9 0 0 1 14 6 q0 10 -14 20 q-14 -10 -14 -20z" fill="#ff8fb8" stroke-width="4"/>
+<path d="M115 470 m-14 0 a9 9 0 0 1 14 -6 a9 9 0 0 1 14 6 q0 10 -14 20 q-14 -10 -14 -20z" fill="#ff8fb8" stroke-width="4"/>
+<!-- floor coins -->
+<circle cx="120" cy="900" r="20" fill="url(#gold)" stroke-width="6"/>
+<circle cx="150" cy="930" r="18" fill="url(#gold)" stroke-width="6"/>
+<circle cx="900" cy="915" r="20" fill="url(#gold)" stroke-width="6"/>
+<circle cx="345" cy="960" r="10" fill="#d9c4ff" stroke-width="5"/>
+<circle cx="680" cy="965" r="10" fill="#bfe6ff" stroke-width="5"/>
+</g>
+</svg>
