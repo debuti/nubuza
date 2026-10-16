@@ -1,8 +1,10 @@
-"""One-off launch kit for the @nubuzacom Instagram: welcome post, how-it-works carousel,
-story highlight covers and timelapse Reels, all made from the live app with a fictional
-demo user, and sent to Telegram to publish by hand.
+"""One-off launch kits for the @nubuzacom Instagram, made from the live apps with fictional
+demo data and sent to Telegram to publish by hand.
 
-    python -m social.tools.launch_kit --out DIR [--send]
+- nubuza (default): welcome post, Bizarre Love Polygon carousel, highlight covers, Reels, X header.
+- fivedollars: "Meet 5dollars" post and a how-it-works carousel.
+
+    python -m social.tools.launch_kit --out DIR [--project fivedollars] [--send]
 
 Without --send it only saves the files in DIR, to look at them first.
 """
@@ -17,7 +19,7 @@ from pathlib import Path
 import requests
 from playwright.sync_api import sync_playwright
 
-from ..bot import ROOT, blp, images, load_projects
+from ..bot import ROOT, blp, fivedollars, images, load_projects
 from ..bot.publish import _check
 
 BLP_URL = "https://bizarre.lovepolygon.com/"
@@ -231,15 +233,86 @@ def send(kit: dict) -> None:
     tg.text("¡Listo! En los próximos días te llegarán también algunos posts extra del bot 💗")
 
 
+FD_URL = "https://apps.nubuza.com/fivedollars/"
+FD_TAGS = "#nubuza #5dollars #personalfinance #budgeting #budgetapp #savingmoney #familybudget #privacyfirst #cuteapp #webapp"
+FD_MEET = f"""Meet 5dollars 💚🪙
+
+Our new little project: a private ledger for your household. Import your bank statements, \
+categorise them in seconds and see every month whether you saved or spent more than you earned 📊✨
+
+No account and no server: your ledger is a file that lives in your Google Drive, a folder or your browser 🔒
+💚 apps.nubuza.com/fivedollars (link in bio)
+.
+{FD_TAGS}"""
+FD_CAROUSEL = f"""How 5dollars works 💚 (swipe →)
+
+1. Choose where your ledger lives: Drive, a folder or your browser 🔒
+2. Import your statements and categorise every move ✨
+3. See if you saved each month 📊
+4. Know why a month went off 🔔
+5. Give trips their own budget ✈️
+
+All the numbers in these screenshots are made up: 5dollars never sees yours 💚
+💚 apps.nubuza.com/fivedollars (link in bio)
+.
+{FD_TAGS} #moneytips"""
+FD_STEPS = [("welcome", "1. Your data stays yours 🔒"), ("categories", "2. Categorise every move ✨"),
+            ("report", "3. Did you save this month? 📊"), ("alerts", "4. Know why a month went off 🔔"),
+            ("epic", "5. Trips get their own budget ✈️")]
+
+
+def fd_cover(browser, out: Path, art: str) -> Path:
+    html = f"""<!doctype html>{FONT}<style>*{{margin:0;box-sizing:border-box}}
+    body{{width:1080px;height:1440px;overflow:hidden;font-family:Fredoka,sans-serif;color:#4a3a6b;
+    background:linear-gradient(180deg,#e8f8ef,#cdeedd);display:flex;flex-direction:column;align-items:center;
+    justify-content:center;text-align:center;padding:80px}}
+    img{{width:760px;border-radius:28px;box-shadow:0 22px 40px rgba(31,122,82,.25)}}
+    h1{{font-size:110px;line-height:1.05;margin-top:60px;font-weight:600}} p{{font-size:46px;margin-top:26px;color:#1f7a52}}
+    </style><img src="{art}"><h1>How 5dollars works</h1><p>swipe →</p>"""
+    return _page(browser, html, out, images.SIZE)
+
+
+def build_fivedollars(out: Path) -> dict:
+    out.mkdir(parents=True, exist_ok=True)
+    rng = random.Random()
+    project = next(p for p in load_projects() if p["id"] == "fivedollars")
+    cover = ROOT / project["cover"]
+    kit = {}
+    with sync_playwright() as pw:
+        browser = pw.chromium.launch()
+        kit["meet"] = images.to_jpeg(images.frame(browser, cover, "Meet 5dollars 💚", out / "meet.png"), out / "1-meet.jpg")
+        slides = [fd_cover(browser, out / "fd-slide-0.png", images._data_uri(cover))]
+        for i, (screen, title) in enumerate(FD_STEPS, 1):
+            shot = fivedollars.screenshot(browser, FD_URL, rng, out / f"fd-{screen}.png", screen)
+            slides.append(images.frame(browser, shot, title, out / f"fd-slide-{i}.png"))
+        kit["carousel"] = [images.to_jpeg(s, out / f"2-carousel-{i + 1}.jpg") for i, s in enumerate(slides)]
+        browser.close()
+    return kit
+
+
+def send_fivedollars(kit: dict) -> None:
+    tg = Telegram()
+    tg.text("🪙 Kit de lanzamiento de 5dollars para @nubuzacom\n\nPublícalo poco a poco (un post cada día o dos), "
+            "intercalado con los de Bizarre Love Polygon.")
+    tg.text("1️⃣ PRESENTACIÓN «Meet 5dollars». Publícala primero.")
+    tg.doc(kit["meet"])
+    tg.text(FD_MEET)
+    tg.text("2️⃣ CARRUSEL «How 5dollars works». Selecciona las 6 fotos en orden (1 → 6). Puedes fijarlo en lugar "
+            "de alguno de Love Polygon (Instagram deja fijar 3).")
+    tg.docs(kit["carousel"])
+    tg.text(FD_CAROUSEL)
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", type=Path, required=True)
+    ap.add_argument("--project", choices=["nubuza", "fivedollars"], default="nubuza")
     ap.add_argument("--send", action="store_true")
     args = ap.parse_args()
-    kit = build(args.out)
+    kit = build_fivedollars(args.out) if args.project == "fivedollars" else build(args.out)
     print(json.dumps({k: [str(p) for p in v] if isinstance(v, list) else str(v) for k, v in kit.items()}, indent=1))
     if args.send:
-        send(kit)
+        (send_fivedollars if args.project == "fivedollars" else send)(kit)
         print("sent to Telegram")
 
 

@@ -4,6 +4,12 @@ name: Instagram launch kit
 # live app with a fictional demo user, and sends them to Telegram. Runs only by hand.
 on:
   workflow_dispatch:
+    inputs:
+      project:
+        description: Which kit
+        type: choice
+        options: [nubuza, fivedollars]
+        default: nubuza
 
 permissions:
   contents: read
@@ -26,4 +32,4 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python -m social.tools.launch_kit --out kit --send
+        run: python -m social.tools.launch_kit --out kit --project "${{ inputs.project }}" --send

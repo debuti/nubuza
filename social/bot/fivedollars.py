@@ -125,17 +125,33 @@ def open_demo(browser, url: str, rng: random.Random, viewport: dict):
 SCREENS = ("report", "alerts", "epic")
 
 
+HEIGHTS = {"epic": 640, "accounts": 520, "welcome": 600}  # short pages: no empty space below
+WIDTHS = {"moves": 1280}  # the moves table needs room for its category column
+
+
 def screenshot(browser, url: str, rng: random.Random, out: Path, screen: str | None = None) -> Path:
-    """One of the app's most telling screens with the demo household: the monthly report,
-    the alerts or the trip epic."""
+    """One of the app's screens with the demo household. The bot picks among SCREENS (the monthly
+    report, the alerts, the trip epic); the launch kit also uses "welcome", "accounts" and "moves"."""
     screen = screen or rng.choice(SCREENS)
-    height = 640 if screen == "epic" else 1080  # the trip page is short
-    context, page = open_demo(browser, url, rng, {"width": 1000, "height": height})
+    viewport = {"width": WIDTHS.get(screen, 1000), "height": HEIGHTS.get(screen, 1080)}
+    if screen == "welcome":  # the first screen, before any data
+        context = browser.new_context(viewport=viewport, device_scale_factor=2, locale="en-US", reduced_motion="reduce")
+        context.route("https://pagead2.googlesyndication.com/**", lambda r: r.abort())
+        page = context.new_page()
+        page.goto(url)
+        page.get_by_text("Welcome to 5dollars").wait_for()
+        page.get_by_text("Welcome to 5dollars").scroll_into_view_if_needed()
+    else:
+        context, page = open_demo(browser, url, rng, viewport)
     try:
         if screen == "epic":
             page.get_by_role("link", name="Epics").first.click()
             page.get_by_text("Lisbon trip").first.click()
-        else:
+        elif screen == "moves":
+            page.get_by_role("link", name="Main account").first.click()
+            page.get_by_role("link", name="Moves").first.click()
+            page.get_by_text("moves", exact=False).first.wait_for()
+        elif screen not in ("welcome", "accounts"):
             page.get_by_role("link", name=screen.capitalize()).first.click()
         page.wait_for_load_state("networkidle")
         page.wait_for_timeout(2000)
