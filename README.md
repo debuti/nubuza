@@ -48,7 +48,9 @@ To deploy by hand instead, run `npx wrangler deploy`.
   - `illustration`: a square SVG drawn by Claude, framed as a polaroid.
   - `cover`: the project's cover, framed.
   If one type fails, the bot falls back to the next type, ending with `cover`.
-- **Publishing:** the image is saved to `public/social/` and deployed with the site, because Instagram fetches images from a public URL. Then the bot posts to X and Instagram, and commits the image and history. A platform without secrets is skipped.
+- **Publishing:** the image is saved to `public/social/` and deployed with the site. Then the bot posts to X and delivers the Instagram post, and commits the image and history. A platform without secrets is skipped.
+- **Instagram "kit" mode (default):** the bot doesn't touch Instagram. It opens a GitHub issue with the image, the caption and the alt text. You publish it by hand from your phone as @nubuzacom, then close the issue. Set the repository variable `IG_MODE=api` to publish through the Graph API instead (needs `IG_USER_ID` and `IG_ACCESS_TOKEN`).
+- **Pausing:** set the repository variable `SOCIAL_PAUSE` to `instagram`, `x` or `all` to stop sending to those platforms.
 
 Run **Actions → Social posts → Run workflow** to post by hand. It defaults to a dry run, which saves the image as an artifact and doesn't publish.
 
