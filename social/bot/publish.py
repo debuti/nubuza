@@ -65,8 +65,9 @@ def telegram_kit(caption: str, jpeg: Path, post: dict) -> str:
     """Sends the photo, the caption and the alt text to Telegram, each easy to save or copy."""
     api = f"https://api.telegram.org/bot{os.environ['TELEGRAM_BOT_TOKEN']}"
     chat = os.environ["TELEGRAM_CHAT_ID"]
-    photo = _check(requests.post(f"{api}/sendPhoto", data={"chat_id": chat, "caption": f"📸 {post['headline']}"},
-                                 files={"photo": (jpeg.name, jpeg.read_bytes(), "image/jpeg")}, timeout=60))
+    # As a document: Telegram shrinks bot photos to 1280 px, Instagram wants the full 1080×1440.
+    photo = _check(requests.post(f"{api}/sendDocument", data={"chat_id": chat, "caption": f"📸 {post['headline']}"},
+                                 files={"document": (jpeg.name, jpeg.read_bytes(), "image/jpeg")}, timeout=60))
     _check(requests.post(f"{api}/sendMessage", data={"chat_id": chat, "text": caption}, timeout=30))
     _check(requests.post(f"{api}/sendMessage", data={
         "chat_id": chat, "text": f"♿ Texto alternativo (Configuración avanzada → Accesibilidad):\n\n{post['alt_text']}"},

@@ -1,4 +1,4 @@
-"""Makes the post image (1080×1350 JPEG, Instagram's 4:5 portrait) in a headless browser."""
+"""Makes the post image (1080×1440 JPEG, the 3:4 portrait Instagram's grid shows) in a headless browser."""
 
 import base64
 import html
@@ -11,7 +11,8 @@ from PIL import Image
 
 from . import ROOT, SOCIAL, blp
 
-SIZE = {"width": 1080, "height": 1350}
+SIZE = {"width": 1080, "height": 1440}
+RATIO = SIZE["width"] / SIZE["height"]
 
 
 def _data_uri(path: Path) -> str:
@@ -83,14 +84,20 @@ def make(browser, project: dict, post: dict, workdir: Path, rng: random.Random) 
 
 
 def to_jpeg(png: Path, out: Path) -> Path:
-    """Instagram only takes JPEG between 4:5 and 1.91:1; taller images are padded to 4:5."""
-    img = Image.open(png).convert("RGB")
+    """Saves as a 1080×1440 (3:4) JPEG. Other shapes (the app's 4:5 card, with rounded transparent
+    corners) are centred on a gradient of their own top and bottom colours, so the padding blends in."""
+    img = Image.open(png).convert("RGBA")
     w, h = img.size
-    if h > w * 1.25:
-        canvas = Image.new("RGB", (round(h * 0.8), h), (255, 240, 247))
-        canvas.paste(img, ((canvas.width - w) // 2, 0))
+    if abs(w / h - RATIO) > 0.01:
+        size = (w, round(w / RATIO)) if w / h > RATIO else (round(h * RATIO), h)
+        top, bottom = img.getpixel((w // 2, 2))[:3], img.getpixel((w // 2, h - 3))[:3]
+        canvas = Image.new("RGB", size)
+        for y in range(size[1]):
+            t = y / (size[1] - 1)
+            canvas.paste(tuple(round(a + (b - a) * t) for a, b in zip(top, bottom)), (0, y, size[0], y + 1))
+        canvas.paste(img, ((size[0] - w) // 2, (size[1] - h) // 2), img)
         img = canvas
-    img.thumbnail((1080, 1350))
+    img = img.convert("RGB").resize((SIZE["width"], SIZE["height"]), Image.LANCZOS)
     out.parent.mkdir(parents=True, exist_ok=True)
-    img.save(out, "JPEG", quality=90, optimize=True)
+    img.save(out, "JPEG", quality=92, optimize=True)
     return out

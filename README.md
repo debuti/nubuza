@@ -42,7 +42,7 @@ To deploy by hand instead, run `npx wrangler deploy`.
 - **When:** the workflow runs hourly. `social/bot/schedule.py` draws each week's two slots from a seeded RNG and posts when a slot is less than an hour away, or catches up the same day if a run was missed. Posted slots are recorded in `social/history.jsonl`.
 - **What:** Claude (`claude-opus-5-5`) writes a kawaii English post (headline, text, hashtags, alt text) from the facts in `social/projects.json`. If Claude is unavailable, the bot picks an unused post from `social/fallback_posts.json` (136 posts).
 - **How it reaches Claude:** through the API when `ANTHROPIC_API_KEY` is set. Otherwise it uses the Claude Agent SDK, which works with `CLAUDE_CODE_OAUTH_TOKEN` (from `claude setup-token`) or, locally, with your Claude Code login. Set `CLAUDE_BACKEND=api` or `CLAUDE_BACKEND=agent-sdk` to force one.
-- **Image** (1080×1350 JPEG), weighted per project in `projects.json`:
+- **Image** (1080×1440 JPEG, the 3:4 Instagram grid), weighted per project in `projects.json`:
   - `card`: the Bizarre Love Polygon share card. The bot opens the live app in headless Chromium, restores an encrypted backup of a fictional demo user and downloads the card. This only works once the app's share feature is deployed; until then the bot uses `screenshot`.
   - `screenshot`: the app on a phone with the demo user's map, framed as a polaroid.
   - `illustration`: a square SVG drawn by Claude, framed as a polaroid.

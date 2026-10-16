@@ -108,7 +108,8 @@ def _dismiss(page) -> None:
 
 def _open_with_demo(browser, url: str, lovers: list[dict], rng: random.Random, viewport: dict):
     context = browser.new_context(viewport=viewport, device_scale_factor=2, locale="en-US",
-                                  accept_downloads=True, is_mobile=viewport["width"] < 600, has_touch=True)
+                                  accept_downloads=True, is_mobile=viewport["width"] < 600, has_touch=True,
+                                  reduced_motion="reduce")  # steady buttons and settled pins
     page = context.new_page()
     page.set_default_timeout(60_000)
     page.goto(url)
@@ -131,7 +132,7 @@ def _open_with_demo(browser, url: str, lovers: list[dict], rng: random.Random, v
 
 
 def card(browser, url: str, lovers: list[dict], rng: random.Random, out: Path) -> Path:
-    """The app's 1080×1350 Instagram post card for the demo user."""
+    """The app's Instagram post card for the demo user (1080×1350; to_jpeg extends it to 3:4)."""
     context, page = _open_with_demo(browser, url, lovers, rng, {"width": 1280, "height": 900})
     try:
         page.get_by_test_id("open-share").click()
@@ -156,5 +157,53 @@ def screenshot(browser, url: str, lovers: list[dict], rng: random.Random, out: P
         page.wait_for_timeout(3000)  # let tiles and pin animations settle
         page.screenshot(path=out)
         return out
+    finally:
+        context.close()
+
+
+def phone_shots(browser, url: str, lovers: list[dict], rng: random.Random, outdir: Path) -> dict[str, Path]:
+    """Phone screenshots of the demo user's map, stats and the add-a-pin picker."""
+    context, page = _open_with_demo(browser, url, lovers, rng, {"width": 390, "height": 760})
+    shots = {name: outdir / f"phone-{name}.png" for name in ("map", "stats", "picker")}
+    try:
+        page.wait_for_load_state("networkidle")
+        page.wait_for_timeout(3000)
+        page.screenshot(path=shots["map"])
+        page.get_by_test_id("add").click(force=True)
+        page.get_by_test_id("picker").wait_for()
+        page.wait_for_load_state("networkidle")
+        page.wait_for_timeout(2000)
+        page.screenshot(path=shots["picker"])
+        page.reload()  # leaves the picker; the demo data stays on the device
+        page.get_by_test_id("open-settings").wait_for()
+        _dismiss(page)
+        page.get_by_test_id("tab-stats").click()
+        page.get_by_test_id("stats").wait_for()
+        page.wait_for_load_state("networkidle")
+        page.wait_for_timeout(1500)
+        page.screenshot(path=shots["stats"])
+        return shots
+    finally:
+        context.close()
+
+
+def timelapse(browser, url: str, lovers: list[dict], rng: random.Random, out: Path) -> Path:
+    """The app's timelapse video of the demo user's polygon growing (mp4 or webm, as encoded)."""
+    context, page = _open_with_demo(browser, url, lovers, rng, {"width": 1280, "height": 900})
+    try:
+        page.get_by_test_id("open-share").click()
+        share = page.get_by_test_id("share")
+        share.get_by_test_id("kind-video").click()
+        create = page.get_by_test_id("timelapse-create")
+        page.wait_for_function("() => !document.querySelector('[data-testid=timelapse-create]')?.disabled",
+                               timeout=120_000)
+        create.click()
+        download = page.get_by_test_id("timelapse-download")
+        download.wait_for(timeout=600_000)  # encoding happens in the page, frame by frame
+        with page.expect_download(timeout=60_000) as dl:
+            download.click()
+        path = out.with_suffix(Path(dl.value.suggested_filename).suffix or ".webm")
+        dl.value.save_as(path)
+        return path
     finally:
         context.close()
