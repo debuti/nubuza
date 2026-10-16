@@ -35,7 +35,7 @@ To deploy by hand instead, run `npx wrangler deploy`.
 1. Put a 4:3 cover image in `public/projects/`.
 2. In `public/index.html`, copy the `<li class="photo">` block and change the link, image, title and blurb.
 
-## Social posts (Instagram @nubuza, X @nubuzacom)
+## Social posts (Instagram and X: @nubuzacom)
 
 `.github/workflows/social.yml` posts about a random nubuza project about twice a week, at a random time between 9:00 and 17:00 (Europe/Madrid).
 
@@ -73,7 +73,7 @@ Claude uses your Claude Code login unless `social/.env` sets a key or token. If 
 | `ANTHROPIC_API_KEY` or `CLAUDE_CODE_OAUTH_TOKEN` | platform.claude.com → API keys, or `claude setup-token` for a Claude subscription token |
 | `X_API_KEY`, `X_API_SECRET` | developer.x.com → your app → Keys and tokens → API Key and Secret. Set the app's permissions to **Read and write** first. |
 | `X_ACCESS_TOKEN`, `X_ACCESS_TOKEN_SECRET` | Same page → Access Token and Secret, generated while logged in as @nubuzacom after enabling write permissions |
-| `IG_USER_ID`, `IG_ACCESS_TOKEN` | A Meta app with the Instagram API, @nubuza as a professional (Business or Creator) account, permissions `instagram_business_basic` + `instagram_business_content_publish` |
+| `IG_USER_ID`, `IG_ACCESS_TOKEN` | A Meta app with the Instagram API, @nubuzacom as a professional (Business or Creator) account, permissions `instagram_business_basic` + `instagram_business_content_publish` |
 
 | `SECRETS_PAT` | github.com → Settings → Developer settings → Fine-grained tokens. Limit it to **only** `debuti/nubuza`, with Repository permissions → **Secrets: Read and write** and nothing else. |
 
