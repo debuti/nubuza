@@ -18,7 +18,8 @@ if (env := SOCIAL / ".env").exists():
 
 
 SECRET_KEYS = ("ANTHROPIC_API_KEY", "CLAUDE_CODE_OAUTH_TOKEN", "CLOUDFLARE_API_TOKEN", "X_API_KEY", "X_API_SECRET",
-               "X_ACCESS_TOKEN", "X_ACCESS_TOKEN_SECRET", "IG_ACCESS_TOKEN")
+               "X_ACCESS_TOKEN", "X_ACCESS_TOKEN_SECRET", "IG_ACCESS_TOKEN", "TELEGRAM_BOT_TOKEN",
+               "TELEGRAM_CHAT_ID")
 
 
 def redact(text: str) -> str:

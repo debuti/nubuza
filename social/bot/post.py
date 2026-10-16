@@ -121,9 +121,11 @@ def main() -> int:
         return 0
 
     image_url = f"{SITE}/social/{jpeg.name}"
-    deploy_and_wait(image_url, jpeg)
+    targets = publish.targets(texts, jpeg, image_url, post)
+    if any(name in publish.NEEDS_PUBLIC_URL for name, _ in targets):
+        deploy_and_wait(image_url, jpeg)
     results, errors = {}, {}
-    for name, send in publish.targets(texts, jpeg, image_url, post):
+    for name, send in targets:
         try:
             results[name] = send()
             print(f"{name}: {results[name]}")

@@ -1,8 +1,10 @@
 """Publishes to X (API v2, OAuth 1.0a user context) and Instagram.
 
-Instagram has two modes (repo variable IG_MODE):
-- "kit" (default): opens a GitHub issue with the image and caption, ready to post by hand.
-  Nothing touches Instagram, so a new account is never at risk from automation.
+Instagram has three modes (repo variable IG_MODE). The first two never touch Instagram, so a
+new account is never at risk from automation:
+- "telegram" (default when TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID are set): sends the photo,
+  caption and alt text to your Telegram, ready to post by hand.
+- "kit" (default otherwise): opens a GitHub issue with the same.
 - "api": publishes through the Graph API (needs IG_USER_ID and IG_ACCESS_TOKEN).
 """
 
@@ -32,7 +34,10 @@ def paused(name: str) -> bool:
     return "all" in pause or name in pause
 
 
-IG_MODE = (os.environ.get("IG_MODE") or "kit").lower()
+TG_KEYS = ("TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID")
+IG_MODE = (os.environ.get("IG_MODE") or ("telegram" if all(os.environ.get(k) for k in TG_KEYS) else "kit")).lower()
+# Targets that need the image on nubuza.com (Instagram fetches it; issues embed it).
+NEEDS_PUBLIC_URL = {"instagram", "instagram-kit"}
 
 
 def configured(keys: tuple[str, ...]) -> bool:
@@ -49,9 +54,24 @@ def targets(texts: dict, jpeg: Path, image_url: str, post: dict) -> list[tuple[s
     if not paused("instagram"):
         if IG_MODE == "api" and configured(IG_KEYS):
             out.append(("instagram", lambda: post_instagram(texts["instagram"], image_url, post["alt_text"])))
+        elif IG_MODE == "telegram" and all(os.environ.get(k) for k in TG_KEYS):
+            out.append(("instagram-telegram", lambda: telegram_kit(texts["instagram"], jpeg, post)))
         elif IG_MODE == "kit" and shutil.which("gh"):
             out.append(("instagram-kit", lambda: instagram_kit(texts["instagram"], image_url, post)))
     return out
+
+
+def telegram_kit(caption: str, jpeg: Path, post: dict) -> str:
+    """Sends the photo, the caption and the alt text to Telegram, each easy to save or copy."""
+    api = f"https://api.telegram.org/bot{os.environ['TELEGRAM_BOT_TOKEN']}"
+    chat = os.environ["TELEGRAM_CHAT_ID"]
+    photo = _check(requests.post(f"{api}/sendPhoto", data={"chat_id": chat, "caption": f"📸 {post['headline']}"},
+                                 files={"photo": (jpeg.name, jpeg.read_bytes(), "image/jpeg")}, timeout=60))
+    _check(requests.post(f"{api}/sendMessage", data={"chat_id": chat, "text": caption}, timeout=30))
+    _check(requests.post(f"{api}/sendMessage", data={
+        "chat_id": chat, "text": f"♿ Texto alternativo (Configuración avanzada → Accesibilidad):\n\n{post['alt_text']}"},
+        timeout=30))
+    return f"telegram message {photo['result']['message_id']}"
 
 
 def instagram_kit(caption: str, image_url: str, post: dict) -> str:

@@ -49,7 +49,7 @@ To deploy by hand instead, run `npx wrangler deploy`.
   - `cover`: the project's cover, framed.
   If one type fails, the bot falls back to the next type, ending with `cover`.
 - **Publishing:** the image is saved to `public/social/` and deployed with the site. Then the bot posts to X and delivers the Instagram post, and commits the image and history. A platform without secrets is skipped.
-- **Instagram "kit" mode (default):** the bot doesn't touch Instagram. It opens a GitHub issue with the image, the caption and the alt text. You publish it by hand from your phone as @nubuzacom, then close the issue. Set the repository variable `IG_MODE=api` to publish through the Graph API instead (needs `IG_USER_ID` and `IG_ACCESS_TOKEN`).
+- **Instagram by hand:** the bot doesn't touch Instagram. It sends you the image, the caption and the alt text, and you publish them from your phone as @nubuzacom. They arrive on Telegram when `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` are set, or otherwise as a GitHub issue (close it once posted). Set the repository variable `IG_MODE` to `telegram`, `kit` (GitHub issue) or `api` (Graph API, needs `IG_USER_ID` and `IG_ACCESS_TOKEN`) to choose.
 - **Pausing:** set the repository variable `SOCIAL_PAUSE` to `instagram`, `x` or `all` to stop sending to those platforms.
 
 Run **Actions → Social posts → Run workflow** to post by hand. It defaults to a dry run, which saves the image as an artifact and doesn't publish.
@@ -77,6 +77,8 @@ Claude uses your Claude Code login unless `social/.env` sets a key or token. If 
 | `X_ACCESS_TOKEN`, `X_ACCESS_TOKEN_SECRET` | Same page → Access Token and Secret, generated while logged in as @nubuzacom after enabling write permissions |
 | `IG_USER_ID`, `IG_ACCESS_TOKEN` | A Meta app with the Instagram API, @nubuzacom as a professional (Business or Creator) account, permissions `instagram_business_basic` + `instagram_business_content_publish` |
 
+| `TELEGRAM_BOT_TOKEN` | Telegram → @BotFather → `/newbot` |
+| `TELEGRAM_CHAT_ID` | Send your bot a message, then run `python -m social.tools.telegram_chat_id` with the token in `social/.env` |
 | `SECRETS_PAT` | github.com → Settings → Developer settings → Fine-grained tokens. Limit it to **only** `debuti/nubuza`, with Repository permissions → **Secrets: Read and write** and nothing else. |
 
 Instagram Login tokens (`graph.instagram.com`, the default) expire after 60 days. `.github/workflows/instagram-token.yml` refreshes `IG_ACCESS_TOKEN` on the 1st of every month, using `SECRETS_PAT` to save it.

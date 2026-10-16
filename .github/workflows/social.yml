@@ -87,6 +87,8 @@ jobs:
           IG_GRAPH_HOST: ${{ vars.IG_GRAPH_HOST }}
           SOCIAL_PAUSE: ${{ vars.SOCIAL_PAUSE }}
           IG_MODE: ${{ vars.IG_MODE }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           GH_TOKEN: ${{ github.token }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
