@@ -57,7 +57,8 @@
       "An optional public wall page shows only each month's savings and the total balance, for example on a tablet at home.",
       "Data safety: automatic daily and monthly snapshots, and a backup before every delete, restore or merge.",
       "Money is exact, down to the cent.",
-      "Made by nubuza."
+      "Made by nubuza.",
+      "The mascot is Duro, a smiling gold coin with blush cheeks (in Spain a «duro» was the old 5-peseta coin). Duro is just the mascot, not a feature: the app doesn't talk or give advice."
     ],
     "hashtags": [
       "5dollars",
@@ -82,6 +83,6 @@
     "cover": "public/projects/fivedollars.svg",
     "exporter": "fivedollars",
     "screenshot_brief": "The image is a screenshot of the app with a fictional household: the monthly report chart (did we save each month?), the alerts that explain an unusual month, or a trip epic with its expenses.",
-    "art_hint": "For this project, think kawaii money: a smiling piggy bank or coin, a happy little wallet, a cheerful bar chart going up, a cozy home; add 5dollars' green and gold to the nubuza pastels."
+    "art_hint": "For this project, Duro (a smiling gold coin with a plum outline and blush cheeks) fits well, with kawaii money around: a smiling piggy bank, a happy little wallet, a cheerful bar chart going up, a cozy home; add 5dollars' green and gold to the nubuza pastels."
   }
 ]
