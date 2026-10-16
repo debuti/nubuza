@@ -85,7 +85,7 @@ def main() -> int:
     ap.add_argument("--commit", action="store_true")
     args = ap.parse_args()
 
-    if not args.dry_run and not (publish.configured(publish.X_KEYS) or publish.configured(publish.IG_KEYS)):
+    if not args.dry_run and not publish.targets({}, Path(), "", {}):
         print("No platform to post to (secrets missing or SOCIAL_PAUSE set): nothing to do.")
         return 0
 
@@ -123,13 +123,7 @@ def main() -> int:
     image_url = f"{SITE}/social/{jpeg.name}"
     deploy_and_wait(image_url, jpeg)
     results, errors = {}, {}
-    targets = [("x", publish.X_KEYS, lambda: publish.post_x(texts["x"], jpeg, post["alt_text"])),
-               ("instagram", publish.IG_KEYS,
-                lambda: publish.post_instagram(texts["instagram"], image_url, post["alt_text"]))]
-    for name, keys, send in targets:
-        if not publish.configured(keys):
-            print(f"{name}: not configured or paused, skipped")
-            continue
+    for name, send in publish.targets(texts, jpeg, image_url, post):
         try:
             results[name] = send()
             print(f"{name}: {results[name]}")

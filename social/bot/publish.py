@@ -1,7 +1,15 @@
-"""Publishes to X (API v2, OAuth 1.0a user context) and Instagram (Graph API content publishing)."""
+"""Publishes to X (API v2, OAuth 1.0a user context) and Instagram.
+
+Instagram has two modes (repo variable IG_MODE):
+- "kit" (default): opens a GitHub issue with the image and caption, ready to post by hand.
+  Nothing touches Instagram, so a new account is never at risk from automation.
+- "api": publishes through the Graph API (needs IG_USER_ID and IG_ACCESS_TOKEN).
+"""
 
 import base64
 import os
+import shutil
+import subprocess
 import time
 from pathlib import Path
 
@@ -24,10 +32,40 @@ def paused(name: str) -> bool:
     return "all" in pause or name in pause
 
 
+IG_MODE = (os.environ.get("IG_MODE") or "kit").lower()
+
+
 def configured(keys: tuple[str, ...]) -> bool:
     """Has secrets and isn't paused. Keys tuples are named after their platform below."""
     name = "x" if keys is X_KEYS else "instagram"
     return all(os.environ.get(k) for k in keys) and not paused(name)
+
+
+def targets(texts: dict, jpeg: Path, image_url: str, post: dict) -> list[tuple[str, callable]]:
+    """The platforms this run sends to, each with the call that does it."""
+    out = []
+    if configured(X_KEYS):
+        out.append(("x", lambda: post_x(texts["x"], jpeg, post["alt_text"])))
+    if not paused("instagram"):
+        if IG_MODE == "api" and configured(IG_KEYS):
+            out.append(("instagram", lambda: post_instagram(texts["instagram"], image_url, post["alt_text"])))
+        elif IG_MODE == "kit" and shutil.which("gh"):
+            out.append(("instagram-kit", lambda: instagram_kit(texts["instagram"], image_url, post)))
+    return out
+
+
+def instagram_kit(caption: str, image_url: str, post: dict) -> str:
+    """Opens a GitHub issue with everything needed to post by hand; returns its URL."""
+    body = (f"![{post['alt_text']}]({image_url})\n\n"
+            f"**1. Guarda la imagen:** [descárgala aquí]({image_url}) (en el móvil, mantén pulsada la imagen).\n\n"
+            f"**2. Copia el texto:**\n\n```text\n{caption}\n```\n\n"
+            f"**3. Texto alternativo** (Configuración avanzada → Accesibilidad):\n\n```text\n{post['alt_text']}\n```\n\n"
+            f"**4. Publícalo en Instagram como @nubuzacom y cierra este issue.**\n")
+    result = subprocess.run(["gh", "issue", "create", "--title", f"📸 Post para Instagram: {post['headline']}",
+                             "--body-file", "-"], input=body, capture_output=True, text=True)
+    if result.returncode:
+        raise RuntimeError(redact(f"gh issue create failed: {result.stderr.strip()}"))
+    return result.stdout.strip().splitlines()[-1]
 
 
 def _check(r: requests.Response) -> dict:
