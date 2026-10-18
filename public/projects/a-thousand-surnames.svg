@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="1200" height="900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e3f6ec"/>
+      <stop offset="1" stop-color="#fde6e1"/>
+    </linearGradient>
+    <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="8" r="1.3" fill="#9fd3b8" opacity=".5"/>
+    </pattern>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <rect width="400" height="300" fill="url(#dots)"/>
+
+  <!-- the surname list: numbered pills, one gap -->
+  <g font-family="'Trebuchet MS', 'Segoe UI', Verdana, sans-serif" font-weight="700" font-size="15" stroke-width="2.5">
+    <g transform="translate(232 40)">
+      <rect width="138" height="30" rx="15" fill="#c4ecd6" stroke="#4a3a6b"/>
+      <circle cx="15" cy="15" r="10" fill="#fff" stroke="#4a3a6b" stroke-width="2"/>
+      <text x="15" y="20" text-anchor="middle" font-size="12" fill="#4a3a6b">1</text>
+      <text x="32" y="20.5" fill="#1f6b48">Etxeberria</text>
+    </g>
+    <g transform="translate(232 78)">
+      <rect width="112" height="30" rx="15" fill="#ffd3cc" stroke="#4a3a6b"/>
+      <circle cx="15" cy="15" r="10" fill="#fff" stroke="#4a3a6b" stroke-width="2"/>
+      <text x="15" y="20" text-anchor="middle" font-size="12" fill="#4a3a6b">2</text>
+      <text x="32" y="20.5" fill="#a8322a">López</text>
+    </g>
+    <g transform="translate(232 116)">
+      <rect width="124" height="30" rx="15" fill="#d6e8ff" stroke="#4a3a6b"/>
+      <circle cx="15" cy="15" r="10" fill="#fff" stroke="#4a3a6b" stroke-width="2"/>
+      <text x="15" y="20" text-anchor="middle" font-size="12" fill="#4a3a6b">3</text>
+      <text x="32" y="20.5" fill="#2a5a9a">Aguirre</text>
+    </g>
+    <g transform="translate(232 154)">
+      <rect width="92" height="30" rx="15" fill="#fff" stroke="#5fc392" stroke-dasharray="5 4"/>
+      <circle cx="15" cy="15" r="10" fill="#fff" stroke="#4a3a6b" stroke-width="2"/>
+      <text x="15" y="20" text-anchor="middle" font-size="12" fill="#4a3a6b">4</text>
+      <text x="36" y="20.5" font-size="20" fill="#2e9e6c">_</text>
+    </g>
+    <g transform="translate(232 192)">
+      <rect width="98" height="30" rx="15" fill="#fff1c2" stroke="#4a3a6b"/>
+      <circle cx="15" cy="15" r="10" fill="#fff" stroke="#4a3a6b" stroke-width="2"/>
+      <text x="15" y="20" text-anchor="middle" font-size="12" fill="#4a3a6b">5</text>
+      <text x="32" y="20.5" fill="#8a6200">Ruiz</text>
+    </g>
+    <g transform="translate(232 230)">
+      <rect width="104" height="30" rx="15" fill="#e9e0ff" stroke="#4a3a6b"/>
+      <circle cx="15" cy="15" r="10" fill="#fff" stroke="#4a3a6b" stroke-width="2"/>
+      <text x="15" y="20" text-anchor="middle" font-size="12" fill="#4a3a6b">6</text>
+      <text x="32" y="20.5" fill="#5b3aa0">Sanz</text>
+    </g>
+  </g>
+  <g fill="#4a3a6b">
+    <circle cx="296" cy="276" r="2.5"/>
+    <circle cx="306" cy="276" r="2.5"/>
+    <circle cx="316" cy="276" r="2.5"/>
+  </g>
+
+  <!-- happy tree with name tags -->
+  <g transform="translate(20 30) scale(1.75)" stroke="#4a3a6b" stroke-linejoin="round">
+    <path d="M52 82 Q50 100 46 110 L74 110 Q70 100 68 82 Z" fill="#b07a4f" stroke-width="2"/>
+    <path d="M56 92 Q58 100 57 108" stroke="#8d5d39" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M60 24 Q60 16 61 10" stroke="#2e9e6c" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M61 12 Q70 3 79 9 Q70 17 61 12 Z" fill="#93d9b4" stroke="#2e9e6c" stroke-width="2"/>
+    <path d="M60 15 Q52 7 44 12 Q52 19 60 15 Z" fill="#c2ead4" stroke="#2e9e6c" stroke-width="2"/>
+    <g fill="#5fc392" stroke-width="2.2">
+      <circle cx="60" cy="56" r="34"/>
+      <circle cx="30" cy="62" r="16"/>
+      <circle cx="90" cy="62" r="16"/>
+      <circle cx="38" cy="36" r="15"/>
+      <circle cx="82" cy="36" r="15"/>
+      <circle cx="60" cy="82" r="17"/>
+    </g>
+    <g fill="#5fc392" stroke="none">
+      <circle cx="60" cy="56" r="32.9"/>
+      <circle cx="30" cy="62" r="14.9"/>
+      <circle cx="90" cy="62" r="14.9"/>
+      <circle cx="38" cy="36" r="13.9"/>
+      <circle cx="82" cy="36" r="13.9"/>
+      <circle cx="60" cy="82" r="15.9"/>
+    </g>
+    <g fill="#93d9b4" opacity=".9" stroke="none">
+      <circle cx="42" cy="40" r="5"/>
+      <circle cx="78" cy="72" r="4"/>
+      <circle cx="32" cy="66" r="3.5"/>
+    </g>
+    <g stroke-width="1.6" stroke-linecap="round">
+      <path d="M24 70 L22 80" stroke="#8d5d39"/>
+      <rect x="13" y="79" width="17" height="10" rx="3" fill="#ffcdc5" stroke="#ef5848" transform="rotate(-8 21 84)"/>
+      <path d="M16.5 84.5 H25.5" stroke="#ef5848" transform="rotate(-8 21 84)"/>
+      <path d="M96 70 L98 80" stroke="#8d5d39"/>
+      <rect x="90" y="79" width="17" height="10" rx="3" fill="#fff1c2" stroke="#e0a100" transform="rotate(8 98 84)"/>
+      <path d="M93.5 84 H102.5" stroke="#e0a100" transform="rotate(8 98 84)"/>
+      <path d="M82 88 L84 96" stroke="#8d5d39"/>
+      <rect x="77" y="95" width="15" height="9" rx="3" fill="#e9e0ff" stroke="#8e5bd6" transform="rotate(5 84 99)"/>
+      <path d="M80.5 99.5 H88" stroke="#8e5bd6" transform="rotate(5 84 99)"/>
+    </g>
+    <g stroke="none">
+      <ellipse cx="49" cy="57" rx="4" ry="4.6" fill="#4a3a6b"/>
+      <circle cx="50.4" cy="55.2" r="1.4" fill="#fff"/>
+      <ellipse cx="71" cy="57" rx="4" ry="4.6" fill="#4a3a6b"/>
+      <circle cx="72.4" cy="55.2" r="1.4" fill="#fff"/>
+      <ellipse cx="40" cy="66" rx="5.5" ry="3.4" fill="#ff8fbd" opacity=".6"/>
+      <ellipse cx="80" cy="66" rx="5.5" ry="3.4" fill="#ff8fbd" opacity=".6"/>
+    </g>
+    <path d="M53 66 q7 8 14 0" stroke="#4a3a6b" stroke-width="3" fill="#ef5848" stroke-linecap="round"/>
+  </g>
+  <line x1="40" y1="224" x2="210" y2="224" stroke="#4a3a6b" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- sparkles -->
+  <g fill="#ffd966" stroke="#4a3a6b" stroke-width="2" stroke-linejoin="round">
+    <path d="M40 30 C42 42 46 46 58 48 C46 50 42 54 40 66 C38 54 34 50 22 48 C34 46 38 42 40 30Z"/>
+    <path d="M200 250 C201 257 203 259 210 260 C203 261 201 263 200 270 C199 263 197 261 190 260 C197 259 199 257 200 250Z"/>
+  </g>
+  <circle cx="200" cy="40" r="6" fill="#ff8fbd"/>
+  <circle cx="30" cy="250" r="4" fill="#b79cff"/>
+</svg>
