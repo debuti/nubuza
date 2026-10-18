@@ -1,1 +1,2 @@
-social/history.jsonl merge=union  # append-only: two bot runs adding a line each keep both
+# append-only: two bot runs adding a line each keep both
+social/history.jsonl merge=union
