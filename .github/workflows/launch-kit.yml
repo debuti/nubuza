@@ -8,7 +8,7 @@ on:
       project:
         description: Which kit
         type: choice
-        options: [nubuza, fivedollars]
+        options: [nubuza, fivedollars, a-thousand-surnames]
         default: nubuza
 
 permissions:

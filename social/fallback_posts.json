@@ -1378,5 +1378,405 @@
   "headline": "Try it in your browser 💻",
   "body": "apps.nubuza.com/fivedollars: open it, import a statement and see your first chart 💚",
   "screen": "report"
+ },
+ {
+  "id": "ats-001",
+  "project": "a-thousand-surnames",
+  "media": "card",
+  "headline": "Two? Try sixty-four 🌳",
+  "body": "Your ID shows two surnames. Your family tree hides dozens more, all in order. Come count yours 🔤✨",
+  "screen": "list"
+ },
+ {
+  "id": "ats-002",
+  "project": "a-thousand-surnames",
+  "media": "screenshot",
+  "headline": "Every surname you carry 🔤",
+  "body": "Import your tree and get all your surnames in order, with a cute \"_\" wherever an ancestor is still missing 🌳💕",
+  "screen": "surnames"
+ },
+ {
+  "id": "ats-003",
+  "project": "a-thousand-surnames",
+  "media": "illustration",
+  "headline": "Meet Kibi 🌳",
+  "body": "Hi, I'm Kibi! I'm a little tree and I hang your surnames from my branches 🏷️ How many will we find together? 💚",
+  "alt": "Kibi, a smiling mint-green kawaii tree with a sprout on top, hangs colourful name tags from its branches above hills, little houses and old family photos."
+ },
+ {
+  "id": "ats-004",
+  "project": "a-thousand-surnames",
+  "media": "card",
+  "headline": "Bake your family cookie 🍪",
+  "body": "Your whole family as one round fan chart, ready for the family group chat 🍪🌳",
+  "screen": "fan"
+ },
+ {
+  "id": "ats-005",
+  "project": "a-thousand-surnames",
+  "media": "screenshot",
+  "headline": "Your tree as a fan 🌀",
+  "body": "The upper half is your 1st-surname line, the lower half your 2nd. Tap a \"+\" to add who's missing 🌳✨",
+  "screen": "tree"
+ },
+ {
+  "id": "ats-006",
+  "project": "a-thousand-surnames",
+  "media": "screenshot",
+  "headline": "How rare are you? 🌸",
+  "body": "See how many people in Spain carry each of your surnames, with INE data. Some of yours might be tiny treasures 💎",
+  "screen": "stats"
+ },
+ {
+  "id": "ats-007",
+  "project": "a-thousand-surnames",
+  "media": "illustration",
+  "headline": "Why a thousand? 🤔",
+  "body": "Each generation doubles your surnames: 2, 4, 8, 16… Ten full generations give you 1,024. About a thousand! 🌳✨",
+  "alt": "Kibi the smiling tree splits its branches again and again: 2 name tags, then 4, 8, 16, up to a canopy covered in tiny tags. A child, houses and old family photos sit below."
+ },
+ {
+  "id": "ats-008",
+  "project": "a-thousand-surnames",
+  "media": "card",
+  "headline": "Show off at Christmas 🎄",
+  "body": "Bring your full surname list to the next family dinner and watch everyone count on their fingers 😆🔤",
+  "screen": "list"
+ },
+ {
+  "id": "ats-009",
+  "project": "a-thousand-surnames",
+  "media": "screenshot",
+  "headline": "Mind the gap _",
+  "body": "A \"_\" means a surname we don't know yet. The app tells you which ancestor to research to fill the first one 🕵️💚",
+  "screen": "surnames"
+ },
+ {
+  "id": "ats-010",
+  "project": "a-thousand-surnames",
+  "media": "illustration",
+  "headline": "Your tree stays home 🔒",
+  "body": "No accounts, no server. Your family tree is stored encrypted in your browser and your GEDCOM file is never uploaded 🌳💕",
+  "alt": "Kawaii scene: Kibi the smiling tree with name tags lives inside a cozy house-shaped browser window, locked by a smiling padlock, while a crossed-out server cloud waits outside."
+ },
+ {
+  "id": "ats-011",
+  "project": "a-thousand-surnames",
+  "media": "card",
+  "headline": "Five generations, one cookie 🍪",
+  "body": "Parents, grandparents, great-grandparents… all baked into one round, shareable family cookie 🥰",
+  "screen": "fan"
+ },
+ {
+  "id": "ats-012",
+  "project": "a-thousand-surnames",
+  "media": "screenshot",
+  "headline": "Collect the trophies 🏆",
+  "body": "A trophy every time you double the surnames you know in a row: 4, 8, 16, 32… Can you grow a mighty oak? 🌳",
+  "screen": "stats"
+ },
+ {
+  "id": "ats-013",
+  "project": "a-thousand-surnames",
+  "media": "illustration",
+  "headline": "How surnames multiply 🔤",
+  "body": "Your 1st surname is your dad's 1st, your 2nd your mum's 1st. Then 3rd, 4th… each parent brings their whole list ✨",
+  "alt": "Kibi, a smiling tree, holds grandparents' and parents' photos with coloured name tags. Below, a child holds a banner of all eight surnames in order."
+ },
+ {
+  "id": "ats-014",
+  "project": "a-thousand-surnames",
+  "media": "card",
+  "headline": "Surname roll call 📣",
+  "body": "Etxeberria, López, Ximénez, Gil… Every surname you carry, on one kawaii card 💌",
+  "screen": "list"
+ },
+ {
+  "id": "ats-015",
+  "project": "a-thousand-surnames",
+  "media": "screenshot",
+  "headline": "Grow your tree by hand ✍️",
+  "body": "No Ancestry file? Start with yourself and add parents and grandparents on the fan chart. Their surnames fill in for you 🌳",
+  "screen": "tree"
+ },
+ {
+  "id": "ats-016",
+  "project": "a-thousand-surnames",
+  "media": "screenshot",
+  "headline": "Sounds Basque? 🌳",
+  "body": "Etxeberria, Goikoetxea, Zubizarreta… we count your surnames that look Basque. Just for fun, not etymology 😄",
+  "screen": "stats"
+ },
+ {
+  "id": "ats-017",
+  "project": "a-thousand-surnames",
+  "media": "illustration",
+  "headline": "From Ancestry in a tap 📂",
+  "body": "Export your GEDCOM from Ancestry or MyHeritage, open it here and pick whose surnames you want. Easy peasy 🌳✨",
+  "alt": "Kawaii scene: a finger taps a folder on a phone, a smiling file flies along a dotted path to Kibi, a happy green tree with colourful name tags, beside old photos."
+ },
+ {
+  "id": "ats-018",
+  "project": "a-thousand-surnames",
+  "media": "card",
+  "headline": "My surnames, my flex 💅",
+  "body": "Sixteen surnames in a row and counting 💪🌳 How long is your list?",
+  "screen": "list"
+ },
+ {
+  "id": "ats-019",
+  "project": "a-thousand-surnames",
+  "media": "screenshot",
+  "headline": "Your next clue 🔎",
+  "body": "The app spots your first missing ancestor and tells you how many surnames in a row you'd get by finding them 🕵️✨",
+  "screen": "surnames"
+ },
+ {
+  "id": "ats-020",
+  "project": "a-thousand-surnames",
+  "media": "illustration",
+  "headline": "The 40-people club 🤫",
+  "body": "Imagine finding out that only 40 people in all of Spain carry your fourth surname 😮 Find your rare ones 🌸",
+  "alt": "Kibi the smiling green tree hangs pastel name tags. A child looks through a magnifying glass at a glowing coral tag, next to a tiny clubhouse behind a velvet rope and old family photos."
+ },
+ {
+  "id": "ats-021",
+  "project": "a-thousand-surnames",
+  "media": "card",
+  "headline": "Your family, in a circle 🌀",
+  "body": "Every branch you know, round and colourful. Send it to the cousin who does the genealogy 💌🌳",
+  "screen": "fan"
+ },
+ {
+  "id": "ats-022",
+  "project": "a-thousand-surnames",
+  "media": "screenshot",
+  "headline": "Repeats spotted 👀",
+  "body": "Same surname on both sides of the family? The stats show your repeated surnames too 🔁🌳",
+  "screen": "stats"
+ },
+ {
+  "id": "ats-023",
+  "project": "a-thousand-surnames",
+  "media": "illustration",
+  "headline": "Ask grandma tonight 👵",
+  "body": "Grandma knows which surname comes next. Call her, fill a \"_\" and make her day 💕📞",
+  "alt": "Kawaii scene: grandma in a pink armchair on the phone with a happy kid. Between them, Kibi the smiling tree hangs name tags, and one blank tag sparkles, waiting to be filled."
+ },
+ {
+  "id": "ats-024",
+  "project": "a-thousand-surnames",
+  "media": "card",
+  "headline": "One card, all of you 💌",
+  "body": "A kawaii image with your first name and every surname you carry. Perfect for Instagram or the family chat 📲",
+  "screen": "list"
+ },
+ {
+  "id": "ats-025",
+  "project": "a-thousand-surnames",
+  "media": "screenshot",
+  "headline": "Two mothers? Two fathers? 💞",
+  "body": "Everyone has two slots. \"Swap order\" changes who gives the 1st surname, for reversed order or any family 🌳",
+  "screen": "tree"
+ },
+ {
+  "id": "ats-026",
+  "project": "a-thousand-surnames",
+  "media": "illustration",
+  "headline": "Kibi's name tags 🏷️",
+  "body": "Kibi is named after 1,024, a \"kibi\" in computing. That's how many surnames ten generations give you 🤓🌳",
+  "alt": "Kawaii smiling green tree Kibi with a sprout on top, ten colourful name tags hanging from its branches, little houses, old family photos and floating tags."
+ },
+ {
+  "id": "ats-027",
+  "project": "a-thousand-surnames",
+  "media": "card",
+  "headline": "Fresh out of the oven 🍪",
+  "body": "A new family cookie just came out of A Thousand Surnames. Bake yours, it's free 🥰",
+  "screen": "fan"
+ },
+ {
+  "id": "ats-028",
+  "project": "a-thousand-surnames",
+  "media": "screenshot",
+  "headline": "Copy all your surnames 📋",
+  "body": "One tap copies your whole list, or just the ones up to the first \"_\". Paste it anywhere 🔤✨",
+  "screen": "surnames"
+ },
+ {
+  "id": "ats-029",
+  "project": "a-thousand-surnames",
+  "media": "illustration",
+  "headline": "Genealogy, but cute 🌳",
+  "body": "Find out which branches are complete and which ancestor to look for next. Family history with blush cheeks 🥰",
+  "alt": "Smiling mint tree Kibi with blush cheeks, colourful name tags on its branches and one dashed empty tag, next to old family photos, little houses and a bar-chart card."
+ },
+ {
+  "id": "ats-030",
+  "project": "a-thousand-surnames",
+  "media": "card",
+  "headline": "Count them with me 🔢",
+  "body": "1 García, 2 López, 3 Pérez… how far can you go before the first \"_\"? 🌳",
+  "screen": "list"
+ },
+ {
+  "id": "ats-031",
+  "project": "a-thousand-surnames",
+  "media": "screenshot",
+  "headline": "Where is it most typical? 🗺️",
+  "body": "For each surname, the province where it stands out most, from INE data. Is yours from Jaén or Gipuzkoa? 🌸",
+  "screen": "stats"
+ },
+ {
+  "id": "ats-032",
+  "project": "a-thousand-surnames",
+  "media": "illustration",
+  "headline": "Free and private 💚",
+  "body": "No sign-up, no server, no catch. Just you, your tree and Kibi counting surnames 🌳🔒",
+  "alt": "Smiling green tree Kibi with colourful name tags hugs a heart padlock beside a cosy pink house and old family photos, while a cloud is crossed out in red."
+ },
+ {
+  "id": "ats-033",
+  "project": "a-thousand-surnames",
+  "media": "card",
+  "headline": "A cookie for the group chat 🍪",
+  "body": "Drop your family cookie in the cousins' chat and see who knows the missing names 😏💬",
+  "screen": "fan"
+ },
+ {
+  "id": "ats-034",
+  "project": "a-thousand-surnames",
+  "media": "screenshot",
+  "headline": "Tap to edit 🌳",
+  "body": "Tap anyone in the fan to fix a name or surname. Each \"+\" adds the parent who's missing ✨",
+  "screen": "tree"
+ },
+ {
+  "id": "ats-035",
+  "project": "a-thousand-surnames",
+  "media": "illustration",
+  "headline": "Interleaved like a braid 🎀",
+  "body": "Dad's list and mum's list take turns: 1st, 2nd, 3rd, 4th… Your surnames are a family braid 💕",
+  "alt": "Kibi the smiling tree between framed photos of dad (blue) and mum (pink). Their ribbons braid together, with name tags in turn: 1st blue, 2nd pink, 3rd blue, 4th pink."
+ },
+ {
+  "id": "ats-036",
+  "project": "a-thousand-surnames",
+  "media": "card",
+  "headline": "Gaps are clues 🕵️",
+  "body": "Every \"_\" on your card is an ancestor waiting to be found. Happy hunting 🌳🔎",
+  "screen": "list"
+ },
+ {
+  "id": "ats-037",
+  "project": "a-thousand-surnames",
+  "media": "screenshot",
+  "headline": "Surnames in a row 🚂",
+  "body": "How many surnames do you know before the first gap? That's your streak. Go grow it 🌳💪",
+  "screen": "surnames"
+ },
+ {
+  "id": "ats-038",
+  "project": "a-thousand-surnames",
+  "media": "illustration",
+  "headline": "Hello, great-great-grandma 💐",
+  "body": "Great-great-grandparents bring you up to 16 surnames. Who were they? 🌳✨",
+  "alt": "Kibi, a smiling green tree with a sprout, wears 16 colourful name tags and offers a bouquet to an oval portrait of a sweet great-great-grandma, among old photos and houses."
+ },
+ {
+  "id": "ats-039",
+  "project": "a-thousand-surnames",
+  "media": "card",
+  "headline": "Round family portrait 🌀",
+  "body": "Six generations in one cute circle. Your family has never looked this tidy 😆🍪",
+  "screen": "fan"
+ },
+ {
+  "id": "ats-040",
+  "project": "a-thousand-surnames",
+  "media": "screenshot",
+  "headline": "Your rarest surname 🌸",
+  "body": "The stats crown your rarest surname and how many people in Spain carry it 👑",
+  "screen": "stats"
+ },
+ {
+  "id": "ats-041",
+  "project": "a-thousand-surnames",
+  "media": "illustration",
+  "headline": "Sync it, safely ☁️",
+  "body": "Want your tree on your phone and laptop? Turn on Google Drive sync: an encrypted copy only you can open 🔒🌳",
+  "alt": "Kawaii scene: Kibi the smiling tree with name tags, a cloud holding a golden padlock above, and dashed sync arrows to a phone and a laptop that both show Kibi."
+ },
+ {
+  "id": "ats-042",
+  "project": "a-thousand-surnames",
+  "media": "card",
+  "headline": "More than two, promise 🤞",
+  "body": "\"I only have two surnames\" said nobody after trying A Thousand Surnames 😌🔤",
+  "screen": "list"
+ },
+ {
+  "id": "ats-043",
+  "project": "a-thousand-surnames",
+  "media": "screenshot",
+  "headline": "From GEDCOM to list ✨",
+  "body": "Drop your .ged file in and, seconds later, every surname you carry lines up in order 📂🌳",
+  "screen": "surnames"
+ },
+ {
+  "id": "ats-044",
+  "project": "a-thousand-surnames",
+  "media": "illustration",
+  "headline": "Kibi found a new one 🎉",
+  "body": "When you add an ancestor, a new surname pops onto Kibi's branches. Tiny family-history party 🥳🌳",
+  "alt": "Kawaii green tree Kibi beams under bunting as a new coral name tag pops onto its branch with confetti, an old ancestor photo sparkling beside it and little houses below."
+ },
+ {
+  "id": "ats-045",
+  "project": "a-thousand-surnames",
+  "media": "card",
+  "headline": "Bake it, share it 🍪",
+  "body": "Your family fan chart, ready to download and share. Made on your device 💚",
+  "screen": "fan"
+ },
+ {
+  "id": "ats-046",
+  "project": "a-thousand-surnames",
+  "media": "screenshot",
+  "headline": "Complete generations ✅",
+  "body": "See how many generations of your tree are complete and how many surnames you know in total 📊🌳",
+  "screen": "stats"
+ },
+ {
+  "id": "ats-047",
+  "project": "a-thousand-surnames",
+  "media": "illustration",
+  "headline": "Spanish surnames 101 🎓",
+  "body": "In Spain you carry your father's 1st surname and your mother's 1st. Keep going back and the list keeps growing 🌳",
+  "alt": "Kibi, a smiling mint tree in a graduation cap, points at a board showing a child's two surname tags coming from parents, grandparents and great-grandparents."
+ },
+ {
+  "id": "ats-048",
+  "project": "a-thousand-surnames",
+  "media": "card",
+  "headline": "Fun at family dinners 🍽️",
+  "body": "Who has the longest surname list at the table? Bring the card, start the debate 😆💌",
+  "screen": "list"
+ },
+ {
+  "id": "ats-049",
+  "project": "a-thousand-surnames",
+  "media": "screenshot",
+  "headline": "Pick how many generations 🎚️",
+  "body": "See 3 generations or go all the way to 8 on the fan chart. The more you know, the rounder it gets 🌀",
+  "screen": "tree"
+ },
+ {
+  "id": "ats-050",
+  "project": "a-thousand-surnames",
+  "media": "illustration",
+  "headline": "Your roots, in order 🌱",
+  "body": "Every surname you carry tells a little story. Line them all up and meet your roots 🌳💕",
+  "alt": "Kibi, a smiling mint tree with a sprout on top, holds a garland of six pastel name tags in a row. Little houses, old family photos and sprout buddies sit below."
  }
 ]

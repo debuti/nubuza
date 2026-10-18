@@ -3,8 +3,9 @@ demo data and sent to Telegram to publish by hand.
 
 - nubuza (default): welcome post, Bizarre Love Polygon carousel, highlight covers, Reels, X header.
 - fivedollars: "Meet 5dollars" post and a how-it-works carousel.
+- a-thousand-surnames: "Meet A Thousand Surnames" post and a how-it-works carousel.
 
-    python -m social.tools.launch_kit --out DIR [--project fivedollars] [--send]
+    python -m social.tools.launch_kit --out DIR [--project fivedollars|a-thousand-surnames] [--send]
 
 Without --send it only saves the files in DIR, to look at them first.
 """
@@ -19,7 +20,7 @@ from pathlib import Path
 import requests
 from playwright.sync_api import sync_playwright
 
-from ..bot import ROOT, blp, fivedollars, images, load_projects
+from ..bot import ROOT, blp, fivedollars, images, load_projects, surnames
 from ..bot.publish import _check
 
 BLP_URL = "https://bizarre.lovepolygon.com/"
@@ -261,14 +262,15 @@ FD_STEPS = [("welcome", "1. Your data stays yours 🔒"), ("categories", "2. Cat
             ("epic", "5. Trips get their own budget ✈️")]
 
 
-def fd_cover(browser, out: Path, art: str) -> Path:
+def fd_cover(browser, out: Path, art: str, title: str = "How 5dollars works",
+             bg: str = "#e8f8ef,#cdeedd", accent: str = "#1f7a52") -> Path:
     html = f"""<!doctype html>{FONT}<style>*{{margin:0;box-sizing:border-box}}
     body{{width:1080px;height:1440px;overflow:hidden;font-family:Fredoka,sans-serif;color:#4a3a6b;
-    background:linear-gradient(180deg,#e8f8ef,#cdeedd);display:flex;flex-direction:column;align-items:center;
+    background:linear-gradient(180deg,{bg});display:flex;flex-direction:column;align-items:center;
     justify-content:center;text-align:center;padding:80px}}
     img{{width:760px;border-radius:28px;box-shadow:0 22px 40px rgba(31,122,82,.25)}}
-    h1{{font-size:110px;line-height:1.05;margin-top:60px;font-weight:600}} p{{font-size:46px;margin-top:26px;color:#1f7a52}}
-    </style><img src="{art}"><h1>How 5dollars works</h1><p>swipe →</p>"""
+    h1{{font-size:110px;line-height:1.05;margin-top:60px;font-weight:600}} p{{font-size:46px;margin-top:26px;color:{accent}}}
+    </style><img src="{art}"><h1>{title}</h1><p>swipe →</p>"""
     return _page(browser, html, out, images.SIZE)
 
 
@@ -303,16 +305,86 @@ def send_fivedollars(kit: dict) -> None:
     tg.text(FD_CAROUSEL)
 
 
+ATS_URL = "https://apps.nubuza.com/a-thousand-surnames/"
+ATS_TAGS = ("#nubuza #athousandsurnames #surnames #apellidos #genealogy #familytree #familyhistory #genealogia "
+            "#spanishsurnames #cuteapp")
+ATS_MEET = f"""Meet A Thousand Surnames 🌳🏷️
+
+Your ID shows two surnames, but your family tree hides many more. Import your tree from Ancestry or \
+MyHeritage, or build it by hand, and get every surname you carry, in order, with how rare each one is in Spain ✨
+
+Free, no sign-up, and your tree never leaves your device 🔒
+🌳 apps.nubuza.com/a-thousand-surnames (link in bio)
+.
+{ATS_TAGS}"""
+ATS_CAROUSEL = f"""How A Thousand Surnames works 🌳 (swipe →)
+
+1. Import your tree or build it by hand 📂
+2. Get every surname you carry, in order 🔤
+3. See your family as a fan chart 🌀
+4. Stats, trophies and how rare you are 🏆
+5. Share your surname card 💌
+
+Everyone in these screenshots is made up: your tree stays encrypted on your device 🔒
+🌳 apps.nubuza.com/a-thousand-surnames (link in bio)
+.
+{ATS_TAGS} #ancestry #myheritage"""
+ATS_STEPS = [("start", "1. Import or build your tree 📂"), ("surnames", "2. Every surname, in order 🔤"),
+             ("tree", "3. Your family as a fan 🌀"), ("stats", "4. Stats, trophies, rarity 🏆"),
+             ("card", "5. A cute card to share 💌")]
+
+
+def build_surnames(out: Path) -> dict:
+    out.mkdir(parents=True, exist_ok=True)
+    rng = random.Random()
+    project = next(p for p in load_projects() if p["id"] == "a-thousand-surnames")
+    cover = ROOT / project["cover"]
+    kit = {}
+    with sync_playwright() as pw:
+        browser = pw.chromium.launch()
+        kit["meet"] = images.to_jpeg(images.frame(browser, cover, "Meet A Thousand Surnames", out / "meet.png"),
+                                     out / "1-meet.jpg")
+        slides = [fd_cover(browser, out / "ats-slide-0.png", images._data_uri(cover),
+                           "How A Thousand Surnames works", "#e3f6ec,#fde6e1", "#c0392b")]
+        for i, (screen, title) in enumerate(ATS_STEPS, 1):
+            if screen == "card":
+                shot = surnames.card(browser, ATS_URL, rng, out / "ats-card.png", "list")
+            else:
+                shot = surnames.screenshot(browser, ATS_URL, rng, out / f"ats-{screen}.png", screen)
+            slides.append(images.frame(browser, shot, title, out / f"ats-slide-{i}.png"))
+        kit["carousel"] = [images.to_jpeg(s, out / f"2-carousel-{i + 1}.jpg") for i, s in enumerate(slides)]
+        browser.close()
+    return kit
+
+
+def send_surnames(kit: dict) -> None:
+    tg = Telegram()
+    tg.text("🌳 Kit de lanzamiento de A Thousand Surnames para @nubuzacom\n\nPublícalo poco a poco (un post cada "
+            "día o dos), intercalado con los de los otros proyectos.")
+    tg.text("1️⃣ PRESENTACIÓN «Meet A Thousand Surnames». Publícala primero.")
+    tg.doc(kit["meet"])
+    tg.text(ATS_MEET)
+    tg.text("2️⃣ CARRUSEL «How A Thousand Surnames works». Selecciona las 6 fotos en orden (1 → 6). Puedes fijarlo "
+            "en lugar de alguno de los otros (Instagram deja fijar 3).")
+    tg.docs(kit["carousel"])
+    tg.text(ATS_CAROUSEL)
+
+
+KITS = {"nubuza": (build, send), "fivedollars": (build_fivedollars, send_fivedollars),
+        "a-thousand-surnames": (build_surnames, send_surnames)}
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", type=Path, required=True)
-    ap.add_argument("--project", choices=["nubuza", "fivedollars"], default="nubuza")
+    ap.add_argument("--project", choices=list(KITS), default="nubuza")
     ap.add_argument("--send", action="store_true")
     args = ap.parse_args()
-    kit = build_fivedollars(args.out) if args.project == "fivedollars" else build(args.out)
+    make, send_kit = KITS[args.project]
+    kit = make(args.out)
     print(json.dumps({k: [str(p) for p in v] if isinstance(v, list) else str(v) for k, v in kit.items()}, indent=1))
     if args.send:
-        (send_fivedollars if args.project == "fivedollars" else send)(kit)
+        send_kit(kit)
         print("sent to Telegram")
 
 

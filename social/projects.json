@@ -38,7 +38,8 @@
     "cover": "public/projects/bizarre-love-polygon.svg",
     "exporter": "bizarre-love-polygon",
     "screenshot_brief": "The image is a phone screenshot of the app showing a pink map with heart pins.",
-    "art_hint": "For this project, Polly (a smiling pink heart-shaped polygon), heart map pins and pink maps fit well."
+    "art_hint": "For this project, Polly (a smiling pink heart-shaped polygon), heart map pins and pink maps fit well.",
+    "card_brief": "The image is the app's own share card of a fictional demo user's love polygon. Also invent that demo user's scenario: 3 to 7 fictional people (cute nicknames, never real names) they fell for, each in a real city with its coordinates and dates."
   },
   {
     "id": "fivedollars",
@@ -84,5 +85,53 @@
     "exporter": "fivedollars",
     "screenshot_brief": "The image is a screenshot of the app with a fictional household: the monthly report chart (did we save each month?), the alerts that explain an unusual month, or a trip epic with its expenses.",
     "art_hint": "For this project, Duro (a smiling gold coin with a plum outline and blush cheeks) fits well, with kawaii money around: a smiling piggy bank, a happy little wallet, a cheerful bar chart going up, a cozy home; add 5dollars' green and gold to the nubuza pastels."
+  },
+  {
+    "id": "a-thousand-surnames",
+    "name": "A Thousand Surnames",
+    "url": "https://apps.nubuza.com/a-thousand-surnames/",
+    "pitch": "Your ID shows two surnames, but your family tree hides many more. Import your tree or build it by hand and get every surname you carry, in order, with stats and how rare each one is in Spain.",
+    "facts": [
+      "In Spain your 1st surname is your father's 1st and your 2nd is your mother's 1st; your 3rd is your father's 2nd, your 4th your mother's 2nd, and so on: each parent brings their whole list, interleaved with the other's.",
+      "Parents give 2 surnames, grandparents 4, great-grandparents 8, great-great-grandparents 16. Ten full generations would give 1,024: about a thousand, hence the name.",
+      "Import your family tree from Ancestry, MyHeritage or any program that exports GEDCOM, or build it by hand on a fan chart.",
+      "A missing surname shows as \"_\", and the app gives a clue about which ancestor to research next to fill the first gap.",
+      "Stats: generations, how many surnames you know in a row, repeated surnames, and trophies each time you double your surnames in a row (4, 8, 16, 32…).",
+      "Rarity uses data from Spain's National Statistics Institute (INE, 1 Jan 2025): how many people in Spain carry each surname and the province where it is most typical.",
+      "A just-for-fun counter of how many of your surnames sound Basque (Etxeberria, Goikoetxea, Zubizarreta…). It goes by how a surname looks, not its history.",
+      "Two images to share: a kawaii card with all your surnames, and a round fan chart of your family (the \"cookie\").",
+      "Truly private: no accounts and no server. The tree is stored encrypted in your browser and the GEDCOM file is never uploaded. Optional Google Drive sync keeps an encrypted copy only you can open.",
+      "Free, in English and Spanish.",
+      "The mascot is Kibi, a smiling little tree that hangs surname tags from its branches (1,024 is a \"kibi\" in computing).",
+      "Made by nubuza."
+    ],
+    "hashtags": [
+      "athousandsurnames",
+      "surnames",
+      "apellidos",
+      "genealogy",
+      "familytree",
+      "familyhistory",
+      "ancestry",
+      "myheritage",
+      "genealogia",
+      "arbolgenealogico",
+      "spanishsurnames",
+      "basque",
+      "kawaii",
+      "cuteapp",
+      "webapp",
+      "privacyfirst"
+    ],
+    "media": {
+      "card": 3,
+      "screenshot": 3,
+      "illustration": 2
+    },
+    "cover": "public/projects/a-thousand-surnames.svg",
+    "exporter": "a-thousand-surnames",
+    "card_brief": "The image is the app's own share image for a fictional demo person: either the surname card (their first name and every surname in order, with \"_\" for gaps) or the round family fan chart (the \"cookie\").",
+    "screenshot_brief": "The image is a phone screenshot of the app with a fictional family: the numbered surname list with \"_\" for gaps, the fan-chart family tree, or the stats (generations, surnames in a row, trophies, how many sound Basque).",
+    "art_hint": "For this project, Kibi (a smiling green kawaii tree with a little sprout on top, hanging colourful name tags from its branches), family trees, name tags, old family photos and little houses fit well; add Kibi's mint green and coral red to the nubuza pastels."
   }
 ]

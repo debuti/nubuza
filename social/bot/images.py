@@ -9,7 +9,7 @@ from pathlib import Path
 
 from PIL import Image
 
-from . import ROOT, SOCIAL, blp, fivedollars
+from . import ROOT, SOCIAL, blp, fivedollars, surnames
 
 SIZE = {"width": 1080, "height": 1440}
 RATIO = SIZE["width"] / SIZE["height"]
@@ -68,7 +68,15 @@ def make(browser, project: dict, post: dict, workdir: Path, rng: random.Random) 
     if media == "cover":
         return frame(browser, ROOT / project["cover"], post["headline"], raw)
     if project.get("exporter") == "fivedollars" and media == "screenshot":
-        shot = fivedollars.screenshot(browser, project["url"], rng, workdir / "shot.png", post.get("screen") or None)
+        screen = post.get("screen") if post.get("screen") in fivedollars.SCREENS else None
+        shot = fivedollars.screenshot(browser, project["url"], rng, workdir / "shot.png", screen)
+        return frame(browser, shot, post["headline"], raw)
+    if project.get("exporter") == "a-thousand-surnames":
+        screen = post.get("screen") or None
+        if media == "card":
+            return surnames.card(browser, project["url"], rng, raw, screen if screen in surnames.CARDS else None)
+        shot = surnames.screenshot(browser, project["url"], rng, workdir / "shot.png",
+                                   screen if screen in surnames.SCREENS else None)
         return frame(browser, shot, post["headline"], raw)
     if project.get("exporter") == "bizarre-love-polygon":
         lovers = post["lovers"] or blp.random_lovers(rng)
