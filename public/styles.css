@@ -173,23 +173,23 @@ main {
 .photo { position: relative; }
 .photo > .store {
   position: absolute;
-  top: 24px; right: 24px;
+  top: 26px; right: 26px;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
+  gap: 8px;
+  padding: 9px 18px 9px 14px;
   border-radius: 999px;
   background: var(--paper);
   color: var(--ink);
   text-decoration: none;
   font-weight: 600;
-  font-size: .9rem;
+  font-size: 1.05rem;
   box-shadow: 0 4px 12px var(--shadow);
   transition: transform .2s cubic-bezier(.3, 1.6, .5, 1);
 }
 .photo > .store:hover, .photo > .store:focus-visible { transform: translateY(-2px) rotate(-3deg); }
 .photo > .store:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
-.photo > .store svg { width: 16px; height: 16px; fill: var(--accent); }
+.photo > .store svg { width: 22px; height: 22px; fill: var(--accent); }
 
 .photo img {
   display: block;
