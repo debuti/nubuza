@@ -141,7 +141,7 @@ main {
 }
 .photo:nth-child(2n) { --tilt: 1.8deg; }
 .photo:nth-child(3n) { --tilt: -1deg; }
-.photo > a, .photo > .placeholder {
+.photo > a:not(.store), .photo > .placeholder {
   display: block;
   background: var(--paper);
   padding: 14px 14px 18px;
@@ -152,7 +152,7 @@ main {
   position: relative;
 }
 /* washi tape */
-.photo > a::before, .photo > .placeholder::before {
+.photo > a:not(.store)::before, .photo > .placeholder::before {
   content: "";
   position: absolute;
   top: -12px; left: 50%;
@@ -161,13 +161,35 @@ main {
   background: rgba(255, 179, 209, .75);
   border-radius: 2px;
 }
-.photo:nth-child(2n) > *::before { background: rgba(168, 230, 217, .75); }
-.photo:nth-child(3n) > *::before { background: rgba(201, 182, 255, .75); }
+.photo:nth-child(2n) > :not(.store)::before { background: rgba(168, 230, 217, .75); }
+.photo:nth-child(3n) > :not(.store)::before { background: rgba(201, 182, 255, .75); }
 
 .photo:not(.soon):hover, .photo:not(.soon):focus-within {
   transform: rotate(0) translateY(-6px) scale(1.03);
 }
 .photo a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+
+/* store badge, pinned to the photo's corner (a sibling of the card link, not inside it) */
+.photo { position: relative; }
+.photo > .store {
+  position: absolute;
+  top: 24px; right: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .9rem;
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: transform .2s cubic-bezier(.3, 1.6, .5, 1);
+}
+.photo > .store:hover, .photo > .store:focus-visible { transform: translateY(-2px) rotate(-3deg); }
+.photo > .store:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.photo > .store svg { width: 16px; height: 16px; fill: var(--accent); }
 
 .photo img {
   display: block;
