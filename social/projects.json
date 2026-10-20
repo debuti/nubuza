@@ -133,5 +133,48 @@
     "card_brief": "The image is the app's own share image for a fictional demo person: either the surname card (their first name and every surname in order, with \"_\" for gaps) or the round family fan chart (the \"cookie\").",
     "screenshot_brief": "The image is a phone screenshot of the app with a fictional family: the numbered surname list with \"_\" for gaps, the fan-chart family tree, or the stats (generations, surnames in a row, trophies, how many sound Basque).",
     "art_hint": "For this project, Kibi (a smiling kawaii cookie, golden-brown crust with chocolate chips and a bite out of the top right, pastel mint, coral, butter, lilac, sky and pink rings around a cream centre with the face), family trees, name tags, old family photos and little houses fit well; add Kibi's mint green, coral red and cookie brown to the nubuza pastels."
+  },
+  {
+    "id": "calview",
+    "name": "calview",
+    "url": "https://apps.nubuza.com/calview/",
+    "pitch": "Print a blank calendar grid of any size, on one sheet or as a giant wall calendar made of smaller sheets glued together.",
+    "facts": [
+      "A blank calendar grid: 7 columns for the weekdays and one row per week, as many weeks as you like (from a date, or until a date).",
+      "Each day has a small number in a tag in the corner of its cell; the first of each month adds the month's initial (1N for November, 1D for December…), so a grid can run across several months.",
+      "Any size: A4 to A0, or US Letter, Legal, Tabloid and ANSI C to E, portrait or landscape. Number size, header height, line width and outer border are adjustable.",
+      "Collage mode: print a giant calendar (say an A1 for the wall) on ordinary A4 sheets at home, then glue them on top of each other. Nothing is lost under a seam.",
+      "Red ticks show where to glue each neighbouring sheet, grey corners show where to trim, and each sheet prints its row and column so the puzzle is easy. An (i) legend explains every mark.",
+      "Printer margins are set once for every sheet, with a warning if they are below the recommended minimum.",
+      "Settings: English or Spanish, mm or inches, date format, ISO or US paper, and the week can start on Monday, Sunday or Saturday.",
+      "Free, no account, no ads: everything runs in the browser and your settings stay on your device.",
+      "The mascot is Pip, a smiling yellow pencil with a pink eraser and blushing cheeks, who loves filling empty days with plans. Pip is just the mascot: the calendars come out blank, for you to fill in.",
+      "Made by nubuza."
+    ],
+    "hashtags": [
+      "calview",
+      "printablecalendar",
+      "calendar",
+      "wallcalendar",
+      "planner",
+      "planneraddict",
+      "bulletjournal",
+      "printables",
+      "diy",
+      "stationery",
+      "organization",
+      "kawaii",
+      "cuteapp",
+      "webapp",
+      "privacyfirst"
+    ],
+    "media": {
+      "screenshot": 5,
+      "illustration": 3
+    },
+    "cover": "public/projects/calview.svg",
+    "exporter": "calview",
+    "screenshot_brief": "The image is a desktop screenshot of the app: the settings panel on the left and the print preview on the right, showing either one blank calendar sheet, a big calendar split across A4 sheets for a collage, or that collage with the legend explaining the glue and trim marks.",
+    "art_hint": "For this project, Pip (a smiling kawaii yellow pencil with a pink eraser, blush cheeks and a sharpened tip), blank calendar grids, sheets of paper being glued into a big wall calendar, glue sticks, scissors, washi tape and doodled plans fit well; add calview's lavender #b9b0f2 and violet #7c6fd6 to the nubuza pastels."
   }
 ]

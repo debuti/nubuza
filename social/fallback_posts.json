@@ -1778,5 +1778,405 @@
   "headline": "Your roots, in order 🌱",
   "body": "Every surname you carry tells a little story. Line them all up and meet your roots 🌳💕",
   "alt": "Kibi the smiling family cookie holds up a garland of six pastel name tags in a row. Little houses, old family photos and sprout buddies sit below."
+ },
+ {
+  "id": "cv-001",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "A blank month, ready 🗓️",
+  "body": "Pick a month, pick a paper size, print. A clean calendar grid with a tiny number tag on every day ✏️💜",
+  "screen": "single"
+ },
+ {
+  "id": "cv-002",
+  "project": "calview",
+  "media": "illustration",
+  "headline": "Meet Pip ✏️",
+  "body": "Hi, I'm Pip! I'm calview's pencil, and nothing makes me happier than an empty calendar waiting for plans 💜 What will you write in yours?",
+  "alt": "Pip, a smiling yellow pencil with a pink eraser, waves while doodling a heart on a big wall calendar made of four sheets taped together, with a glue stick, scissors and washi tape below."
+ },
+ {
+  "id": "cv-003",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "A1 wall calendar, from A4s 🧩",
+  "body": "No big printer? Print a giant wall calendar on plain A4 sheets at home and glue them together. Nothing gets lost under a seam ✨",
+  "screen": "collage"
+ },
+ {
+  "id": "cv-004",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Red ticks = glue here 🔴",
+  "body": "Each sheet shows exactly where its neighbour goes, and the (i) legend explains every mark. Like a cute paper puzzle 🧩💕",
+  "screen": "marks"
+ },
+ {
+  "id": "cv-005",
+  "project": "calview",
+  "media": "illustration",
+  "headline": "Your wall, your plans 🏠",
+  "body": "A whole term, a whole season, a whole year on one wall. Print it big with calview and fill it with doodles 🖍️✨",
+  "alt": "Kawaii scene: Pip the smiling yellow pencil doodles a heart on a giant wall calendar made of four grid sheets taped together, with glue stick, washi tape and scissors on the desk."
+ },
+ {
+  "id": "cv-006",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Any size, A4 to A0 📏",
+  "body": "A4 for the fridge, A3 for your desk, A0 for the whole family. calview fits the grid to the paper you choose 🗓️💕",
+  "screen": "single"
+ },
+ {
+  "id": "cv-007",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Big calendar, small printer 🖨️",
+  "body": "calview splits your calendar into A4 sheets with a shared overlap, so they glue into one smooth giant grid ✂️💜",
+  "screen": "collage"
+ },
+ {
+  "id": "cv-008",
+  "project": "calview",
+  "media": "illustration",
+  "headline": "Plans need room to breathe 🌸",
+  "body": "Tiny phone calendars are cramped. A big paper one has space for doodles, stickers and every little plan ✏️✨",
+  "alt": "Kawaii scene: Pip the smiling pencil doodles on a big wall calendar made of four sheets taped together, above a desk with a tiny phone calendar, glue stick, scissors and washi tape."
+ },
+ {
+  "id": "cv-009",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Starts on Monday? Sunday? ☀️",
+  "body": "Your week, your rules: start it on Monday, Sunday or Saturday. calview redraws the grid in a blink 🗓️💕",
+  "screen": "single"
+ },
+ {
+  "id": "cv-010",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Trim or don't, it still fits ✂️",
+  "body": "Grey corners show where to trim each sheet. Skip the scissors and the seams still line up on the red ticks 💜",
+  "screen": "marks"
+ },
+ {
+  "id": "cv-011",
+  "project": "calview",
+  "media": "illustration",
+  "headline": "Glue stick time 🧴",
+  "body": "Print, glue, done: Pip's favourite craft session ends with a giant calendar on the wall 🧩✏️💕",
+  "alt": "Pip, a smiling yellow pencil, sticks the last sheet onto a giant wall calendar made of four sheets, holding a glue stick, with scissors and washi tape on a mint table."
+ },
+ {
+  "id": "cv-012",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "1N, 1D, 1E… 🏷️",
+  "body": "The first of each month gets its initial in the day tag, so one grid can run across months without getting lost ✨",
+  "screen": "single"
+ },
+ {
+  "id": "cv-013",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Term planner, wall-sized 🎒",
+  "body": "Thirteen weeks of school in one big grid. Print it on A4s, glue it up and let the whole class see what's coming 📚💜",
+  "screen": "collage"
+ },
+ {
+  "id": "cv-014",
+  "project": "calview",
+  "media": "illustration",
+  "headline": "Fridge calendar glow-up ❄️",
+  "body": "Swap the free supermarket calendar for one you made yourself, any size, any month, totally blank ✨🗓️",
+  "alt": "Kawaii kitchen: Pip the pencil holds a glue stick by a smiling fridge that has a big blank calendar on it, made of four taped sheets. Snow falls outside."
+ },
+ {
+  "id": "cv-015",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Number size? Your call 🔢",
+  "body": "Make the day numbers bigger, the header taller or the lines thinner. calview keeps the grid tidy while you play 🎛️💕",
+  "screen": "single"
+ },
+ {
+  "id": "cv-016",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Every mark explained 💡",
+  "body": "Tap (i) and calview tells you what each line means: printed area, glue edge, overlap, sheet number. No guessing ✨",
+  "screen": "marks"
+ },
+ {
+  "id": "cv-017",
+  "project": "calview",
+  "media": "illustration",
+  "headline": "Habit tracker, giant edition 🌱",
+  "body": "One big grid, one sticker per day. Watching the row fill up is half the fun 💚✏️",
+  "alt": "Pip the smiling yellow pencil sticks a heart on a giant pastel wall calendar made of four taped sheets. Rows of sticker days fill up, with glue stick, washi tape and scissors."
+ },
+ {
+  "id": "cv-018",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Letter or A4? Both 🌍",
+  "body": "ISO A4 to A0, or US Letter, Legal, Tabloid and ANSI C to E, in mm or inches. calview speaks your paper 📏💜",
+  "screen": "single"
+ },
+ {
+  "id": "cv-019",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Your printer's margins, handled 🖨️",
+  "body": "Set your printer margins once and every sheet respects them. calview even warns you if they're too thin ✨",
+  "screen": "collage"
+ },
+ {
+  "id": "cv-020",
+  "project": "calview",
+  "media": "illustration",
+  "headline": "Countdown to the holidays 🎄",
+  "body": "Print a blank grid up to the big day and cross off one square at a time. Pip loves a good countdown ✏️💕",
+  "alt": "Kawaii pencil Pip crosses off days on a giant wall calendar glued from four sheets, counting down to a tiny Christmas tree. Glue stick, scissors and washi tape sit on the desk."
+ },
+ {
+  "id": "cv-021",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Blank on purpose ✨",
+  "body": "No holidays, no ads, no clutter. Just a clean grid for your plans, your doodles and your stickers 🗓️💜",
+  "screen": "single"
+ },
+ {
+  "id": "cv-022",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Sheet 2/3? Easy 🧩",
+  "body": "Every collage sheet prints its row and column where a neighbour will cover it, so assembling is a breeze ✨",
+  "screen": "collage"
+ },
+ {
+  "id": "cv-023",
+  "project": "calview",
+  "media": "illustration",
+  "headline": "Family planner on the wall 👨‍👩‍👧",
+  "body": "Football, dentist, birthdays, grandma's visit: one big shared calendar, one colour per person 🖍️💕",
+  "alt": "Kawaii family of three with crayons beside a big wall calendar of glued sheets, colour-coded with football, tooth, cake and hearts, while Pip the pencil doodles."
+ },
+ {
+  "id": "cv-024",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "From this date to that one 📅",
+  "body": "Choose a start date and how many weeks, or just pick an end date. calview counts the rows for you 🗓️✨",
+  "screen": "single"
+ },
+ {
+  "id": "cv-025",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Nothing lost under a seam 🪄",
+  "body": "Each sheet carries on exactly where the one underneath stops showing. Glue it up and the grid looks seamless 💜",
+  "screen": "marks"
+ },
+ {
+  "id": "cv-026",
+  "project": "calview",
+  "media": "illustration",
+  "headline": "Bullet journal, but huge 📓",
+  "body": "Love planning on paper? Take it to the wall: a giant blank grid for spreads, trackers and doodles ✏️💕",
+  "alt": "Kawaii pencil Pip doodles on a giant blank wall calendar made of paper sheets joined with washi tape, while a smiling glue stick presses the last sheet into place."
+ },
+ {
+  "id": "cv-027",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Portrait or landscape 🔄",
+  "body": "Tall for the fridge door, wide for above your desk. One tap and calview reflows the calendar ✨",
+  "screen": "single"
+ },
+ {
+  "id": "cv-028",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "A0 on your living room wall 🏡",
+  "body": "The biggest grid, printed at home on regular sheets. Your whole year of plans, larger than life 🗓️💜",
+  "screen": "collage"
+ },
+ {
+  "id": "cv-029",
+  "project": "calview",
+  "media": "illustration",
+  "headline": "Wedding countdown 💍",
+  "body": "Months of planning deserve a big wall calendar: dress fittings, tastings, invitations… and the big day circled 💕✨",
+  "alt": "Kawaii scene: Pip the yellow pencil circles a ring-marked wedding day on a big wall calendar made of four sheets taped together, with dress, cake and invitation doodles."
+ },
+ {
+  "id": "cv-030",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Free, no sign-up 🔒",
+  "body": "calview runs in your browser and keeps your settings on your device. No account, no ads, just calendars ✏️💜",
+  "screen": "single"
+ },
+ {
+  "id": "cv-031",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Overlap, explained 🧩",
+  "body": "Neighbouring sheets share a strip of paper to glue on. calview makes it the same on every side, so it all lines up ✨",
+  "screen": "collage"
+ },
+ {
+  "id": "cv-032",
+  "project": "calview",
+  "media": "illustration",
+  "headline": "Exam season survival 📚",
+  "body": "Print a big grid, block out study days and treat yourself to a sticker for each one done. You've got this 💪💕",
+  "alt": "Pip the kawaii pencil sticks a star on a giant taped-together calendar with study days blocked in lavender, beside books, a glue stick, scissors and washi tape."
+ },
+ {
+  "id": "cv-033",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Thin lines or bold ones ✒️",
+  "body": "Tune the line width for a delicate planner look or a bold wall chart. Print preview updates as you go 🗓️✨",
+  "screen": "single"
+ },
+ {
+  "id": "cv-034",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Like a sewing pattern, for plans 🪡",
+  "body": "Ticks, corners and labels show how the sheets fit, so your giant calendar comes together on the first try 💜",
+  "screen": "marks"
+ },
+ {
+  "id": "cv-035",
+  "project": "calview",
+  "media": "illustration",
+  "headline": "Fresh month, fresh start 🌷",
+  "body": "There's something magic about a brand new blank month. Print it, pin it, fill it with good things ✏️💕",
+  "alt": "Pip the smiling pencil helps tape blank calendar sheets into a big wall calendar, with doodles, washi tape, a glue stick, scissors and tulips on a pastel desk."
+ },
+ {
+  "id": "cv-036",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "English or Spanish 🌍",
+  "body": "calview speaks both, with your choice of date format and mm or inches. Cute in any language 🗓️💜",
+  "screen": "single"
+ },
+ {
+  "id": "cv-037",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Classroom calendar in minutes 🍎",
+  "body": "Teachers: print a wall-sized month on the school's A4 printer, glue it up and let the kids fill it in ✨📚",
+  "screen": "collage"
+ },
+ {
+  "id": "cv-038",
+  "project": "calview",
+  "media": "illustration",
+  "headline": "Pip loves stickers ⭐",
+  "body": "Gold stars, hearts, little suns: every blank square is a spot for something happy. What's your favourite sticker? ✏️💕",
+  "alt": "Pip, a smiling yellow pencil with a pink eraser, sticks a gold star onto a big blank wall calendar of taped sheets, already decorated with stars, hearts and suns."
+ },
+ {
+  "id": "cv-039",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Header just right 📐",
+  "body": "Make the weekday header taller or shorter. Small details, tidy calendar ✨🗓️",
+  "screen": "single"
+ },
+ {
+  "id": "cv-040",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Many weeks, one wall 🧱",
+  "body": "Nine, thirteen, twenty-six weeks: calview fits them all on one giant grid and slices it into printable sheets 💜",
+  "screen": "collage"
+ },
+ {
+  "id": "cv-041",
+  "project": "calview",
+  "media": "illustration",
+  "headline": "Trip countdown ✈️",
+  "body": "Mark the flight, the packing day and the days in between. Crossing off squares never felt so good 🧳💕",
+  "alt": "Kawaii scene: Pip the smiling pencil crosses off days on a glued-together wall calendar heading toward a plane-marked flight day, with a happy suitcase, glue stick and tape."
+ },
+ {
+  "id": "cv-042",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Print and go 🖨️",
+  "body": "Hit Print, set margins to None and scale to 100 %. Your calendar comes out exactly the size you picked ✨",
+  "screen": "single"
+ },
+ {
+  "id": "cv-043",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "A paper puzzle with a legend 🗺️",
+  "body": "Every line on the preview has a meaning, and the legend tells you which. Crafting made cosy 💜✂️",
+  "screen": "marks"
+ },
+ {
+  "id": "cv-044",
+  "project": "calview",
+  "media": "illustration",
+  "headline": "Meal plan on the fridge 🥕",
+  "body": "A blank weekly grid, one dinner per square. Pip votes pancakes on Sunday 🥞✏️💕",
+  "alt": "Kawaii mint fridge holding a weekly meal-plan grid with food doodles; Pip the smiling yellow pencil draws pancakes in the Sunday square."
+ },
+ {
+  "id": "cv-045",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Weeks in a row 🗓️",
+  "body": "Not just months: print any run of weeks, like a 6-week sprint or a summer break, as one clean grid ✨",
+  "screen": "single"
+ },
+ {
+  "id": "cv-046",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Glue each sheet on top 🧴",
+  "body": "Glue every sheet on the one to its left and the one above, line it up with the red ticks, and you're done 💜",
+  "screen": "collage"
+ },
+ {
+  "id": "cv-047",
+  "project": "calview",
+  "media": "illustration",
+  "headline": "Cosy planning night 🕯️",
+  "body": "Tea, pens, a giant blank calendar and a whole month to dream up. Pip's idea of a perfect evening ✏️💕",
+  "alt": "Pip, a smiling kawaii yellow pencil, doodles on a blank calendar sheet at a cosy desk with a candle, tea, a glue stick and scissors, below a giant pastel wall calendar."
+ },
+ {
+  "id": "cv-048",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Your settings stay put 💾",
+  "body": "calview remembers your size, margins and language on your device, so next month is one click away ✨",
+  "screen": "single"
+ },
+ {
+  "id": "cv-049",
+  "project": "calview",
+  "media": "screenshot",
+  "headline": "Big for kids' eyes 👀",
+  "body": "A giant grid at eye level helps little ones count the sleeps until the next big thing 🎈💜",
+  "screen": "collage"
+ },
+ {
+  "id": "cv-050",
+  "project": "calview",
+  "media": "illustration",
+  "headline": "So many empty days ✨",
+  "body": "Each blank square is a tiny promise. Print yours with calview and fill them with things you love ✏️💕",
+  "alt": "Pip, a smiling yellow pencil, holds a glue stick next to a big wall calendar of four taped blank grid sheets with cute doodles. Scissors, washi tape and a glue stick sit on the desk."
  }
 ]

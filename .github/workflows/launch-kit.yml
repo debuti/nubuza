@@ -8,7 +8,7 @@ on:
       project:
         description: Which kit
         type: choice
-        options: [nubuza, fivedollars, a-thousand-surnames]
+        options: [nubuza, fivedollars, a-thousand-surnames, calview]
         default: nubuza
 
 permissions:

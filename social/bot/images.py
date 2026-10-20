@@ -9,7 +9,7 @@ from pathlib import Path
 
 from PIL import Image
 
-from . import ROOT, SOCIAL, blp, fivedollars, surnames
+from . import ROOT, SOCIAL, blp, calview, fivedollars, surnames
 
 SIZE = {"width": 1080, "height": 1440}
 RATIO = SIZE["width"] / SIZE["height"]
@@ -70,6 +70,10 @@ def make(browser, project: dict, post: dict, workdir: Path, rng: random.Random) 
     if project.get("exporter") == "fivedollars" and media == "screenshot":
         screen = post.get("screen") if post.get("screen") in fivedollars.SCREENS else None
         shot = fivedollars.screenshot(browser, project["url"], rng, workdir / "shot.png", screen)
+        return frame(browser, shot, post["headline"], raw)
+    if project.get("exporter") == "calview" and media == "screenshot":
+        screen = post.get("screen") if post.get("screen") in calview.SCREENS else None
+        shot = calview.screenshot(browser, project["url"], rng, workdir / "shot.png", screen)
         return frame(browser, shot, post["headline"], raw)
     if project.get("exporter") == "a-thousand-surnames":
         screen = post.get("screen") or None

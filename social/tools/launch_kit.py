@@ -4,8 +4,9 @@ demo data and sent to Telegram to publish by hand.
 - nubuza (default): welcome post, Bizarre Love Polygon carousel, highlight covers, Reels, X header.
 - fivedollars: "Meet 5dollars" post and a how-it-works carousel.
 - a-thousand-surnames: "Meet A Thousand Surnames" post and a how-it-works carousel.
+- calview: "Meet calview" post and a how-it-works carousel.
 
-    python -m social.tools.launch_kit --out DIR [--project fivedollars|a-thousand-surnames] [--send]
+    python -m social.tools.launch_kit --out DIR [--project fivedollars|a-thousand-surnames|calview] [--send]
 
 Without --send it only saves the files in DIR, to look at them first.
 """
@@ -20,7 +21,7 @@ from pathlib import Path
 import requests
 from playwright.sync_api import sync_playwright
 
-from ..bot import ROOT, blp, fivedollars, images, load_projects, surnames
+from ..bot import ROOT, blp, calview, fivedollars, images, load_projects, surnames
 from ..bot.publish import _check
 
 BLP_URL = "https://bizarre.lovepolygon.com/"
@@ -370,8 +371,67 @@ def send_surnames(kit: dict) -> None:
     tg.text(ATS_CAROUSEL)
 
 
+CV_URL = "https://apps.nubuza.com/calview/"
+CV_TAGS = ("#nubuza #calview #printablecalendar #wallcalendar #planner #bulletjournal #printables #diy "
+           "#stationery #cuteapp")
+CV_MEET = f"""Meet calview ✏️🗓️
+
+Our new little project: blank calendar grids to print, any size from A4 to A0. No big printer? \
+Print a giant wall calendar on plain A4 sheets and glue them together: red ticks show where each \
+sheet goes, and nothing gets lost under a seam ✨
+
+Free, no account, no ads, all in your browser 🔒
+✏️ apps.nubuza.com/calview (link in bio)
+.
+{CV_TAGS}"""
+CV_CAROUSEL = f"""How calview works ✏️ (swipe →)
+
+1. Pick the dates and the paper size 🗓️
+2. Too big for your printer? Split it into A4 sheets 🧩
+3. Glue them on the red ticks, nothing lost under a seam ✂️
+
+Print with margins "None" and scale 100 % 🖨️
+✏️ apps.nubuza.com/calview (link in bio)
+.
+{CV_TAGS} #organization"""
+CV_STEPS = [("single", "1. Pick dates and a size 🗓️"), ("collage", "2. Big? Split it into A4s 🧩"),
+            ("marks", "3. Glue on the red ticks ✂️")]
+
+
+def build_calview(out: Path) -> dict:
+    out.mkdir(parents=True, exist_ok=True)
+    rng = random.Random()
+    project = next(p for p in load_projects() if p["id"] == "calview")
+    cover = ROOT / project["cover"]
+    kit = {}
+    with sync_playwright() as pw:
+        browser = pw.chromium.launch()
+        kit["meet"] = images.to_jpeg(images.frame(browser, cover, "Meet calview ✏️", out / "meet.png"),
+                                     out / "1-meet.jpg")
+        slides = [fd_cover(browser, out / "cv-slide-0.png", images._data_uri(cover), "How calview works",
+                           "#f6f4ff,#dcd6fb", "#7c6fd6")]
+        for i, (screen, title) in enumerate(CV_STEPS, 1):
+            shot = calview.screenshot(browser, CV_URL, rng, out / f"cv-{screen}.png", screen)
+            slides.append(images.frame(browser, shot, title, out / f"cv-slide-{i}.png"))
+        kit["carousel"] = [images.to_jpeg(s, out / f"2-carousel-{i + 1}.jpg") for i, s in enumerate(slides)]
+        browser.close()
+    return kit
+
+
+def send_calview(kit: dict) -> None:
+    tg = Telegram()
+    tg.text("✏️ Kit de lanzamiento de calview para @nubuzacom\n\nPublícalo poco a poco (un post cada día o dos), "
+            "intercalado con los de los otros proyectos.")
+    tg.text("1️⃣ PRESENTACIÓN «Meet calview». Publícala primero.")
+    tg.doc(kit["meet"])
+    tg.text(CV_MEET)
+    tg.text("2️⃣ CARRUSEL «How calview works». Selecciona las 4 fotos en orden (1 → 4).")
+    tg.docs(kit["carousel"])
+    tg.text(CV_CAROUSEL)
+
+
 KITS = {"nubuza": (build, send), "fivedollars": (build_fivedollars, send_fivedollars),
-        "a-thousand-surnames": (build_surnames, send_surnames)}
+        "a-thousand-surnames": (build_surnames, send_surnames), "calview": (build_calview, send_calview)}
 
 
 def main() -> None:

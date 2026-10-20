@@ -57,13 +57,15 @@ SCHEMA = {
                                                  "with viewBox=\"0 0 1000 1000\", a filled background, no text, "
                                                  "no scripts, no external references. Empty otherwise."},
         "screen": {"type": "string", "enum": ["report", "alerts", "epic", "surnames", "tree", "stats", "list",
-                                              "fan", ""],
+                                              "fan", "single", "collage", "marks", ""],
                    "description": "The image that fits the text. 5dollars screenshots: report = monthly savings "
                                   "chart, alerts = why a month went off, epic = a trip's expenses. A Thousand "
                                   "Surnames screenshots: surnames = the numbered surname list, tree = the "
                                   "fan-chart tree, stats = generations, surnames in a row and trophies; its "
-                                  "cards: list = the surname card, fan = the round family fan chart. Empty "
-                                  "otherwise."},
+                                  "cards: list = the surname card, fan = the round family fan chart. calview "
+                                  "screenshots: single = one printable sheet, collage = a big calendar split "
+                                  "across A4 sheets, marks = that collage with the legend of its glue and trim "
+                                  "marks. Empty otherwise."},
         "lovers": {"type": "array", "items": LOVER, "description": "Only for card and screenshot posts of "
                                                                    "Bizarre Love Polygon. Empty otherwise."},
     },
