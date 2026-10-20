@@ -57,56 +57,49 @@
     <circle cx="316" cy="276" r="2.5"/>
   </g>
 
-  <!-- happy tree with name tags -->
-  <g transform="translate(20 30) scale(1.75)" stroke="#4a3a6b" stroke-linejoin="round">
-    <path d="M52 82 Q50 100 46 110 L74 110 Q70 100 68 82 Z" fill="#b07a4f" stroke-width="2"/>
-    <path d="M56 92 Q58 100 57 108" stroke="#8d5d39" stroke-width="2" fill="none" stroke-linecap="round"/>
-    <path d="M60 24 Q60 16 61 10" stroke="#2e9e6c" stroke-width="3" fill="none" stroke-linecap="round"/>
-    <path d="M61 12 Q70 3 79 9 Q70 17 61 12 Z" fill="#93d9b4" stroke="#2e9e6c" stroke-width="2"/>
-    <path d="M60 15 Q52 7 44 12 Q52 19 60 15 Z" fill="#c2ead4" stroke="#2e9e6c" stroke-width="2"/>
-    <g fill="#5fc392" stroke-width="2.2">
-      <circle cx="60" cy="56" r="34"/>
-      <circle cx="30" cy="62" r="16"/>
-      <circle cx="90" cy="62" r="16"/>
-      <circle cx="38" cy="36" r="15"/>
-      <circle cx="82" cy="36" r="15"/>
-      <circle cx="60" cy="82" r="17"/>
+  <!-- Kibi, the family cookie (A Thousand Surnames' mascot, from its Kibi.svelte) -->
+  <g transform="translate(22 44) scale(1.6)">
+    <defs><clipPath id="kibi"><path d="M70.40,11.09 A11,11 0 0 0 80.14,27.77 A11,11 0 0 0 89.55,37.73 A11,11 0 0 0 108.51,47.90 A50,50 0 1 1 70.40,11.09 Z"/></clipPath></defs>
+    <ellipse cx="60" cy="114" rx="34" ry="4.5" fill="#1d3a2e" opacity="0.12"/>
+    <path d="M70.40,11.09 A11,11 0 0 0 80.14,27.77 A11,11 0 0 0 89.55,37.73 A11,11 0 0 0 108.51,47.90 A50,50 0 1 1 70.40,11.09 Z" fill="#e8b062" stroke="#b9772f" stroke-width="2.4" stroke-linejoin="round"/>
+    <g clip-path="url(#kibi)" stroke="#e8b062" stroke-width="1.6">
+      <path d="M34.00,60.00 L25.00,60.00 A35,35 0 0 1 95.00,60.00 L86.00,60.00 A26,26 0 0 0 34.00,60.00 Z" fill="#c2ead4"/>
+      <path d="M86.00,60.00 L95.00,60.00 A35,35 0 0 1 25.00,60.00 L34.00,60.00 A26,26 0 0 0 86.00,60.00 Z" fill="#ffcdc5"/>
+      <path d="M25.00,60.00 L18.00,60.00 A42,42 0 0 1 60.00,18.00 L60.00,25.00 A35,35 0 0 0 25.00,60.00 Z" fill="#fff1c2"/>
+      <path d="M60.00,25.00 L60.00,18.00 A42,42 0 0 1 102.00,60.00 L95.00,60.00 A35,35 0 0 0 60.00,25.00 Z" fill="#e9e0ff"/>
+      <path d="M95.00,60.00 L102.00,60.00 A42,42 0 0 1 60.00,102.00 L60.00,95.00 A35,35 0 0 0 95.00,60.00 Z" fill="#d6eaff"/>
+      <path d="M60.00,95.00 L60.00,102.00 A42,42 0 0 1 18.00,60.00 L25.00,60.00 A35,35 0 0 0 60.00,95.00 Z" fill="#ffd9ec"/>
+      <circle cx="60" cy="60" r="26" fill="#fff4dc"/>
     </g>
-    <g fill="#5fc392" stroke="none">
-      <circle cx="60" cy="56" r="32.9"/>
-      <circle cx="30" cy="62" r="14.9"/>
-      <circle cx="90" cy="62" r="14.9"/>
-      <circle cx="38" cy="36" r="13.9"/>
-      <circle cx="82" cy="36" r="13.9"/>
-      <circle cx="60" cy="82" r="15.9"/>
+    <g clip-path="url(#kibi)">
+      <circle cx="38.4" cy="100.62" r="1" fill="#f6d08f"/>
+      <circle cx="16.53" cy="71.65" r="1" fill="#f6d08f"/>
+      <circle cx="14.7" cy="52.01" r="1" fill="#f6d08f"/>
+      <circle cx="29.89" cy="26.56" r="1" fill="#f6d08f"/>
+      <circle cx="64.1" cy="13.18" r="1" fill="#f6d08f"/>
+      <circle cx="91.82" cy="91.82" r="1" fill="#f6d08f"/>
+      <circle cx="68.16" cy="106.29" r="1" fill="#f6d08f"/>
+      <circle cx="104.02" cy="69.36" r="1" fill="#f6d08f"/>
+      <ellipse cx="52.01" cy="105.3" rx="3" ry="2.2" transform="rotate(130 52.01 105.3)" fill="#6e3f1f"/>
+      <ellipse cx="24.76" cy="89.57" rx="2.3" ry="1.8" transform="rotate(170 24.76 89.57)" fill="#6e3f1f"/>
+      <ellipse cx="18.31" cy="40.56" rx="3" ry="2.2" transform="rotate(235 18.31 40.56)" fill="#6e3f1f"/>
+      <ellipse cx="44.27" cy="16.77" rx="2.3" ry="1.8" transform="rotate(280 44.27 16.77)" fill="#6e3f1f"/>
+      <ellipse cx="99.84" cy="83.0" rx="3" ry="2.2" transform="rotate(60 99.84 83.0)" fill="#6e3f1f"/>
+      <ellipse cx="83.0" cy="99.84" rx="2.3" ry="1.8" transform="rotate(90 83.0 99.84)" fill="#6e3f1f"/>
     </g>
-    <g fill="#93d9b4" opacity=".9" stroke="none">
-      <circle cx="42" cy="40" r="5"/>
-      <circle cx="78" cy="72" r="4"/>
-      <circle cx="32" cy="66" r="3.5"/>
+    <g fill="#d39a4c">
+      <circle cx="104" cy="14" r="2.6"/>
+      <circle cx="111" cy="22" r="1.8"/>
+      <circle cx="98" cy="6" r="1.6"/>
     </g>
-    <g stroke-width="1.6" stroke-linecap="round">
-      <path d="M24 70 L22 80" stroke="#8d5d39"/>
-      <rect x="13" y="79" width="17" height="10" rx="3" fill="#ffcdc5" stroke="#ef5848" transform="rotate(-8 21 84)"/>
-      <path d="M16.5 84.5 H25.5" stroke="#ef5848" transform="rotate(-8 21 84)"/>
-      <path d="M96 70 L98 80" stroke="#8d5d39"/>
-      <rect x="90" y="79" width="17" height="10" rx="3" fill="#fff1c2" stroke="#e0a100" transform="rotate(8 98 84)"/>
-      <path d="M93.5 84 H102.5" stroke="#e0a100" transform="rotate(8 98 84)"/>
-      <path d="M82 88 L84 96" stroke="#8d5d39"/>
-      <rect x="77" y="95" width="15" height="9" rx="3" fill="#e9e0ff" stroke="#8e5bd6" transform="rotate(5 84 99)"/>
-      <path d="M80.5 99.5 H88" stroke="#8e5bd6" transform="rotate(5 84 99)"/>
-    </g>
-    <g stroke="none">
-      <ellipse cx="49" cy="57" rx="4" ry="4.6" fill="#4a3a6b"/>
-      <circle cx="50.4" cy="55.2" r="1.4" fill="#fff"/>
-      <ellipse cx="71" cy="57" rx="4" ry="4.6" fill="#4a3a6b"/>
-      <circle cx="72.4" cy="55.2" r="1.4" fill="#fff"/>
-      <ellipse cx="40" cy="66" rx="5.5" ry="3.4" fill="#ff8fbd" opacity=".6"/>
-      <ellipse cx="80" cy="66" rx="5.5" ry="3.4" fill="#ff8fbd" opacity=".6"/>
-    </g>
-    <path d="M53 66 q7 8 14 0" stroke="#4a3a6b" stroke-width="3" fill="#ef5848" stroke-linecap="round"/>
+    <ellipse cx="49" cy="57" rx="4" ry="4.6" fill="#1d3a2e"/>
+    <circle cx="50.4" cy="55.2" r="1.4" fill="#fff"/>
+    <ellipse cx="71" cy="57" rx="4" ry="4.6" fill="#1d3a2e"/>
+    <circle cx="72.4" cy="55.2" r="1.4" fill="#fff"/>
+    <ellipse cx="40" cy="66" rx="5.5" ry="3.4" fill="#ffa598" opacity="0.75"/>
+    <ellipse cx="80" cy="66" rx="5.5" ry="3.4" fill="#ffa598" opacity="0.75"/>
+    <path d="M53 66 q7 8 14 0" stroke="#1d3a2e" stroke-width="3" fill="#ef5848" stroke-linecap="round"/>
   </g>
-  <line x1="40" y1="224" x2="210" y2="224" stroke="#4a3a6b" stroke-width="3" stroke-linecap="round"/>
 
   <!-- sparkles -->
   <g fill="#ffd966" stroke="#4a3a6b" stroke-width="2" stroke-linejoin="round">

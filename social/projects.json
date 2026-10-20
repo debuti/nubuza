@@ -102,7 +102,7 @@
       "Two images to share: a kawaii card with all your surnames, and a round fan chart of your family (the \"cookie\").",
       "Truly private: no accounts and no server. The tree is stored encrypted in your browser and the GEDCOM file is never uploaded. Optional Google Drive sync keeps an encrypted copy only you can open.",
       "Free, in English and Spanish.",
-      "The mascot is Kibi, a smiling little tree that hangs surname tags from its branches (1,024 is a \"kibi\" in computing).",
+      "The mascot is Kibi, a smiling family cookie: the app's round fan chart baked as a biscuit, with a face in the middle where you are, pastel rings for parents and grandparents, chocolate chips and a bite out of it for the missing ancestors (1,024 is a \"kibi\" in computing).",
       "Made by nubuza."
     ],
     "hashtags": [
@@ -132,6 +132,6 @@
     "exporter": "a-thousand-surnames",
     "card_brief": "The image is the app's own share image for a fictional demo person: either the surname card (their first name and every surname in order, with \"_\" for gaps) or the round family fan chart (the \"cookie\").",
     "screenshot_brief": "The image is a phone screenshot of the app with a fictional family: the numbered surname list with \"_\" for gaps, the fan-chart family tree, or the stats (generations, surnames in a row, trophies, how many sound Basque).",
-    "art_hint": "For this project, Kibi (a smiling green kawaii tree with a little sprout on top, hanging colourful name tags from its branches), family trees, name tags, old family photos and little houses fit well; add Kibi's mint green and coral red to the nubuza pastels."
+    "art_hint": "For this project, Kibi (a smiling kawaii cookie, golden-brown crust with chocolate chips and a bite out of the top right, pastel mint, coral, butter, lilac, sky and pink rings around a cream centre with the face), family trees, name tags, old family photos and little houses fit well; add Kibi's mint green, coral red and cookie brown to the nubuza pastels."
   }
 ]
