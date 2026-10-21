@@ -321,7 +321,7 @@ ATS_CAROUSEL = f"""How A Thousand Surnames works 🌳 (swipe →)
 
 1. Import your tree or build it by hand 📂
 2. Get every surname you carry, in order 🔤
-3. See your family as a fan chart 🌀
+3. Bake your family cookie 🍪
 4. Stats, trophies and how rare you are 🏆
 5. Share your surname card 💌
 
@@ -329,8 +329,8 @@ Everyone in these screenshots is made up: your tree stays encrypted on your devi
 🌳 apps.nubuza.com/a-thousand-surnames (link in bio)
 .
 {ATS_TAGS}"""
-ATS_STEPS = [("start", "1. Import or build your tree 📂"), ("surnames", "2. Every surname, in order 🔤"),
-             ("tree", "3. Your family as a fan 🌀"), ("stats", "4. Stats, trophies, rarity 🏆"),
+ATS_STEPS = [("start", "1. Import your tree 📂"), ("surnames", "2. Every surname, in order 🔤"),
+             ("tree", "3. Your family cookie 🍪"), ("stats", "4. Stats, trophies, rarity 🏆"),
              ("card", "5. A cute card to share 💌")]
 
 
