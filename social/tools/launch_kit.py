@@ -25,7 +25,7 @@ from ..bot import ROOT, blp, calview, fivedollars, images, load_projects, surnam
 from ..bot.publish import _check
 
 BLP_URL = "https://bizarre.lovepolygon.com/"
-TAGS = "#nubuza #kawaii #cuteapp #pastelaesthetic #bizarrelovepolygon #lovemap"
+TAGS = "#nubuza #bizarrelovepolygon #lovemap"
 
 WELCOME = f"""Hi, we're nubuza ☁️🪼
 
@@ -236,7 +236,7 @@ def send(kit: dict) -> None:
 
 
 FD_URL = "https://apps.nubuza.com/fivedollars/"
-FD_TAGS = "#nubuza #5dollars #personalfinance #budgeting #savingmoney #familybudget #cuteapp"
+FD_TAGS = "#nubuza #5dollars #personalfinance #budgeting"
 FD_MEET = f"""Meet 5dollars 💚🪙
 
 Our new little project: a private ledger for your household. Import your bank statements, \
@@ -257,7 +257,7 @@ FD_CAROUSEL = f"""How 5dollars works 💚 (swipe →)
 All the numbers in these screenshots are made up: 5dollars never sees yours 💚
 💚 apps.nubuza.com/fivedollars (link in bio)
 .
-{FD_TAGS} #moneytips"""
+{FD_TAGS} #savingmoney"""
 FD_STEPS = [("welcome", "1. Your data stays yours 🔒"), ("categories", "2. Categorise every move ✨"),
             ("report", "3. Did you save this month? 📊"), ("alerts", "4. Know why a month went off 🔔"),
             ("epic", "5. Trips get their own budget ✈️")]
@@ -307,7 +307,7 @@ def send_fivedollars(kit: dict) -> None:
 
 
 ATS_URL = "https://apps.nubuza.com/a-thousand-surnames/"
-ATS_TAGS = "#nubuza #athousandsurnames #apellidos #genealogy #familytree #familyhistory #genealogia #cuteapp"
+ATS_TAGS = "#nubuza #athousandsurnames #apellidos #genealogy #familytree"
 ATS_MEET = f"""Meet A Thousand Surnames 🌳🏷️
 
 Your ID shows two surnames, but your family tree hides many more. Import your tree from Ancestry or \
@@ -371,7 +371,7 @@ def send_surnames(kit: dict) -> None:
 
 
 CV_URL = "https://apps.nubuza.com/calview/"
-CV_TAGS = "#nubuza #calview #printablecalendar #wallcalendar #planner #bulletjournal #printables #cuteapp"
+CV_TAGS = "#nubuza #calview #printablecalendar #wallcalendar #planner"
 CV_MEET = f"""Meet calview ✏️🗓️
 
 Our new little project: blank calendar grids to print, any size from A4 to A0. No big printer? \

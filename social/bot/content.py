@@ -51,7 +51,7 @@ SCHEMA = {
         "body": {"type": "string", "description": "The post text: 1-2 sentences, at most 180 characters, "
                                                   "emojis welcome, no hashtags, no links."},
         "hashtags": {"type": "array", "items": {"type": "string"},
-                     "description": "4-7 relevant hashtags without the # sign, lowercase, no spaces."},
+                     "description": "3-4 relevant hashtags without the # sign, lowercase, no spaces."},
         "alt_text": {"type": "string", "description": "Image description for screen readers, under 200 characters."},
         "svg": {"type": "string", "description": "Only for illustration posts: a complete standalone <svg> "
                                                  "with viewBox=\"0 0 1000 1000\", a filled background, no text, "
@@ -176,7 +176,7 @@ def _x_len(text: str) -> int:
     return sum(1 if narrow(c) else 2 for c in text)
 
 
-IG_TAGS = 8  # few, relevant hashtags: long repeated lists look like spam to Instagram
+IG_TAGS = 5  # Instagram allows at most 5 hashtags per post
 
 
 def _tags(post: dict, project: dict, rng: random.Random) -> list[str]:
