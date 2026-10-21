@@ -51,7 +51,7 @@ SCHEMA = {
         "body": {"type": "string", "description": "The post text: 1-2 sentences, at most 180 characters, "
                                                   "emojis welcome, no hashtags, no links."},
         "hashtags": {"type": "array", "items": {"type": "string"},
-                     "description": "6-10 relevant hashtags without the # sign, lowercase, no spaces."},
+                     "description": "4-7 relevant hashtags without the # sign, lowercase, no spaces."},
         "alt_text": {"type": "string", "description": "Image description for screen readers, under 200 characters."},
         "svg": {"type": "string", "description": "Only for illustration posts: a complete standalone <svg> "
                                                  "with viewBox=\"0 0 1000 1000\", a filled background, no text, "
@@ -176,6 +176,9 @@ def _x_len(text: str) -> int:
     return sum(1 if narrow(c) else 2 for c in text)
 
 
+IG_TAGS = 8  # few, relevant hashtags: long repeated lists look like spam to Instagram
+
+
 def _tags(post: dict, project: dict, rng: random.Random) -> list[str]:
     pool = project["hashtags"][:]
     rng.shuffle(pool)
@@ -204,5 +207,5 @@ def compose(post: dict, project: dict, rng: random.Random) -> dict:
 
     caption = (f"{post['body'].strip()}\n\n"
                f"💗 {project['name']}: {project['url'].removeprefix('https://').rstrip('/')} (link in bio)\n"
-               f"☁️ more cute things at nubuza.com\n.\n" + " ".join(f"#{t}" for t in tags[:20]))
+               f"☁️ more cute things at nubuza.com\n.\n" + " ".join(f"#{t}" for t in tags[:IG_TAGS]))
     return {"x": x_text, "instagram": caption[:2200]}

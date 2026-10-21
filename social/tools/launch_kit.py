@@ -25,7 +25,7 @@ from ..bot import ROOT, blp, calview, fivedollars, images, load_projects, surnam
 from ..bot.publish import _check
 
 BLP_URL = "https://bizarre.lovepolygon.com/"
-TAGS = "#nubuza #kawaii #cuteapp #webapp #indiedev #pastelaesthetic #privacyfirst #bizarrelovepolygon #lovepolygon #lovemap"
+TAGS = "#nubuza #kawaii #cuteapp #pastelaesthetic #bizarrelovepolygon #lovemap"
 
 WELCOME = f"""Hi, we're nubuza ☁️🪼
 
@@ -236,7 +236,7 @@ def send(kit: dict) -> None:
 
 
 FD_URL = "https://apps.nubuza.com/fivedollars/"
-FD_TAGS = "#nubuza #5dollars #personalfinance #budgeting #budgetapp #savingmoney #familybudget #privacyfirst #cuteapp #webapp"
+FD_TAGS = "#nubuza #5dollars #personalfinance #budgeting #savingmoney #familybudget #cuteapp"
 FD_MEET = f"""Meet 5dollars 💚🪙
 
 Our new little project: a private ledger for your household. Import your bank statements, \
@@ -307,8 +307,7 @@ def send_fivedollars(kit: dict) -> None:
 
 
 ATS_URL = "https://apps.nubuza.com/a-thousand-surnames/"
-ATS_TAGS = ("#nubuza #athousandsurnames #surnames #apellidos #genealogy #familytree #familyhistory #genealogia "
-            "#spanishsurnames #cuteapp")
+ATS_TAGS = "#nubuza #athousandsurnames #apellidos #genealogy #familytree #familyhistory #genealogia #cuteapp"
 ATS_MEET = f"""Meet A Thousand Surnames 🌳🏷️
 
 Your ID shows two surnames, but your family tree hides many more. Import your tree from Ancestry or \
@@ -329,7 +328,7 @@ ATS_CAROUSEL = f"""How A Thousand Surnames works 🌳 (swipe →)
 Everyone in these screenshots is made up: your tree stays encrypted on your device 🔒
 🌳 apps.nubuza.com/a-thousand-surnames (link in bio)
 .
-{ATS_TAGS} #ancestry #myheritage"""
+{ATS_TAGS}"""
 ATS_STEPS = [("start", "1. Import or build your tree 📂"), ("surnames", "2. Every surname, in order 🔤"),
              ("tree", "3. Your family as a fan 🌀"), ("stats", "4. Stats, trophies, rarity 🏆"),
              ("card", "5. A cute card to share 💌")]
@@ -372,8 +371,7 @@ def send_surnames(kit: dict) -> None:
 
 
 CV_URL = "https://apps.nubuza.com/calview/"
-CV_TAGS = ("#nubuza #calview #printablecalendar #wallcalendar #planner #bulletjournal #printables #diy "
-           "#stationery #cuteapp")
+CV_TAGS = "#nubuza #calview #printablecalendar #wallcalendar #planner #bulletjournal #printables #cuteapp"
 CV_MEET = f"""Meet calview ✏️🗓️
 
 Our new little project: blank calendar grids to print, any size from A4 to A0. No big printer? \
@@ -393,7 +391,7 @@ CV_CAROUSEL = f"""How calview works ✏️ (swipe →)
 Print with margins "None" and scale 100 % 🖨️
 ✏️ apps.nubuza.com/calview (link in bio)
 .
-{CV_TAGS} #organization"""
+{CV_TAGS}"""
 CV_STEPS = [("single", "1. Pick dates and a size 🗓️"), ("collage", "2. Big? Split it into A4s 🧩"),
             ("marks", "3. Glue on the red ticks ✂️")]
 
@@ -418,16 +416,20 @@ def build_calview(out: Path) -> dict:
     return kit
 
 
-def send_calview(kit: dict) -> None:
+def send_calview(kit: dict, part: str = "all") -> None:
+    """part = meet or carousel sends one post, so each can go out on a different day."""
     tg = Telegram()
-    tg.text("✏️ Kit de lanzamiento de calview para @nubuzacom\n\nPublícalo poco a poco (un post cada día o dos), "
-            "intercalado con los de los otros proyectos.")
-    tg.text("1️⃣ PRESENTACIÓN «Meet calview». Publícala primero.")
-    tg.doc(kit["meet"])
-    tg.text(CV_MEET)
-    tg.text("2️⃣ CARRUSEL «How calview works». Selecciona las 4 fotos en orden (1 → 4).")
-    tg.docs(kit["carousel"])
-    tg.text(CV_CAROUSEL)
+    if part == "all":
+        tg.text("✏️ Kit de lanzamiento de calview para @nubuzacom\n\nPublícalo poco a poco (un post cada día o "
+                "dos), intercalado con los de los otros proyectos.")
+    if part in ("all", "meet"):
+        tg.text("1️⃣ PRESENTACIÓN «Meet calview». Publícala primero.")
+        tg.doc(kit["meet"])
+        tg.text(CV_MEET)
+    if part in ("all", "carousel"):
+        tg.text("2️⃣ CARRUSEL «How calview works». Selecciona las 4 fotos en orden (1 → 4).")
+        tg.docs(kit["carousel"])
+        tg.text(CV_CAROUSEL)
 
 
 KITS = {"nubuza": (build, send), "fivedollars": (build_fivedollars, send_fivedollars),
@@ -439,12 +441,16 @@ def main() -> None:
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--project", choices=list(KITS), default="nubuza")
     ap.add_argument("--send", action="store_true")
+    ap.add_argument("--part", choices=["all", "meet", "carousel"], default="all",
+                    help="with --send: only that post (calview only)")
     args = ap.parse_args()
+    if args.part != "all" and args.project != "calview":
+        ap.error("--part only works with --project calview")
     make, send_kit = KITS[args.project]
     kit = make(args.out)
     print(json.dumps({k: [str(p) for p in v] if isinstance(v, list) else str(v) for k, v in kit.items()}, indent=1))
     if args.send:
-        send_kit(kit)
+        send_kit(kit, args.part) if args.part != "all" else send_kit(kit)
         print("sent to Telegram")
 
 

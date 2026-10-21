@@ -10,6 +10,11 @@ on:
         type: choice
         options: [nubuza, fivedollars, a-thousand-surnames, calview]
         default: nubuza
+      part:
+        description: Only one post of the kit (calview only), to publish on different days
+        type: choice
+        options: [all, meet, carousel]
+        default: all
 
 permissions:
   contents: read
@@ -32,4 +37,4 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python -m social.tools.launch_kit --out kit --project "${{ inputs.project }}" --send
+        run: python -m social.tools.launch_kit --out kit --project "${{ inputs.project }}" --part "${{ inputs.part }}" --send
