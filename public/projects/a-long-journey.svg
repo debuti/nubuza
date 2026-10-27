@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="1200" height="900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdf6e6"/>
+      <stop offset="1" stop-color="#f3dfbf"/>
+    </linearGradient>
+    <clipPath id="globe"><circle cx="150" cy="190" r="96"/></clipPath>
+    <clipPath id="envelope"><path d="M300 22c-28 0-46 20-46 45 0 19 15 33 27 44l7 10h24l7-10c12-11 27-25 27-44 0-25-18-45-46-45z"/></clipPath>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#bg)"/>
+
+  <!-- the hand-inked globe -->
+  <circle cx="150" cy="190" r="96" fill="#3a2a20" opacity=".1" transform="translate(5 7)"/>
+  <circle cx="150" cy="190" r="96" fill="#cfe3e0"/>
+  <g clip-path="url(#globe)" stroke="#3a2a20" stroke-width="2" stroke-linejoin="round">
+    <path d="M70 130c18-14 40-12 52 2s4 30 16 40-4 32-24 30-28-22-40-24-26-6-24-24 8-14 20-24z" fill="#9fbf9a"/>
+    <path d="M170 120c16-10 40-8 56 6s20 34 4 44-30-2-40 10-6 30-20 34-22-14-16-34-6-26-2-40 6-14 18-20z" fill="#9fbf9a"/>
+    <path d="M120 250c12-8 30-6 38 4s-2 22-16 24-30-14-22-28z" fill="#f6e7c4"/>
+  </g>
+  <g clip-path="url(#globe)" fill="none" stroke="#3a2a20" stroke-width=".9" opacity=".35">
+    <ellipse cx="150" cy="190" rx="96" ry="30"/><ellipse cx="150" cy="190" rx="40" ry="96"/><path d="M54 190h192M150 94v192"/>
+  </g>
+  <circle cx="150" cy="190" r="96" fill="none" stroke="#3a2a20" stroke-width="3"/>
+
+  <!-- a trip: two pins and a dashed route -->
+  <path d="M104 168c20-40 70-52 102-30" fill="none" stroke="#e05a4a" stroke-width="2.5" stroke-dasharray="6 5" stroke-linecap="round"/>
+  <g stroke="#3a2a20" stroke-width="2">
+    <path d="M104 172c-8-10-10-14-10-18a10 10 0 0 1 20 0c0 4-2 8-10 18z" fill="#e05a4a"/>
+    <path d="M206 142c-8-10-10-14-10-18a10 10 0 0 1 20 0c0 4-2 8-10 18z" fill="#e05a4a"/>
+  </g>
+  <circle cx="104" cy="154" r="3.5" fill="#fff"/>
+  <circle cx="206" cy="124" r="3.5" fill="#fff"/>
+
+  <!-- the balloon, smiling -->
+  <g clip-path="url(#envelope)">
+    <ellipse cx="300" cy="70" rx="48" ry="56" fill="#e39a86"/>
+    <ellipse cx="300" cy="70" rx="33" ry="56" fill="#f6e7c4"/>
+    <ellipse cx="300" cy="70" rx="20" ry="56" fill="#9fbf9a"/>
+    <ellipse cx="300" cy="70" rx="7" ry="56" fill="#f6e7c4"/>
+    <g fill="none" stroke="#3a2a20" stroke-width="1.2">
+      <ellipse cx="300" cy="70" rx="33" ry="56"/><ellipse cx="300" cy="70" rx="20" ry="56"/><ellipse cx="300" cy="70" rx="7" ry="56"/>
+    </g>
+  </g>
+  <path d="M300 22c-28 0-46 20-46 45 0 19 15 33 27 44l7 10h24l7-10c12-11 27-25 27-44 0-25-18-45-46-45z" fill="none" stroke="#3a2a20" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="288" cy="70" r="4.5" fill="#3a2a20"/>
+  <circle cx="312" cy="70" r="4.5" fill="#3a2a20"/>
+  <circle cx="289.5" cy="68.5" r="1.5" fill="#fff"/>
+  <circle cx="313.5" cy="68.5" r="1.5" fill="#fff"/>
+  <circle cx="279" cy="81" r="5" fill="#ff8fbd" opacity=".6"/>
+  <circle cx="321" cy="81" r="5" fill="#ff8fbd" opacity=".6"/>
+  <path d="M294 82q6 6 12 0" fill="none" stroke="#3a2a20" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M288 121h24M289 121l1 13M311 121l-1 13M296 121l.5 13M304 121l-.5 13" stroke="#3a2a20" stroke-width="1.6" stroke-linecap="round"/>
+  <rect x="288" y="134" width="24" height="15" rx="3" fill="#c99a63" stroke="#3a2a20" stroke-width="2.4"/>
+  <path d="M288.5 141.5h23M294 134.5v14M300 134.5v14M306 134.5v14" stroke="#3a2a20" stroke-width="1"/>
+
+  <!-- a polaroid from the trip, and a music note for the movie -->
+  <g transform="rotate(8 342 222)">
+    <rect x="306" y="180" width="72" height="84" rx="3" fill="#3a2a20" opacity=".12" transform="translate(4 6)"/>
+    <rect x="306" y="180" width="72" height="84" rx="3" fill="#fff" stroke="#3a2a20" stroke-width="2.5"/>
+    <rect x="313" y="187" width="58" height="54" fill="#cfe3e0"/>
+    <path d="M313 241l18-22 12 12 10-8 18 18z" fill="#9fbf9a" stroke="#3a2a20" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="358" cy="200" r="6" fill="#f6c86a"/>
+  </g>
+  <g fill="#3a2a20">
+    <path d="M42 46v26" stroke="#3a2a20" stroke-width="2.5"/>
+    <path d="M42 46l16-5v8l-16 5z"/>
+    <ellipse cx="37" cy="73" rx="6" ry="4.5" transform="rotate(-20 37 73)"/>
+  </g>
+</svg>
