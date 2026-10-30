@@ -23,7 +23,7 @@ python3 -m http.server -d public
 
 `wrangler.jsonc` has no `main` script, so Cloudflare serves the files directly from its edge. No Worker runs, and static asset requests are free and unmetered.
 
-Every push to `main` deploys through `.github/workflows/deploy.yml`, which runs `wrangler deploy` and attaches `nubuza.com` and `www.nubuza.com` as custom domains. The workflow needs two repository secrets:
+Every push to `main` deploys through `.github/workflows/deploy.yml`, which runs `wrangler deploy` and attaches `nubuza.com` and `www.nubuza.com` as custom domains, plus the `apps.nubuza.com/app-ads.txt` route for AdMob. The workflow needs two repository secrets:
 
 - `CLOUDFLARE_API_TOKEN`: create it from the "Edit Cloudflare Workers" template, with the nubuza.com zone included.
 - `CLOUDFLARE_ACCOUNT_ID`

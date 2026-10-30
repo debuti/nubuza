@@ -9,6 +9,9 @@
   },
   "routes": [
     { "pattern": "nubuza.com", "custom_domain": true },
-    { "pattern": "www.nubuza.com", "custom_domain": true }
+    { "pattern": "www.nubuza.com", "custom_domain": true },
+    // AdMob crawls app-ads.txt on the Play listing's developer website, and some
+    // listings point at apps.nubuza.com, whose other paths belong to the app Workers.
+    { "pattern": "apps.nubuza.com/app-ads.txt", "zone_name": "nubuza.com" }
   ]
 }
