@@ -176,5 +176,46 @@
     "exporter": "calview",
     "screenshot_brief": "The image is a desktop screenshot of the app: the settings panel on the left and the print preview on the right, showing either one blank calendar sheet, a big calendar split across A4 sheets for a collage, or that collage with the legend explaining the glue and trim marks.",
     "art_hint": "For this project, Pip (a smiling kawaii yellow pencil with a pink eraser, blush cheeks and a sharpened tip), blank calendar grids, sheets of paper being glued into a big wall calendar, glue sticks, scissors, washi tape and doodled plans fit well; add calview's lavender #b9b0f2 and violet #7c6fd6 to the nubuza pastels."
+  },
+  {
+    "id": "copy-cat",
+    "name": "Copy cat",
+    "url": "https://apps.nubuza.com/photos/copy-cat/",
+    "pitch": "Passport and ID photos at home: crop your own photo to your country's official size and print a whole sheet of copies on ordinary photo paper.",
+    "facts": [
+      "Pick your country and document (passport, ID card, visa…) and Copy cat knows the official photo size, head height and background, each taken from the government's own page.",
+      "Take the photo with your phone against a plain light wall; a silhouette guide shows where the chin and the top of the head must go, and it warns if the photo is too small to print sharp.",
+      "It lays out as many copies as fit on a 10×15 cm (or 4×6\") photo print, 13×18, A4 or Letter, with cut marks and a 10 mm ruler to check the print size.",
+      "Print it at home at 100 %, or take the 300 dpi JPG to any photo lab or print kiosk as a normal 10×15 print: a sheet of passport photos for the price of one print.",
+      "Several people on one sheet: the whole family's passport photos on one print.",
+      "Every country has a guide page with its official measurements, in English and Spanish.",
+      "Private: the photos never leave your device. Saved sheets are encrypted in the browser, with an optional end-to-end encrypted backup in your own Google Drive.",
+      "Free, no account, works on phone and computer.",
+      "The mascot is Mimi, a round lilac kawaii cat with pointy ears and blushing cheeks who holds a little strip of identical photos, because she copies everything.",
+      "Made by nubuza."
+    ],
+    "hashtags": [
+      "copycat",
+      "passportphoto",
+      "idphoto",
+      "passport",
+      "visaphoto",
+      "travel",
+      "traveltips",
+      "printables",
+      "diy",
+      "moneysaving",
+      "kawaii",
+      "cuteapp",
+      "webapp",
+      "privacyfirst"
+    ],
+    "media": {
+      "screenshot": 2,
+      "illustration": 3
+    },
+    "cover": "public/projects/copy-cat.svg",
+    "screenshot_brief": "The image is a phone screenshot of the app's home page: Mimi the cat, the promise of passport and ID photos at home, and the button to start.",
+    "art_hint": "For this project, Mimi (a round lilac kawaii cat with pointy ears, pink inner ears, blush cheeks and whiskers, holding a little strip of identical photos), sheets of identical passport photos with dashed cut marks, scissors, a ruler, a phone camera and passports fit well; add Copy cat's lilac #c4b0f5, violet #6a4cc2 and peach #ffb895 to the nubuza pastels."
   }
 ]
