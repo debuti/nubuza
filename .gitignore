@@ -6,3 +6,6 @@ social/.env
 .env*
 !social/.env.example
 *.swp
+
+# Private app monitoring (STATUS.md, console notes): never publish
+ops/
