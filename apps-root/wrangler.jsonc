@@ -1,0 +1,8 @@
+// The root of apps.nubuza.com, which belongs to no app: each app's Worker only answers under
+// its own base path. Deploy from this directory with `npx wrangler deploy`.
+{
+  "name": "nubuza-apps-root",
+  "compatibility_date": "2026-09-01",
+  "assets": { "directory": "./public" },
+  "routes": [{ "pattern": "apps.nubuza.com/robots.txt", "zone_name": "nubuza.com" }]
+}

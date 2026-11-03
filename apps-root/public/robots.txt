@@ -1,0 +1,11 @@
+# apps.nubuza.com/robots.txt, for the whole host (Google only reads it at the root). Served by
+# nubuza/apps-root. Each app on this host adds its Sitemap: line here when it has a sitemap,
+# then redeploys apps-root.
+User-agent: *
+Allow: /
+
+Sitemap: https://apps.nubuza.com/a-long-journey/sitemap.xml
+Sitemap: https://apps.nubuza.com/a-thousand-surnames/sitemap.xml
+Sitemap: https://apps.nubuza.com/photos/copy-cat/sitemap.xml
+Sitemap: https://apps.nubuza.com/music/release-sonar/sitemap.xml
+Sitemap: https://apps.nubuza.com/spinny/sitemap.xml
