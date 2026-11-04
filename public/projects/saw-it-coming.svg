@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="1200" height="900">
+  <defs>
+    <linearGradient id="cbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff8e1"/>
+      <stop offset="1" stop-color="#ffe3a3"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#cbg)"/>
+  <!-- a stock panel planned into parts, with the saw's dashed cut lines -->
+  <g transform="rotate(-3 270 150)">
+    <rect x="166" y="56" width="214" height="188" rx="4" fill="#1e262e" opacity=".12" transform="translate(6 8)"/>
+    <rect x="166" y="56" width="214" height="188" rx="4" fill="#e9c58f" stroke="#1e262e" stroke-width="3"/>
+    <g stroke="#1e262e" stroke-width="2">
+      <rect x="174" y="64" width="110" height="80" fill="#ffc93c"/>
+      <rect x="292" y="64" width="80" height="80" fill="#c2ead4"/>
+      <rect x="174" y="152" width="60" height="84" fill="#d6eaff"/>
+      <rect x="242" y="152" width="90" height="84" fill="#ffcdc5"/>
+      <rect x="340" y="152" width="32" height="84" fill="#f3dfbf" stroke-dasharray="4 3"/>
+    </g>
+    <g stroke="#ef5848" stroke-width="2.5" stroke-dasharray="7 5" fill="none">
+      <path d="M160 148h226M288 50v102M238 148v102M336 148v102"/>
+    </g>
+    <g font-family="'Fredoka', 'Trebuchet MS', sans-serif" font-weight="600" font-size="14" fill="#1e262e" text-anchor="middle">
+      <text x="229" y="109">1</text><text x="332" y="109">2</text><text x="204" y="199">3</text><text x="287" y="199">4</text>
+    </g>
+  </g>
+<svg x="10" y="70" width="165" height="179" viewBox="0 0 240 260"><polygon points="202.0,145.0 219.9,148.5 216.5,155.1 197.1,173.0 212.7,182.5 207.2,187.5 182.8,197.7 194.3,211.9 187.4,214.8 161.0,216.0 166.9,233.3 159.5,233.6 134.2,225.8 133.9,244.0 126.8,241.8 105.8,225.8 99.2,242.8 93.3,238.2 79.0,216.0 67.0,229.8 63.0,223.5 57.2,197.7 41.2,206.6 39.6,199.2 42.9,173.0 24.9,175.9 25.9,168.5 38.0,145.0 20.1,141.5 23.5,134.9 42.9,117.0 27.3,107.5 32.8,102.5 57.2,92.3 45.7,78.1 52.6,75.2 79.0,74.0 73.1,56.7 80.5,56.4 105.8,64.2 106.1,46.0 113.2,48.2 134.2,64.2 140.8,47.2 146.7,51.8 161.0,74.0 173.0,60.2 177.0,66.5 182.8,92.3 198.8,83.4 200.4,90.8 197.1,117.0 215.1,114.1 214.1,121.5" fill="#c9d3dc" stroke="#1e262e" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="120" cy="145" r="63.96" fill="none" stroke="#9aa8b5" stroke-width="3"/>
+<g transform="translate(120 145) scale(1)"><g transform="rotate(-8)"><path d="M-68 -62 C-70 -112 -36 -136 0 -136 C36 -136 70 -112 68 -62 Z" fill="#ffc93c" stroke="#1e262e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-13 -134 Q0 -140 13 -134 L11 -64 L-11 -64 Z" fill="#e8a400" stroke="#1e262e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-50 -80 C-48 -100 -38 -114 -24 -122" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity=".6"/>
+<path d="M-94 -62 Q0 -78 94 -62 Q98 -52 90 -50 Q0 -64 -90 -50 Q-98 -52 -94 -62 Z" fill="#ffc93c" stroke="#1e262e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M-66 -16 L-6 -16 L-10 8 Q-14 20 -32 20 L-48 20 Q-62 18 -64 4 Z" fill="#14191e" stroke="#1e262e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M66 -16 L6 -16 L10 8 Q14 20 32 20 L48 20 Q62 18 64 4 Z" fill="#14191e" stroke="#1e262e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-6 -12 Q0 -16 6 -12" fill="none" stroke="#1e262e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-74 -14 L-66 -16 M74 -14 L66 -16" stroke="#1e262e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M-54 -8 L-40 -8 M22 -8 L34 -8" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity=".75"/>
+<path d="M14 -30 Q36 -40 58 -30" fill="none" stroke="#1e262e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M-30 40 Q4 56 40 30" fill="none" stroke="#1e262e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M36 24 L44 36" stroke="#1e262e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
+</svg>

@@ -45,9 +45,19 @@
       and drop a cover image (4:3 works best) in /projects/. Covers are cached for a day:
       when you change one, bump its ?v= so visitors see the new one. A project with an app in a
       store gets an <a class="store"> after its card link, like Bizarre Love Polygon's.
+      data-cat is the card's category for the filters above: memories, make or home ("everyday").
+      The "on Android" filter needs nothing: it picks the cards with an <a class="store">.
+      Add the project to the list in 404.html too.
     -->
+    <nav class="filters" aria-label="Filter projects" hidden>
+      <button type="button" data-filter="" aria-pressed="true">all</button>
+      <button type="button" data-filter="memories" aria-pressed="false">memories</button>
+      <button type="button" data-filter="make" aria-pressed="false">make &amp; print</button>
+      <button type="button" data-filter="home" aria-pressed="false">everyday</button>
+      <button type="button" data-filter="android" aria-pressed="false">on Android</button>
+    </nav>
     <ul class="gallery">
-      <li class="photo">
+      <li class="photo" data-cat="memories">
         <a href="https://bizarre.lovepolygon.com/">
           <img src="/projects/bizarre-love-polygon.svg" alt="A pink map with heart pins joined into a polygon around a smiling polygon mascot" width="400" height="300" loading="lazy">
           <span class="caption">
@@ -62,7 +72,7 @@
         </a>
       </li>
 
-      <li class="photo">
+      <li class="photo" data-cat="home">
         <a href="https://apps.nubuza.com/fivedollars/">
           <img src="/projects/fivedollars.svg" alt="A smiling gold coin in front of a green five dollar note, next to a savings chart going up" width="400" height="300" loading="lazy">
           <span class="caption">
@@ -73,7 +83,7 @@
         </a>
       </li>
 
-      <li class="photo">
+      <li class="photo" data-cat="memories">
         <a href="https://apps.nubuza.com/a-thousand-surnames/">
           <img src="/projects/a-thousand-surnames.svg?v=2" alt="Kibi, a smiling cookie with a bite out of it and pastel rings like a family fan chart, next to a numbered list of surnames with one gap" width="400" height="300" loading="lazy">
           <span class="caption">
@@ -88,7 +98,7 @@
         </a>
       </li>
 
-      <li class="photo">
+      <li class="photo" data-cat="make">
         <a href="https://apps.nubuza.com/calview/">
           <img src="/projects/calview.svg?v=2" alt="A blank printable calendar grid made of four glued sheets, with red ticks on the seams and a smiling pencil" width="400" height="300" loading="lazy">
           <span class="caption">
@@ -99,7 +109,7 @@
         </a>
       </li>
 
-      <li class="photo">
+      <li class="photo" data-cat="make">
         <a href="https://apps.nubuza.com/photos/copy-cat/">
           <img src="/projects/copy-cat.svg" alt="Mimi, a lilac kawaii cat holding a little photo strip, next to a printed sheet of identical passport photos with cut marks" width="400" height="300" loading="lazy">
           <span class="caption">
@@ -110,7 +120,7 @@
         </a>
       </li>
 
-      <li class="photo">
+      <li class="photo" data-cat="memories">
         <a href="https://apps.nubuza.com/a-long-journey/">
           <img src="/projects/a-long-journey.svg" alt="A smiling hot-air balloon floating over a hand-inked globe with a dashed route between two pins, next to a travel photo" width="400" height="300" loading="lazy">
           <span class="caption">
@@ -125,7 +135,7 @@
         </a>
       </li>
 
-      <li class="photo">
+      <li class="photo" data-cat="make">
         <a href="https://apps.nubuza.com/ariadna/">
           <img src="/projects/ariadna.svg" alt="A ring of nails with black thread woven into a smiling face, next to the photo it came from and a ball of thread" width="400" height="300" loading="lazy">
           <span class="caption">
@@ -137,6 +147,39 @@
         <a class="store" href="https://play.google.com/store/apps/details?id=com.nubuza.android.ariadna" aria-label="Ariadna for Android, on Google Play">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.7v16.6a1 1 0 0 0 1.5.86l13.6-8.3a1 1 0 0 0 0-1.72L7.5 2.84A1 1 0 0 0 6 3.7z"/></svg>
           Android
+        </a>
+      </li>
+
+      <li class="photo" data-cat="home">
+        <a href="https://apps.nubuza.com/music/release-sonar/">
+          <img src="/projects/release-sonar.svg" alt="Echo, a lilac bat sending out sonar rings towards a vinyl record and an album sleeve marked new" width="400" height="300" loading="lazy">
+          <span class="caption">
+            <strong>Release Sonar</strong>
+            <span>Tell it what music you have and it tells you when your artists release something new.</span>
+            <small>apps.nubuza.com/music/release-sonar ↗</small>
+          </span>
+        </a>
+      </li>
+
+      <li class="photo" data-cat="make">
+        <a href="https://apps.nubuza.com/saw-it-coming/">
+          <img src="/projects/saw-it-coming.svg" alt="A smiling yellow saw blade with a hard hat next to a wooden panel split into numbered parts by dashed cut lines" width="400" height="300" loading="lazy">
+          <span class="caption">
+            <strong>Saw It Coming</strong>
+            <span>Cut lists for carpenters and stonemasons: plan every panel, the cut order and the offcuts worth keeping.</span>
+            <small>apps.nubuza.com/saw-it-coming ↗</small>
+          </span>
+        </a>
+      </li>
+
+      <li class="photo" data-cat="home">
+        <a href="https://apps.nubuza.com/spinny/">
+          <img src="/projects/spinny.svg" alt="Spinny, a pastel prize wheel with a smiling face, mid-spin, next to a card reading pizza" width="400" height="300" loading="lazy">
+          <span class="caption">
+            <strong>Spinny</strong>
+            <span>Can't decide? Type your options, spin the wheel and let it pick for you.</span>
+            <small>apps.nubuza.com/spinny ↗</small>
+          </span>
         </a>
       </li>
 
@@ -155,5 +198,27 @@
     <p>© <span id="y">2026</span> nubuza · <a href="https://www.instagram.com/nubuzacom/">Instagram</a> · <a href="https://x.com/nubuzacom">X</a></p>
   </footer>
   <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <script>
+    // Category filters. Without JS the nav stays hidden and every card shows. The choice
+    // lives in the hash (#make) so a filtered view can be shared.
+    const nav = document.querySelector('.filters')
+    const cards = [...document.querySelectorAll('.gallery .photo:not(.soon)')]
+    const apply = (cat) => {
+      if (!nav.querySelector(`[data-filter="${cat}"]`)) cat = ''
+      for (const b of nav.querySelectorAll('button')) b.setAttribute('aria-pressed', b.dataset.filter === cat)
+      for (const c of cards) c.hidden = cat !== '' &&
+        (cat === 'android' ? !c.querySelector('.store') : c.dataset.cat !== cat)
+    }
+    nav.addEventListener('click', (e) => {
+      const b = e.target.closest('button')
+      if (!b) return
+      history.replaceState(null, '', b.dataset.filter ? `#${b.dataset.filter}` : location.pathname)
+      apply(b.dataset.filter)
+    })
+    const fromHash = () => apply(decodeURIComponent(location.hash.slice(1)))
+    addEventListener('hashchange', fromHash)
+    nav.hidden = false
+    fromHash()
+  </script>
 </body>
 </html>

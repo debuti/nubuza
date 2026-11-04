@@ -1,8 +1,11 @@
 // The root of apps.nubuza.com, which belongs to no app: each app's Worker only answers under
-// its own base path. Deploy from this directory with `npx wrangler deploy`.
+// its own base path, and Cloudflare sends a request to the most specific matching route, so
+// this catch-all only gets what no app claims: robots.txt, the bare host (redirected to
+// nubuza.com) and the friendly 404 (a symlink to ../public/404.html) for everything else.
+// Deploy from this directory with `npx wrangler deploy`.
 {
   "name": "nubuza-apps-root",
   "compatibility_date": "2026-09-01",
-  "assets": { "directory": "./public" },
-  "routes": [{ "pattern": "apps.nubuza.com/robots.txt", "zone_name": "nubuza.com" }]
+  "assets": { "directory": "./public", "not_found_handling": "404-page" },
+  "routes": [{ "pattern": "apps.nubuza.com/*", "zone_name": "nubuza.com" }]
 }

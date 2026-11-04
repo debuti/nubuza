@@ -3,18 +3,101 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
   <title>lost in the clouds · nubuza</title>
-  <link rel="icon" href="/logo.svg" type="image/svg+xml">
+  <!--
+    The 404 of both nubuza.com and apps.nubuza.com (apps-root/public/404.html is a symlink to
+    this file), so every URL here is absolute to nubuza.com. Keep the app list in step with the
+    gallery in index.html.
+  -->
+  <link rel="icon" href="https://nubuza.com/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://nubuza.com/styles.css">
+  <style>
+    .lost .mascot { animation: drift 6s ease-in-out infinite; }
+    @keyframes drift { 50% { transform: translate(14px, -10px) rotate(4deg); } }
+    @media (prefers-reduced-motion: reduce) { .lost .mascot { animation: none; } }
+    .lost h1 { margin-bottom: 0; }
+    .lost .path { font-size: .9rem; color: var(--ink-soft); word-break: break-all; }
+    .lost .path code { background: var(--paper); padding: 2px 8px; border-radius: 8px; }
+    .lost .guess { font-size: 1.15rem; }
+    .lost .home {
+      display: inline-block; margin: 8px 0 28px; padding: 10px 22px; border-radius: 999px;
+      background: var(--accent); color: #fff; font-weight: 600; text-decoration: none;
+      box-shadow: 0 6px 16px var(--shadow);
+    }
+    .lost .home:hover, .lost .home:focus-visible { transform: translateY(-2px) rotate(-2deg); }
+    .lost ul {
+      list-style: none; padding: 0; margin: 12px auto 0; max-width: 640px;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+    }
+    .lost li a {
+      display: block; padding: 6px 14px; border-radius: 999px; background: var(--paper);
+      color: var(--ink); text-decoration: none; box-shadow: 0 4px 12px var(--shadow);
+    }
+    .lost li a:hover, .lost li a:focus-visible { color: var(--accent); }
+  </style>
 </head>
 <body>
-  <header class="hero">
-    <img class="mascot" src="/logo.svg" alt="" width="200" height="220">
+  <div class="sky" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <header class="hero lost">
+    <img class="mascot" src="https://nubuza.com/logo.svg" alt="" width="200" height="220">
     <h1>404</h1>
-    <p class="tagline">this page drifted away… <a href="/" style="color: var(--accent)">float back home</a></p>
+    <p class="tagline">this page drifted away with the clouds…</p>
+    <p class="path" id="path" hidden></p>
+    <p class="guess" id="guess" hidden></p>
+    <a class="home" href="https://nubuza.com/">float back home</a>
+    <p>or hop onto one of our little projects:</p>
+    <ul id="apps">
+      <li><a href="https://bizarre.lovepolygon.com/">Bizarre Love Polygon</a></li>
+      <li><a href="https://apps.nubuza.com/fivedollars/">5dollars</a></li>
+      <li><a href="https://apps.nubuza.com/a-thousand-surnames/">A Thousand Surnames</a></li>
+      <li><a href="https://apps.nubuza.com/calview/">calview</a></li>
+      <li><a href="https://apps.nubuza.com/photos/copy-cat/">Copy cat</a></li>
+      <li><a href="https://apps.nubuza.com/a-long-journey/">A Long Journey</a></li>
+      <li><a href="https://apps.nubuza.com/ariadna/">Ariadna</a></li>
+      <li><a href="https://apps.nubuza.com/music/release-sonar/">Release Sonar</a></li>
+      <li><a href="https://apps.nubuza.com/saw-it-coming/">Saw It Coming</a></li>
+      <li><a href="https://apps.nubuza.com/spinny/">Spinny</a></li>
+    </ul>
   </header>
+  <script>
+    // Show the missing path and, for a mistyped app URL (/calvew/), suggest the closest app.
+    const path = location.pathname
+    const p = document.getElementById('path')
+    p.textContent = ''
+    p.append('nothing lives at ', Object.assign(document.createElement('code'), { textContent: location.host + path }))
+    p.hidden = false
+
+    const dist = (a, b) => {
+      let row = [...Array(b.length + 1).keys()]
+      for (let i = 1; i <= a.length; i++) {
+        const next = [i]
+        for (let j = 1; j <= b.length; j++)
+          next[j] = Math.min(row[j] + 1, next[j - 1] + 1, row[j - 1] + (a[i - 1] !== b[j - 1]))
+        row = next
+      }
+      return row[b.length]
+    }
+    const wanted = path.toLowerCase().split('/').filter(Boolean)
+    let best
+    for (const a of document.querySelectorAll('#apps a')) {
+      const slug = new URL(a.href).pathname.split('/').filter(Boolean).pop()
+      if (!slug) continue
+      for (const w of wanted) {
+        const d = dist(w, slug)
+        if (d <= Math.max(2, slug.length / 3) && (!best || d < best.d)) best = { d, a }
+      }
+    }
+    if (best) {
+      const g = document.getElementById('guess')
+      g.append('were you looking for ', Object.assign(best.a.cloneNode(true), { style: 'color: var(--accent)' }), '?')
+      g.hidden = false
+    }
+  </script>
 </body>
 </html>

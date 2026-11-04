@@ -125,6 +125,32 @@ main {
   padding: 24px 16px 48px;
 }
 
+/* category filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 0 32px;
+}
+.filters[hidden] { display: none; }
+.filters button {
+  font: inherit;
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--ink);
+  background: var(--paper);
+  border: 0;
+  border-radius: 999px;
+  padding: 7px 16px;
+  box-shadow: 0 4px 12px var(--shadow);
+  cursor: pointer;
+  transition: transform .2s cubic-bezier(.3, 1.6, .5, 1);
+}
+.filters button:hover { transform: translateY(-2px) rotate(-2deg); }
+.filters button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.filters button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+
 /* polaroid gallery */
 .gallery {
   list-style: none;
@@ -139,6 +165,7 @@ main {
   transform: rotate(var(--tilt));
   transition: transform .25s cubic-bezier(.3, 1.6, .5, 1);
 }
+.photo[hidden] { display: none; }
 .photo:nth-child(2n) { --tilt: 1.8deg; }
 .photo:nth-child(3n) { --tilt: -1deg; }
 .photo > a:not(.store), .photo > .placeholder {
