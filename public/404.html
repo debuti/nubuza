@@ -7,8 +7,8 @@
   <title>lost in the clouds · nubuza</title>
   <!--
     The 404 of both nubuza.com and apps.nubuza.com (apps-root/public/404.html is a symlink to
-    this file), so every URL here is absolute to nubuza.com. Keep the app list in step with the
-    gallery in index.html.
+    this file), so every URL here is absolute to nubuza.com. Keep the app list and its
+    descriptions in step with the gallery in index.html.
   -->
   <link rel="icon" href="https://nubuza.com/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,6 +35,7 @@
       color: var(--ink); text-decoration: none; box-shadow: 0 4px 12px var(--shadow);
     }
     .lost li a:hover, .lost li a:focus-visible { color: var(--accent); }
+    .lost #pick { max-width: 640px; margin: 24px auto 0; }
   </style>
 </head>
 <body>
@@ -50,21 +51,22 @@
     <a class="home" href="https://nubuza.com/">float back home</a>
     <p>or hop onto one of our little projects:</p>
     <ul id="apps">
-      <li><a href="https://bizarre.lovepolygon.com/">Bizarre Love Polygon</a></li>
-      <li><a href="https://apps.nubuza.com/money/fivedollars/">5dollars</a></li>
-      <li><a href="https://apps.nubuza.com/a-thousand-surnames/">A Thousand Surnames</a></li>
-      <li><a href="https://apps.nubuza.com/calview/">calview</a></li>
-      <li><a href="https://apps.nubuza.com/photos/copy-cat/">Copy cat</a></li>
-      <li><a href="https://apps.nubuza.com/a-long-journey/">A Long Journey</a></li>
-      <li><a href="https://apps.nubuza.com/ariadna/">Ariadna</a></li>
-      <li><a href="https://apps.nubuza.com/music/release-sonar/">Release Sonar</a></li>
-      <li><a href="https://apps.nubuza.com/saw-it-coming/">Saw It Coming</a></li>
-      <li><a href="https://apps.nubuza.com/spinny/">Spinny</a></li>
+      <li><a href="https://bizarre.lovepolygon.com/" data-about="Pin where and when you fell for someone and watch your love polygon grow on a cute pink map.">Bizarre Love Polygon</a></li>
+      <li><a href="https://apps.nubuza.com/money/fivedollars/" data-about="A private ledger for your household: import your bank statements and see every month whether you saved.">5dollars</a></li>
+      <li><a href="https://apps.nubuza.com/a-thousand-surnames/" data-about="Import your family tree and get every surname you carry, in order, with how rare each one is in Spain.">A Thousand Surnames</a></li>
+      <li><a href="https://apps.nubuza.com/calview/" data-about="Print a blank calendar grid of any size, on one sheet or as a collage of smaller sheets glued together.">calview</a></li>
+      <li><a href="https://apps.nubuza.com/photos/copy-cat/" data-about="Passport and ID photos at home: crop yours to any country&#x27;s official size and print a whole sheet of copies.">Copy cat</a></li>
+      <li><a href="https://apps.nubuza.com/a-long-journey/" data-about="Log every trip on a hand-inked globe, then watch it played back as a movie with your song.">A Long Journey</a></li>
+      <li><a href="https://apps.nubuza.com/ariadna/" data-about="Turn a photo into a string art portrait made of one thread wound around a ring of nails.">Ariadna</a></li>
+      <li><a href="https://apps.nubuza.com/music/release-sonar/" data-about="Tell it what music you have and it tells you when your artists release something new.">Release Sonar</a></li>
+      <li><a href="https://apps.nubuza.com/saw-it-coming/" data-about="Cut lists for carpenters and stonemasons: plan every panel, the cut order and the offcuts worth keeping.">Saw It Coming</a></li>
+      <li><a href="https://apps.nubuza.com/spinny/" data-about="Can&#x27;t decide? Type your options, spin the wheel and let it pick for you.">Spinny</a></li>
     </ul>
+    <p class="guess" id="pick" hidden></p>
   </header>
   <script>
-    // Show the missing path and suggest an app: the closest one for a mistyped URL (/calvew/),
-    // or a random one.
+    // Show the missing path, suggest the closest app for a mistyped URL (/calvew/) and recommend
+    // a random other one.
     const path = location.pathname
     const p = document.getElementById('path')
     p.textContent = ''
@@ -91,11 +93,17 @@
         if (d <= Math.max(2, slug.length / 3) && (!best || d < best.d)) best = { d, a }
       }
     }
-    const apps = document.querySelectorAll('#apps a')
-    const pick = best ? best.a : apps[Math.floor(Math.random() * apps.length)]
-    const g = document.getElementById('guess')
-    g.append(best ? 'were you looking for ' : 'why not try ', Object.assign(pick.cloneNode(true), { style: 'color: var(--accent)' }), '?')
-    g.hidden = false
+    const link = a => Object.assign(a.cloneNode(true), { style: 'color: var(--accent)' })
+    if (best) {
+      const g = document.getElementById('guess')
+      g.append('were you looking for ', link(best.a), '?')
+      g.hidden = false
+    }
+    const others = [...document.querySelectorAll('#apps a')].filter(a => a !== best?.a)
+    const rec = others[Math.floor(Math.random() * others.length)]
+    const pick = document.getElementById('pick')
+    pick.append('we recommend ', link(rec), document.createElement('br'), rec.dataset.about)
+    pick.hidden = false
   </script>
 </body>
 </html>
