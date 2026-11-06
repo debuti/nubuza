@@ -67,14 +67,10 @@ body {
   padding: clamp(32px, 8vw, 72px) 16px 24px;
 }
 .mascot {
-  width: clamp(120px, 28vw, 180px);
+  /* mascot.svg has a margin around the drawing for its swimming, hence the wider size */
+  width: clamp(140px, 32.5vw, 209px);
   height: auto;
-  animation: bob 4s ease-in-out infinite;
   filter: drop-shadow(0 10px 12px var(--shadow));
-}
-@keyframes bob {
-  0%, 100% { transform: translateY(0) rotate(-2deg); }
-  50%      { transform: translateY(-12px) rotate(2deg); }
 }
 h1 {
   margin: 8px 0 0;

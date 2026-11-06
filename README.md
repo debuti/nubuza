@@ -7,6 +7,7 @@ public/
   index.html        gallery page
   styles.css
   logo.svg          the cloud-jellyfish mascot (also the favicon)
+  mascot.svg        the same mascot, swimming (the hero of the home page and the 404)
   404.html
   _headers          cache + security headers (Cloudflare reads this)
   projects/         cover images, one per project

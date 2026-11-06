@@ -16,9 +16,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://nubuza.com/styles.css">
   <style>
-    .lost .mascot { animation: drift 6s ease-in-out infinite; }
-    @keyframes drift { 50% { transform: translate(14px, -10px) rotate(4deg); } }
-    @media (prefers-reduced-motion: reduce) { .lost .mascot { animation: none; } }
     .lost h1 { margin-bottom: 0; }
     .lost .path { font-size: .9rem; color: var(--ink-soft); word-break: break-all; }
     .lost .path code { background: var(--paper); padding: 2px 8px; border-radius: 8px; }
@@ -45,7 +42,7 @@
     <span></span><span></span><span></span><span></span><span></span><span></span>
   </div>
   <header class="hero lost">
-    <img class="mascot" src="https://nubuza.com/logo.svg" alt="" width="200" height="220">
+    <img class="mascot" src="https://nubuza.com/mascot.svg" alt="" width="232" height="256">
     <h1>404</h1>
     <p class="tagline">this page drifted away with the clouds…</p>
     <p class="path" id="path" hidden></p>
@@ -66,7 +63,8 @@
     </ul>
   </header>
   <script>
-    // Show the missing path and, for a mistyped app URL (/calvew/), suggest the closest app.
+    // Show the missing path and suggest an app: the closest one for a mistyped URL (/calvew/),
+    // or a random one.
     const path = location.pathname
     const p = document.getElementById('path')
     p.textContent = ''
@@ -93,11 +91,11 @@
         if (d <= Math.max(2, slug.length / 3) && (!best || d < best.d)) best = { d, a }
       }
     }
-    if (best) {
-      const g = document.getElementById('guess')
-      g.append('were you looking for ', Object.assign(best.a.cloneNode(true), { style: 'color: var(--accent)' }), '?')
-      g.hidden = false
-    }
+    const apps = document.querySelectorAll('#apps a')
+    const pick = best ? best.a : apps[Math.floor(Math.random() * apps.length)]
+    const g = document.getElementById('guess')
+    g.append(best ? 'were you looking for ' : 'why not try ', Object.assign(pick.cloneNode(true), { style: 'color: var(--accent)' }), '?')
+    g.hidden = false
   </script>
 </body>
 </html>

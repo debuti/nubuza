@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-16 -8 232 256" role="img" aria-labelledby="t">
+  <title id="t">nubuza</title>
+  <style>
+    /* Same drawing as logo.svg, which stays still for the favicon and the social images. The
+       body swims in a loop and the tentacles trail against its motion: stretched out while it
+       rises, bunched up while it sinks, and tipped the opposite way when it moves sideways.
+       It all lives in this file so both stay in phase wherever it is shown as an image. */
+    .t1 { transform-origin: 52px 120px; animation-delay: -.2s; }
+    .t2 { transform-origin: 78px 126px; animation-delay: -.1s; }
+    .t3 { transform-origin: 102px 128px; }
+    .t4 { transform-origin: 126px 126px; animation-delay: -.1s; }
+    .t5 { transform-origin: 150px 120px; animation-delay: -.2s; }
+    .body { transform-origin: 100px 110px; }
+    @media (prefers-reduced-motion: no-preference) {
+      .body { animation: swim 5s ease-in-out infinite; }
+      .t { animation: trail 5s ease-in-out infinite; }
+    }
+    @keyframes swim {
+      0%, 100% { transform: translate(-7px, 12px) rotate(-2deg); }
+      50%      { transform: translate(7px, -12px) rotate(2deg); }
+    }
+    @keyframes trail {
+      0%, 50%, 100% { transform: none; }
+      25% { transform: skewX(-7deg) scale(.92, 1.16); }
+      75% { transform: skewX(7deg) scale(1.08, .86); }
+    }
+  </style>
+  <defs>
+    <linearGradient id="cloud" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#dcecff"/>
+    </linearGradient>
+  </defs>
+
+  <g class="body">
+  <!-- tentacles: dark outline stroke under a pastel stroke -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#4a3a6b" stroke-width="13">
+      <path class="t t1" d="M52 120 C42 145 62 160 50 182"/>
+      <path class="t t2" d="M78 126 C70 156 92 172 80 204"/>
+      <path class="t t3" d="M102 128 C110 158 90 176 102 210"/>
+      <path class="t t4" d="M126 126 C134 154 114 170 124 200"/>
+      <path class="t t5" d="M150 120 C160 144 140 158 152 180"/>
+    </g>
+    <g stroke-width="7">
+      <path class="t t1" stroke="#ffb3d1" d="M52 120 C42 145 62 160 50 182"/>
+      <path class="t t2" stroke="#c9b6ff" d="M78 126 C70 156 92 172 80 204"/>
+      <path class="t t3" stroke="#a8e6d9" d="M102 128 C110 158 90 176 102 210"/>
+      <path class="t t4" stroke="#c9b6ff" d="M126 126 C134 154 114 170 124 200"/>
+      <path class="t t5" stroke="#ffb3d1" d="M150 120 C160 144 140 158 152 180"/>
+    </g>
+  </g>
+
+  <!-- cloud: outlined union (thick stroke pass, then fill pass on top) -->
+  <g stroke="#4a3a6b" stroke-width="9">
+    <circle cx="60" cy="88" r="36"/>
+    <circle cx="102" cy="66" r="46"/>
+    <circle cx="146" cy="90" r="34"/>
+    <rect x="26" y="84" width="152" height="50" rx="25"/>
+  </g>
+  <g fill="url(#cloud)">
+    <circle cx="60" cy="88" r="36"/>
+    <circle cx="102" cy="66" r="46"/>
+    <circle cx="146" cy="90" r="34"/>
+    <rect x="26" y="84" width="152" height="50" rx="25"/>
+  </g>
+  <ellipse cx="84" cy="44" rx="14" ry="7" fill="#fff" opacity=".9" transform="rotate(-20 84 44)"/>
+
+  <!-- face -->
+  <ellipse cx="70" cy="110" rx="9" ry="5" fill="#ff8fbd" opacity=".55"/>
+  <ellipse cx="134" cy="110" rx="9" ry="5" fill="#ff8fbd" opacity=".55"/>
+  <ellipse cx="82" cy="96" rx="6.5" ry="8.5" fill="#4a3a6b"/>
+  <ellipse cx="122" cy="96" rx="6.5" ry="8.5" fill="#4a3a6b"/>
+  <circle cx="84.5" cy="92.5" r="2.6" fill="#fff"/>
+  <circle cx="124.5" cy="92.5" r="2.6" fill="#fff"/>
+  <path d="M95 106 Q98.5 111 102 106 Q105.5 111 109 106" fill="none" stroke="#4a3a6b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
