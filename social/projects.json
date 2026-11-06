@@ -44,7 +44,7 @@
   {
     "id": "fivedollars",
     "name": "5dollars",
-    "url": "https://apps.nubuza.com/fivedollars/",
+    "url": "https://apps.nubuza.com/money/fivedollars/",
     "pitch": "A private ledger for your household's bank accounts: import your statements, categorise them in seconds and see every month whether you saved or spent more than you earned.",
     "facts": [
       "No server and no account: 5dollars never sees your data.",

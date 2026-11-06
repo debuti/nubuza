@@ -45,7 +45,7 @@
       and drop a cover image (4:3 works best) in /projects/. Covers are cached for a day:
       when you change one, bump its ?v= so visitors see the new one. A project with an app in a
       store gets an <a class="store"> after its card link, like Bizarre Love Polygon's.
-      data-cat is the card's category for the filters above: memories, make or home ("everyday").
+      data-cat is the card's category for the filters above: memories, make, home ("everyday") or money.
       The "on Android" filter needs nothing: it picks the cards with an <a class="store">.
       Add the project to the list in 404.html too.
     -->
@@ -54,6 +54,7 @@
       <button type="button" data-filter="memories" aria-pressed="false">memories</button>
       <button type="button" data-filter="make" aria-pressed="false">make &amp; print</button>
       <button type="button" data-filter="home" aria-pressed="false">everyday</button>
+      <button type="button" data-filter="money" aria-pressed="false">money</button>
       <button type="button" data-filter="android" aria-pressed="false">on Android</button>
     </nav>
     <ul class="gallery">
@@ -72,13 +73,13 @@
         </a>
       </li>
 
-      <li class="photo" data-cat="home">
-        <a href="https://apps.nubuza.com/fivedollars/">
+      <li class="photo" data-cat="money">
+        <a href="https://apps.nubuza.com/money/fivedollars/">
           <img src="/projects/fivedollars.svg" alt="A smiling gold coin in front of a green five dollar note, next to a savings chart going up" width="400" height="300" loading="lazy">
           <span class="caption">
             <strong>5dollars</strong>
             <span>A private ledger for your household: import your bank statements and see every month whether you saved.</span>
-            <small>apps.nubuza.com/fivedollars ↗</small>
+            <small>apps.nubuza.com/money/fivedollars ↗</small>
           </span>
         </a>
       </li>

@@ -235,7 +235,7 @@ def send(kit: dict) -> None:
     tg.text("¡Listo! En los próximos días te llegarán también algunos posts extra del bot 💗")
 
 
-FD_URL = "https://apps.nubuza.com/fivedollars/"
+FD_URL = "https://apps.nubuza.com/money/fivedollars/"
 FD_TAGS = "#nubuza #5dollars #personalfinance #budgeting"
 FD_MEET = f"""Meet 5dollars 💚🪙
 
@@ -243,7 +243,7 @@ Our new little project: a private ledger for your household. Import your bank st
 categorise them in seconds and see every month whether you saved or spent more than you earned 📊✨
 
 No account and no server: your ledger is a file that lives in your Google Drive, a folder or your browser 🔒
-💚 apps.nubuza.com/fivedollars (link in bio)
+💚 apps.nubuza.com/money/fivedollars (link in bio)
 .
 {FD_TAGS}"""
 FD_CAROUSEL = f"""How 5dollars works 💚 (swipe →)
@@ -255,7 +255,7 @@ FD_CAROUSEL = f"""How 5dollars works 💚 (swipe →)
 5. Give trips their own budget ✈️
 
 All the numbers in these screenshots are made up: 5dollars never sees yours 💚
-💚 apps.nubuza.com/fivedollars (link in bio)
+💚 apps.nubuza.com/money/fivedollars (link in bio)
 .
 {FD_TAGS} #savingmoney"""
 FD_STEPS = [("welcome", "1. Your data stays yours 🔒"), ("categories", "2. Categorise every move ✨"),
