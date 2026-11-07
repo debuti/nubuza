@@ -13,3 +13,4 @@ Sitemap: https://apps.nubuza.com/ariadna/sitemap.xml
 Sitemap: https://apps.nubuza.com/calview/sitemap.xml
 Sitemap: https://apps.nubuza.com/money/fivedollars/sitemap.xml
 Sitemap: https://apps.nubuza.com/saw-it-coming/sitemap.xml
+Sitemap: https://apps.nubuza.com/money/a-family-of-traders/sitemap.xml
