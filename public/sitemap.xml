@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- nubuza.com is one page; the apps list their own sitemaps (apps.nubuza.com/robots.txt). -->
+<!-- nubuza.com is the home page plus its legal pages; the apps list their own sitemaps (apps.nubuza.com/robots.txt). -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://nubuza.com/</loc></url>
+  <url><loc>https://nubuza.com/privacy/</loc></url>
+  <url><loc>https://nubuza.com/terms/</loc></url>
+  <url><loc>https://nubuza.com/es/privacy/</loc></url>
+  <url><loc>https://nubuza.com/es/terms/</loc></url>
 </urlset>
