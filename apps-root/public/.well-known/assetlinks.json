@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.nubuza.android.ariadna",
+      "sha256_cert_fingerprints": ["C5:F3:30:70:95:AB:14:E2:E8:71:25:9C:F6:F9:81:83:CB:3E:FA:85:7D:6B:A0:72:76:4E:3A:11:69:B0:99:7C"]
+    }
+  }
+]
