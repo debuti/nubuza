@@ -28,3 +28,19 @@ jobs:
           wranglerVersion: "4.149.0"
           workingDirectory: apps-root
           command: deploy
+      # games.nubuza.com root (robots.txt with every game's sitemap, redirect, shared 404)
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: "4.149.0"
+          workingDirectory: games-root
+          command: deploy
+      # labs.nubuza.com root (unlisted experiments: robots Disallow, noindex, redirect, 404)
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: "4.149.0"
+          workingDirectory: labs-root
+          command: deploy

@@ -1,0 +1,11 @@
+// The root of labs.nubuza.com, the host for experiments that are never listed anywhere: not in
+// the nubuza.com gallery, sitemaps, social bot or 404 suggestions. Each experiment's Worker only
+// answers under its own base path (labs.nubuza.com/<slug>*) and must send
+// `X-Robots-Tag: noindex, nofollow` itself; this catch-all serves robots.txt (Disallow: /), the
+// bare host (redirected to nubuza.com) and the 404. Deploy with `npx wrangler deploy`.
+{
+  "name": "nubuza-labs-root",
+  "compatibility_date": "2026-09-01",
+  "assets": { "directory": "./public", "not_found_handling": "404-page" },
+  "routes": [{ "pattern": "labs.nubuza.com/*", "zone_name": "nubuza.com" }]
+}

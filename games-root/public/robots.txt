@@ -1,0 +1,5 @@
+# games.nubuza.com/robots.txt, for the whole host (Google only reads it at the root). Served by
+# nubuza/games-root. Each game on this host adds its Sitemap: line here when it has a sitemap,
+# then redeploys games-root.
+User-agent: *
+Allow: /
