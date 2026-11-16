@@ -37,9 +37,7 @@ jobs:
           workingDirectory: games-root
           command: deploy
       # labs.nubuza.com root (unlisted experiments: robots Disallow, noindex, redirect, 404)
-      # Off until cuanto-vale-tu-voto drops its own labs-root custom domain.
-      - if: false
-        uses: cloudflare/wrangler-action@v3
+      - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
