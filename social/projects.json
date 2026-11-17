@@ -217,5 +217,198 @@
     "cover": "public/projects/copy-cat.svg",
     "screenshot_brief": "The image is a phone screenshot of the app's home page: Mimi the cat, the promise of passport and ID photos at home, and the button to start.",
     "art_hint": "For this project, Mimi (a round lilac kawaii cat with pointy ears, pink inner ears, blush cheeks and whiskers, holding a little strip of identical photos), sheets of identical passport photos with dashed cut marks, scissors, a ruler, a phone camera and passports fit well; add Copy cat's lilac #c4b0f5, violet #6a4cc2 and peach #ffb895 to the nubuza pastels."
+  },
+  {
+    "id": "a-long-journey",
+    "name": "A Long Journey",
+    "url": "https://apps.nubuza.com/a-long-journey/",
+    "pitch": "Log every trip on a hand-inked globe, then watch it played back as a movie with your song.",
+    "facts": [
+      "Add the places you've been one by one: where, when, how you went and how you came back, with photos.",
+      "Every trip is drawn as a curved ink line, the real shortest way over a round Earth; planes, trains, boats, cars and walks each get their own ink.",
+      "Your travel movie: the camera flies from trip to trip, stamps every new country and tapes in your photos as polaroids, in time with your song.",
+      "Exports a vertical, square or wide video, made on your phone, ready for Reels, TikTok and Shorts. No watermark on your photos, just a tiny address in the corner.",
+      "Private by design: no account, and your trips, photos and song stay encrypted on your device.",
+      "Free.",
+      "Made by nubuza."
+    ],
+    "hashtags": [
+      "alongjourney",
+      "travel",
+      "traveljournal",
+      "travelmap",
+      "wanderlust",
+      "travelmemories",
+      "roadtrip",
+      "backpacking",
+      "travelvideo",
+      "kawaii",
+      "cuteapp",
+      "webapp",
+      "privacyfirst"
+    ],
+    "media": {
+      "screenshot": 2,
+      "illustration": 3
+    },
+    "cover": "public/projects/a-long-journey.svg",
+    "screenshot_brief": "The image is a phone screenshot of the app's home page: the promise of every trip inked on a globe and played back as a movie, and the button to start the journal.",
+    "art_hint": "For this project, a smiling kawaii hot-air balloon with blush cheeks, a pale globe with dashed red travel routes and map pins, polaroid photos taped on, stamps, tickets and an ink pen fit well; add A Long Journey's sage #9fbf9a, cream #f6e7c4 and red #e05a4a to the nubuza pastels."
+  },
+  {
+    "id": "ariadna",
+    "name": "Ariadna",
+    "url": "https://apps.nubuza.com/ariadna/",
+    "pitch": "Turn a photo into a string-art portrait made of one thread wound around a ring of nails.",
+    "facts": [
+      "Pick a photo, frame it and adjust the contrast while you see what the engine will see.",
+      "Choose the board: shape, size in millimetres, number of pins and thread thickness, with real physics.",
+      "The portrait draws itself live in seconds, and you can change the number of lines without recalculating.",
+      "Guided mode reads the next pin aloud and saves your progress after every step.",
+      "You can also print the 1:1 template and the list of steps.",
+      "A gallery of designs to open in the app and wind.",
+      "Free, no account, no subscription. Your photos never leave your device.",
+      "In the browser and on Android.",
+      "Made by nubuza."
+    ],
+    "hashtags": [
+      "ariadna",
+      "stringart",
+      "threadart",
+      "nailandthread",
+      "diy",
+      "crafts",
+      "handmade",
+      "diygift",
+      "portrait",
+      "makersgonnamake",
+      "kawaii",
+      "cuteapp",
+      "webapp",
+      "privacyfirst"
+    ],
+    "media": {
+      "screenshot": 2,
+      "illustration": 3
+    },
+    "cover": "public/projects/ariadna.svg",
+    "screenshot_brief": "The image is a phone screenshot of the app's home page: the promise of your photo made with a single thread, and the buttons to try it.",
+    "art_hint": "For this project, a smiling kawaii string-art face on a round board of pins with blush cheeks, a ball of thread, a polaroid portrait, hammers and nails fit well; add Ariadna's warm pink #ff8fbd, terracotta #e39a86 and cream #fbf7f0 to the nubuza pastels.",
+    "dismiss": [
+      "Skip"
+    ]
+  },
+  {
+    "id": "release-sonar",
+    "name": "Release Sonar",
+    "url": "https://apps.nubuza.com/music/release-sonar/",
+    "pitch": "Tell it what music you have and it tells you when your artists release something new.",
+    "facts": [
+      "Pick your music folder, paste a folder tree or listing, or just type a few artists. Only folder and file names are read, never your files.",
+      "It finds each artist in MusicBrainz and you confirm the doubtful ones.",
+      "Each artist has a page with the whole discography: mark what you have, what you want and what you want to ignore.",
+      "Come back whenever you like and see what came out since your last visit and what is coming soon.",
+      "With Google Drive, the same library is on all your devices.",
+      "Free, no account, nothing uploaded: everything stays in your browser.",
+      "The mascot is Echo, a purple kawaii bat with headphones and blushing cheeks.",
+      "Made by nubuza."
+    ],
+    "hashtags": [
+      "releasesonar",
+      "newmusic",
+      "newalbum",
+      "musiccollection",
+      "vinyl",
+      "musiclover",
+      "albumrelease",
+      "musicbrainz",
+      "kawaii",
+      "cuteapp",
+      "webapp",
+      "privacyfirst"
+    ],
+    "media": {
+      "screenshot": 2,
+      "illustration": 3
+    },
+    "cover": "public/projects/release-sonar.svg",
+    "screenshot_brief": "The image is a phone screenshot of the app's welcome screen: Echo the bat introduces Release Sonar and asks you to show it your music.",
+    "art_hint": "For this project, Echo (a purple kawaii bat with headphones and blush cheeks), sonar waves, vinyl records, album covers with a NEW badge and music folders fit well; add Release Sonar's pink #ff7fae, deep purple #2e1a4f and violet #5a3cc4 to the nubuza pastels."
+  },
+  {
+    "id": "saw-it-coming",
+    "name": "Saw It Coming",
+    "url": "https://apps.nubuza.com/saw-it-coming/",
+    "pitch": "Cut lists for carpenters and stonemasons: plan every panel, the cut order and the offcuts worth keeping.",
+    "facts": [
+      "Plans how to cut your parts from the panels you have: the layout of every panel, the cut order for the saw, the offcuts worth keeping and the edge banding you need.",
+      "Made for the saw: guillotine cuts with the kerf, the trim and the cut order. Free layouts for CNC too.",
+      "Offcuts go back to the inventory and are used first next time.",
+      "Projects are encrypted on your device and kept in a hidden app folder of your own Google Drive; nubuza never sees them.",
+      "Try it with an example kitchen of 29 parts that runs on your device.",
+      "The mascot is a cool circular saw blade with sunglasses and a yellow hard hat.",
+      "Made by nubuza."
+    ],
+    "hashtags": [
+      "sawitcoming",
+      "woodworking",
+      "carpentry",
+      "cutlist",
+      "cabinetmaking",
+      "joinery",
+      "diy",
+      "plywood",
+      "stonemason",
+      "workshop",
+      "maker",
+      "webapp",
+      "privacyfirst"
+    ],
+    "media": {
+      "screenshot": 2,
+      "illustration": 3
+    },
+    "cover": "public/projects/saw-it-coming.svg",
+    "screenshot_brief": "The image is a phone screenshot of the app's home page: the saw blade mascot and the promise to cut more parts from fewer panels.",
+    "art_hint": "For this project, a cool kawaii circular saw blade with sunglasses and a yellow hard hat, panels split into numbered parts with dashed red cut lines, offcuts, a tape measure and a pencil behind the ear fit well; add Saw It Coming's yellow #ffc93c and charcoal #1e262e to the nubuza pastels."
+  },
+  {
+    "id": "spinny",
+    "name": "Spinny",
+    "url": "https://apps.nubuza.com/spinny/",
+    "pitch": "Can't decide? Type your options, spin the wheel and let it pick for you.",
+    "facts": [
+      "Type your options, one per line, and spin the wheel.",
+      "Really random: the winner is picked with the browser's cryptographic generator, and every option has the same chance.",
+      "Save up to 50 named lists and load them back, for example after removing the winners one by one.",
+      "Share a wheel with a link.",
+      "Your options never leave your phone: no server, no database, no sign-up, no annoying ads.",
+      "Free.",
+      "Made by nubuza."
+    ],
+    "hashtags": [
+      "spinny",
+      "spinthewheel",
+      "decisionmaking",
+      "randompicker",
+      "cantdecide",
+      "whatsfordinner",
+      "partygames",
+      "classroom",
+      "kawaii",
+      "cuteapp",
+      "webapp",
+      "privacyfirst"
+    ],
+    "media": {
+      "screenshot": 2,
+      "illustration": 3
+    },
+    "cover": "public/projects/spinny.svg",
+    "screenshot_brief": "The image is a phone screenshot of the app: the wheel with options, ready to spin.",
+    "art_hint": "For this project, a smiling kawaii pastel prize wheel with a red pointer, a speech bubble with the winner (pizza!), dice and party confetti fit well; add Spinny's coral red #ef5848 and butter yellow #fff1c2 to the nubuza pastels.",
+    "dismiss": [
+      "Skip"
+    ]
   }
 ]

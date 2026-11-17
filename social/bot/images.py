@@ -92,6 +92,11 @@ def make(browser, project: dict, post: dict, workdir: Path, rng: random.Random) 
         context = browser.new_context(viewport={"width": 390, "height": 760}, device_scale_factor=2)
         page = context.new_page()
         page.goto(project["url"], wait_until="networkidle")
+        for name in project.get("dismiss", []):  # e.g. close a first-visit tour that covers the app
+            button = page.get_by_role("button", name=name, exact=True)
+            if button.count():
+                button.first.click()
+                page.wait_for_timeout(600)
         page.screenshot(path=workdir / "shot.png")
         context.close()
         return frame(browser, workdir / "shot.png", post["headline"], raw)
