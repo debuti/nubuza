@@ -1,0 +1,16 @@
+# Private artifacts: never publish
+node_modules/
+reels/
+brand/
+music/
+models/
+.venv/
+out/
+*.mp4
+*.wav
+*.mp3
+plan.md
+.env*
+.venv-cb/
+public/
+src/reels/*.json
