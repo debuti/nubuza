@@ -2,57 +2,78 @@
   <defs>
     <linearGradient id="obg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#fffdf8"/>
-      <stop offset="1" stop-color="#e3ebff"/>
+      <stop offset="1" stop-color="#e3eaff"/>
     </linearGradient>
+    <clipPath id="arena"><rect x="30" y="46" width="262" height="216" rx="26"/></clipPath>
   </defs>
   <rect width="400" height="300" fill="url(#obg)"/>
-  <!-- the arena: a dark box where the two teams bounce -->
-  <rect x="58" y="44" width="250" height="212" rx="22" fill="#3a2e3f" opacity=".1" transform="translate(6 8)"/>
-  <rect x="58" y="44" width="250" height="212" rx="22" fill="#0b0f1a"/>
-  <!-- motion trails -->
-  <g fill="none" stroke-linecap="round" stroke-width="3" opacity=".35">
-    <path d="M110 214 Q90 190 96 160" stroke="#ff5a5f"/>
-    <path d="M250 96 Q276 112 280 140" stroke="#4d8dff"/>
+
+  <!-- the arena -->
+  <rect x="30" y="46" width="262" height="216" rx="26" fill="#3a2e3f" opacity=".12" transform="translate(6 8)"/>
+  <rect x="30" y="46" width="262" height="216" rx="26" fill="#f4f1ff"/>
+  <g clip-path="url(#arena)" stroke="#d9d2f2" stroke-width="1.5" fill="none">
+    <path d="M30 100h262M30 154h262M30 208h262M84 46v216M138 46v216M192 46v216M246 46v216"/>
   </g>
-  <!-- blue team: splits on walls, so many small ones -->
-  <g fill="#4d8dff">
-    <circle cx="250" cy="96" r="22"/>
-    <circle cx="282" cy="176" r="11"/>
-    <circle cx="232" cy="214" r="13"/>
-    <circle cx="276" cy="226" r="8"/>
-    <circle cx="206" cy="70" r="9"/>
+  <rect x="30" y="46" width="262" height="216" rx="26" fill="none" stroke="#3a2e3f" stroke-width="3"/>
+
+  <!-- the splitter pops off the right wall into little copies -->
+  <g stroke="#3a2e3f" stroke-width="3" stroke-linecap="round">
+    <path d="M286 84l-12 4M286 100l-14-2M284 68l-10 8"/>
   </g>
-  <!-- red team: eats what it touches, so one big one -->
-  <circle cx="134" cy="170" r="52" fill="#ff5a5f"/>
-  <!-- kawaii faces -->
-  <g fill="#0b0f1a">
-    <circle cx="118" cy="164" r="6"/>
-    <circle cx="150" cy="164" r="6"/>
-    <circle cx="243" cy="93" r="3.2"/>
-    <circle cx="257" cy="93" r="3.2"/>
+  <g stroke="#3a2e3f" stroke-width="2.5" fill="#6b9bff">
+    <circle cx="258" cy="128" r="13"/>
+    <circle cx="262" cy="160" r="9"/>
   </g>
-  <g fill="#fff">
-    <circle cx="120" cy="162" r="2"/>
-    <circle cx="152" cy="162" r="2"/>
+  <g fill="#3a2e3f">
+    <circle cx="254" cy="127" r="2"/><circle cx="262" cy="127" r="2"/>
+    <circle cx="259" cy="159" r="1.5"/><circle cx="265" cy="159" r="1.5"/>
   </g>
-  <path d="M124 182 Q134 192 144 182" fill="none" stroke="#0b0f1a" stroke-width="4" stroke-linecap="round"/>
-  <path d="M245 103 Q250 107 255 103" fill="none" stroke="#0b0f1a" stroke-width="2.4" stroke-linecap="round"/>
-  <g fill="#ffb3c1" opacity=".8">
-    <ellipse cx="108" cy="180" rx="7" ry="4"/>
-    <ellipse cx="160" cy="180" rx="7" ry="4"/>
+
+  <!-- the blue ball, worried -->
+  <path d="M168 96q-14-10-30-8M172 112q-16-4-28 2" fill="none" stroke="#9db8ff" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="214" cy="94" r="32" fill="#6b9bff" stroke="#3a2e3f" stroke-width="3"/>
+  <ellipse cx="202" cy="80" rx="9" ry="5" fill="#fff" opacity=".6" transform="rotate(-30 202 80)"/>
+  <g fill="#3a2e3f">
+    <circle cx="204" cy="96" r="4"/><circle cx="224" cy="96" r="4"/>
   </g>
-  <!-- the bet: a coin stack and a "who wins?" bubble -->
-  <g transform="translate(6 196)">
-    <ellipse cx="22" cy="56" rx="26" ry="9" fill="#3a2e3f" opacity=".12"/>
-    <g stroke="#c98a00" stroke-width="2">
-      <ellipse cx="22" cy="44" rx="24" ry="9" fill="#ffc93c"/>
-      <ellipse cx="22" cy="32" rx="24" ry="9" fill="#ffc93c"/>
-      <ellipse cx="22" cy="20" rx="24" ry="9" fill="#ffd96a"/>
-    </g>
-    <text x="22" y="25" font-family="Fredoka, sans-serif" font-weight="600" font-size="13" text-anchor="middle" fill="#a86f00">¢</text>
+  <circle cx="205.5" cy="94.5" r="1.3" fill="#fff"/><circle cx="225.5" cy="94.5" r="1.3" fill="#fff"/>
+  <path d="M208 109q6-4 12 0" fill="none" stroke="#3a2e3f" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M240 78q4 7 0 10q-4-3 0-10z" fill="#bfe3ff" stroke="#3a2e3f" stroke-width="1.5"/>
+
+  <!-- the eater, mouth wide open, chasing a tiny blue one -->
+  <path d="M60 230q-14-14-14-34M74 248q-24-6-34-22" fill="none" stroke="#ffb0b0" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="122" cy="186" r="56" fill="#ff6b6b" stroke="#3a2e3f" stroke-width="3"/>
+  <ellipse cx="98" cy="160" rx="16" ry="9" fill="#fff" opacity=".55" transform="rotate(-35 98 160)"/>
+  <path d="M96 168l12 5M150 166l-12 6" stroke="#3a2e3f" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="106" cy="180" r="5" fill="#3a2e3f"/><circle cx="140" cy="180" r="5" fill="#3a2e3f"/>
+  <circle cx="108" cy="178" r="1.6" fill="#fff"/><circle cx="142" cy="178" r="1.6" fill="#fff"/>
+  <path d="M106 198q17 30 36 0z" fill="#7a2a3a" stroke="#3a2e3f" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M116 212q8-8 16 0q-8 6-16 0z" fill="#ff9aa8"/>
+  <ellipse cx="94" cy="194" rx="7" ry="4" fill="#ffc2cb"/><ellipse cx="152" cy="194" rx="7" ry="4" fill="#ffc2cb"/>
+
+  <circle cx="200" cy="208" r="11" fill="#6b9bff" stroke="#3a2e3f" stroke-width="2.5"/>
+  <circle cx="203" cy="206" r="2" fill="#3a2e3f"/><circle cx="209" cy="206" r="2" fill="#3a2e3f"/>
+  <path d="M214 196l6-4M216 206h8" stroke="#3a2e3f" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- the bet slip -->
+  <g transform="rotate(8 344 140)">
+    <rect x="306" y="94" width="78" height="96" rx="10" fill="#3a2e3f" opacity=".12" transform="translate(4 6)"/>
+    <rect x="306" y="94" width="78" height="96" rx="10" fill="#fff" stroke="#3a2e3f" stroke-width="3"/>
+    <circle cx="326" cy="118" r="9" fill="#ff6b6b" stroke="#3a2e3f" stroke-width="2"/>
+    <text x="345" y="123" font-family="Fredoka, sans-serif" font-weight="600" font-size="13" text-anchor="middle" fill="#3a2e3f">vs</text>
+    <circle cx="364" cy="118" r="9" fill="#6b9bff" stroke="#3a2e3f" stroke-width="2"/>
+    <path d="M318 138h54" stroke="#3a2e3f" stroke-width="2" stroke-dasharray="4 4"/>
+    <text x="345" y="174" font-family="Fredoka, sans-serif" font-weight="600" font-size="26" text-anchor="middle" fill="#ef5848">×3</text>
   </g>
-  <g transform="translate(284 150)">
-    <path d="M6 0h88a12 12 0 0 1 12 12v34a12 12 0 0 1-12 12H40l-16 14 2-14H6a12 12 0 0 1-12-12V12A12 12 0 0 1 6 0z" fill="#fff" stroke="#3a2e3f" stroke-width="2.5"/>
-    <text x="44" y="35" font-family="Fredoka, sans-serif" font-weight="600" font-size="17" text-anchor="middle" fill="#3a2e3f">who wins?</text>
+
+  <!-- coins -->
+  <g stroke="#3a2e3f" stroke-width="2.5">
+    <ellipse cx="350" cy="258" rx="26" ry="9" fill="#e9a920"/>
+    <path d="M324 248v10M376 248v10" fill="none"/>
+    <ellipse cx="350" cy="248" rx="26" ry="9" fill="#e9a920"/>
+    <path d="M324 238v10M376 238v10" fill="none"/>
+    <ellipse cx="350" cy="238" rx="26" ry="9" fill="#ffc93c"/>
   </g>
+  <path d="M343 238h14" stroke="#b47b00" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M384 214l4-8M392 222l8-2" stroke="#ffc93c" stroke-width="3" stroke-linecap="round"/>
 </svg>
