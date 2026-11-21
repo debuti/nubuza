@@ -47,7 +47,8 @@ export const Captions: React.FC<{words: Word[]; y: number; size?: number}> = ({w
         const on = t >= w.start - 0.03;
         const now = on && (t < w.end + 0.05 || i === line.length - 1);
         return (
-          <span key={i} style={{color: now ? C.accent : on ? C.text : C.soft, marginRight: '0.28em'}}>{w.text}</span>
+          // el espacio entre palabras deja que una línea larga se parta en dos
+          <React.Fragment key={i}>{i > 0 && ' '}<span style={{color: now ? C.accent : on ? C.text : C.soft}}>{w.text}</span></React.Fragment>
         );
       })}
     </div>
