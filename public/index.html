@@ -45,7 +45,7 @@
       and drop a cover image (4:3 works best) in /projects/. Covers are cached for a day:
       when you change one, bump its ?v= so visitors see the new one. A project with an app in a
       store gets an <a class="store"> after its card link, like Bizarre Love Polygon's.
-      data-cat is the card's category for the filters above: memories, make, home ("everyday") or money.
+      data-cat is the card's category for the filters above: memories, make, home ("everyday"), money or games.
       The "on Android" filter needs nothing: it picks the cards with an <a class="store">.
       Add the project to the list in 404.html too.
     -->
@@ -55,6 +55,7 @@
       <button type="button" data-filter="make" aria-pressed="false">make &amp; print</button>
       <button type="button" data-filter="home" aria-pressed="false">everyday</button>
       <button type="button" data-filter="money" aria-pressed="false">money</button>
+      <button type="button" data-filter="games" aria-pressed="false">games</button>
       <button type="button" data-filter="android" aria-pressed="false">on Android</button>
     </nav>
     <ul class="gallery">
@@ -181,6 +182,21 @@
             <span>Can't decide? Type your options, spin the wheel and let it pick for you.</span>
             <small>apps.nubuza.com/spinny ↗</small>
           </span>
+        </a>
+      </li>
+
+      <li class="photo" data-cat="games">
+        <a href="https://games.nubuza.com/odd-balls/">
+          <img src="/projects/odd-balls.svg" alt="A big smiling red ball and a swarm of small blue ones bouncing in a dark arena, next to a stack of coins and a bubble asking who wins" width="400" height="300" loading="lazy">
+          <span class="caption">
+            <strong>Odd Balls</strong>
+            <span>Two teams of bouncing balls with odd rules. Bet coins on the winner: the earlier you call it, the more it pays.</span>
+            <small>games.nubuza.com/odd-balls ↗</small>
+          </span>
+        </a>
+        <a class="store" href="https://play.google.com/store/apps/details?id=com.nubuza.android.oddballs" aria-label="Odd Balls for Android, on Google Play">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.7v16.6a1 1 0 0 0 1.5.86l13.6-8.3a1 1 0 0 0 0-1.72L7.5 2.84A1 1 0 0 0 6 3.7z"/></svg>
+          Android
         </a>
       </li>
 

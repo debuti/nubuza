@@ -410,5 +410,42 @@
     "dismiss": [
       "Skip"
     ]
+  },
+  {
+    "id": "odd-balls",
+    "name": "Odd Balls",
+    "url": "https://games.nubuza.com/odd-balls/",
+    "pitch": "Two teams of bouncing balls with odd rules. Bet coins on the winner: the earlier you call it, the more it pays.",
+    "facts": [
+      "Two teams of bouncing balls fight in an arena, each with an odd rule: one eats what it touches, another splits on every wall.",
+      "Arenas (box, ring, pegs, gate) with gravity, a black hole or magnets that attract or repel.",
+      "Bet coins on the winner while the duel plays: the earlier you call it, the more it pays.",
+      "Daily challenge: 5 duels, the same for everyone. Free practice doesn't touch your bank.",
+      "Run out of coins and it's game over for good.",
+      "Pretend coins only: they can't be bought or cashed out. For adults (18+).",
+      "Android game on Google Play, in English and Spanish.",
+      "Made by nubuza."
+    ],
+    "hashtags": [
+      "oddballs",
+      "androidgame",
+      "mobilegame",
+      "indiegame",
+      "physicsgame",
+      "simulation",
+      "whowins",
+      "dailychallenge",
+      "casualgame",
+      "kawaii",
+      "cutegame",
+      "googleplay"
+    ],
+    "media": {
+      "screenshot": 2,
+      "illustration": 3
+    },
+    "cover": "public/projects/odd-balls.svg",
+    "screenshot_brief": "The image is a phone screenshot of the game's landing page: the red and blue balls and the Google Play button.",
+    "art_hint": "For this project, a big smiling red ball and a swarm of small blue balls bouncing in a dark arena, a stack of gold coins and a 'who wins?' speech bubble fit well; add Odd Balls' red #ff5a5f, blue #4d8dff and night #0b0f1a to the nubuza pastels."
   }
 ]

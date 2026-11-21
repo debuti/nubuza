@@ -6,6 +6,6 @@ nubuza.com: the home of the nubuza apps, plus the coordinator of their agents.
 - apps-root/: a tiny Worker for the root of apps.nubuza.com: robots.txt listing every app's sitemap, .well-known/assetlinks.json for the Android apps' App Links, redirect to nubuza.com, shared 404. Also deployed on every push.
 - games-root/: the same for games.nubuza.com, the host for the games.
 - labs-root/: the root of labs.nubuza.com, unlisted experiments: blocks crawlers, noindex, never linked from anywhere.
-- social/: a bot that posts about a random app about twice a week on X and Instagram (@nubuzacom), with text written by Claude and a generated image. Knows all 10 apps.
+- social/: a bot that posts about a random app about twice a week on X and Instagram (@nubuzacom), with text written by Claude and a generated image. Knows all 11 apps.
 - reel/: makes finished vertical reels about the apps (Remotion, a local Castilian voice, word-by-word captions); /reel and one line. Videos and voices stay private, only the code is in git.
 - brand/: the nubuza avatar and logo PNGs (square and wide, for consoles such as the AdSense consent message).
