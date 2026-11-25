@@ -1,14 +1,16 @@
 """Send a finished reel or post to the nubuza-alerts Telegram bot.
 
 Usage: python3 scripts/send_alert.py "caption" [file ...]
-Reads TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID from reel/.env (gitignored). Never prints them.
+Reads TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID from reel/.env, or else the repo-root .env (both gitignored). Never prints them.
 .mp4 goes as video, images as documents (full quality), and with no file it sends the caption as text.
 """
 import json, sys, urllib.request, uuid
 from pathlib import Path
 
 env = {}
-for line in (Path(__file__).resolve().parent.parent / ".env").read_text().splitlines():
+here = Path(__file__).resolve().parent.parent
+envfile = next(p for p in (here / ".env", here.parent / ".env") if p.exists())
+for line in envfile.read_text().splitlines():
     if "=" in line and not line.lstrip().startswith("#"):
         k, v = line.split("=", 1)
         env[k.strip()] = v.strip().strip('"').strip("'")
